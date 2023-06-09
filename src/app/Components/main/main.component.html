@@ -1,16 +1,55 @@
 <div class="container-fluid text-center section py-5 px-3" id="main">
   <div class="row align-items-center justify-content-center">
-
-      <div class="col-12 my-3">
-          <h1 id="title">Find & Hire Employees, Sooner.</h1>
-      </div>
-      <div class="col-md-12 col-lg-8  mt-2" >
-        From advertising jobs to making offers, get everything you need to attract and hire better employees — in less time.
-      </div>
-      <div class="col-12 mt-5">
-        <a style="background-color: #d0256a;" class="button text-light btn rounded rounded-5 py-3 px-5"
-            routerLink="">Get Started</a>
+    <div class="col-12 my-3">
+      <h1 id="title">Find & Hire Employees, Sooner.</h1>
     </div>
-
+    <div class="col-md-12 col-lg-8 mt-2">
+      From advertising jobs to making offers, get everything you need to attract
+      and hire better employees — in less time.
+    </div>
+    <div class="col-12 mt-5">
+      <a
+        style="background-color: #d0256a"
+        class="button text-light btn rounded rounded-5 py-3 px-5"
+        routerLink=""
+        >Get Started</a
+      >
+    </div>
+    <div
+      class="mt-4 d-flex flex-row justify-content-evenly align-items-center w-75"
+    >
+      <p [ngClass]="!isMonthly ? 'text-dark' : 'text-primary'">Monthly</p>
+      <app-toggle-button (toggle)="isMonthly = $event"></app-toggle-button>
+      <p [ngClass]="isMonthly ? 'text-dark' : 'text-primary'">Annually</p>
+    </div>
+    <section
+      class="row d-flex flex-row justify-content-evenly align-items-center mt-4"
+    >
+      <div class="col-12 col-md-4">
+        <app-info-card type="Bootstrap"></app-info-card>
+      </div>
+      <div class="col-12 col-md-4">
+        <app-info-card
+          [toggle]="isMonthly"
+          type="Startup"
+          btnColor="#EE136B"
+          description="Enhanced hiring tools to get off the ground"
+          image="assets/images/free-sub.jpg"
+          monthlyPrice="$329/mo"
+          annuallyPrice="$229/mo"
+        ></app-info-card>
+      </div>
+      <div class="col-12 col-md-4">
+        <app-info-card
+          [toggle]="isMonthly"
+          type="Business"
+          btnColor="#B908FF"
+          description="Ultimate hiring control & flexibility"
+          image="assets/images/Business-sub.jpg"
+          monthlyPrice="$489/mo"
+          annuallyPrice="$369/mo"
+        ></app-info-card>
+      </div>
+    </section>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , DoCheck } from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class MainComponent {
 
+  isMonthly:boolean = true
 }

@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './Components/AboutComponent/about/about.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { MainComponent } from './Components/main/main.component';
+import { RoundedButtonComponent } from './Components/rounded-button/rounded-button.component';
+import { InfoCardComponent } from './Components/info-card/info-card.component';
+import { ToggleButtonComponent } from './Components/toggle-button/toggle-button.component';
 
 
 @NgModule({
@@ -12,7 +15,11 @@ import { MainComponent } from './Components/main/main.component';
     AppComponent,
     AboutComponent,
     NotFoundComponent,
-    MainComponent
+    MainComponent,
+    InfoCardComponent,
+    RoundedButtonComponent,
+    ToggleButtonComponent,
+
   ],
   imports: [
     BrowserModule,
