@@ -9,8 +9,10 @@ export class InfoCardComponent {
   constructor(){}
 
   @Input() type: string = "Bootstrap"
-  @Input() price: string = "Free"
+  @Input() monthlyPrice: string = "Free"
+  @Input() annuallyPrice: string = "Free"
   @Input() description: string = "All the basics for one position or pool"
-  @Input() image: string = "assets/images/free-sub.jpg"
+  @Input() image: string = "assets/images/Bootstrap-sub.jpg"
+  @Input() btnColor: string = "#035CFF"
 
 }

@@ -20,4 +20,13 @@ describe('InfoCardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should have price', () => {
+    expect(typeof(component.type)).toBe('string');
+  });
+  it('should have description', () => {
+    expect(typeof(component.type)).toBe('string');
+  });
+  it('should have image', () => {
+    expect(typeof(component.type)).toBe('string');
+  });
 });

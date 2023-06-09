@@ -1,5 +1,5 @@
 <div
-  class="col-12 col-md-3 d-flex flex-column justify-content-evenly align-items-center my-3 py-3 card-container"
+  class="w-100 d-flex flex-column justify-content-evenly align-items-center my-3 py-3 card-container"
 >
   <img
     [src]="image"
@@ -9,9 +9,11 @@
   />
   <h4 class="fw-bold my-2">{{ type }}</h4>
   <div class="margin-bottom margin-small">
-    <h2 class="fw-bold my-2">{{ price }}</h2>
-    <h2 style="display: none" class="pricing-tier_price">$189/mo</h2>
+    <h2 class="fw-bold my-2">{{ monthlyPrice }}</h2>
+    <h2 style="display: none" class="fw-bold my-2">
+      {{ annuallyPrice }}
+    </h2>
   </div>
   <p class="fs-6 px-5 my-3 fw-bold text-center">{{ description }}</p>
-  <app-rounded-button color="#035CFF"></app-rounded-button>
+  <app-rounded-button [color]="btnColor"></app-rounded-button>
 </div>
