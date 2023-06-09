@@ -20,13 +20,22 @@ describe('InfoCardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should have price', () => {
+  it('should have monthly price', () => {
+    expect(typeof(component.monthlyPrice)).toBe('string');
+  });
+  it('should have annually price', () => {
+    expect(typeof(component.annuallyPrice)).toBe('string');
+  });
+  it('should have type', () => {
     expect(typeof(component.type)).toBe('string');
   });
   it('should have description', () => {
-    expect(typeof(component.type)).toBe('string');
+    expect(typeof(component.description)).toBe('string');
   });
   it('should have image', () => {
-    expect(typeof(component.type)).toBe('string');
+    expect(typeof(component.image)).toBe('string');
+  });
+  it('should have btnColor', () => {
+    expect(typeof(component.btnColor)).toBe('string');
   });
 });
