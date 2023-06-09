@@ -20,4 +20,11 @@ describe('RoundedButtonComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('Should have a title' , ()=>{
+    expect(typeof(component.title)).toBe('string')
+  })
+  it('Should have a color' , ()=>{
+    expect(typeof(component.color)).toBe('string')
+    expect(component.color).toContain('#')
+  })
 });
