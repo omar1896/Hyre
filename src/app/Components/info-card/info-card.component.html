@@ -9,8 +9,8 @@
   />
   <h4 class="fw-bold my-2">{{ type }}</h4>
   <div class="margin-bottom margin-small">
-    <h2 class="fw-bold my-2">{{ monthlyPrice }}</h2>
-    <h2 style="display: none" class="fw-bold my-2">
+    <h2 *ngIf="toggle" class="fw-bold my-2">{{ monthlyPrice }}</h2>
+    <h2 *ngIf="!toggle" class="fw-bold my-2">
       {{ annuallyPrice }}
     </h2>
   </div>

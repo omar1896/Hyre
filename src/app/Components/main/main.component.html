@@ -15,6 +15,11 @@
         >Get Started</a
       >
     </div>
+    <div class="mt-4 d-flex flex-row justify-content-evenly align-items-center">
+      <p>Monthly</p>
+      <app-toggle-button (toggle)="isMonthly = $event"></app-toggle-button>
+      <p>Annually</p>
+    </div>
     <section
       class="row d-flex flex-row justify-content-evenly align-items-center mt-4"
     >
@@ -23,6 +28,7 @@
       </div>
       <div class="col-12 col-md-3">
         <app-info-card
+          [toggle]="isMonthly"
           type="Startup"
           btnColor="#EE136B"
           description="Enhanced hiring tools to get off the ground"
@@ -33,6 +39,7 @@
       </div>
       <div class="col-12 col-md-3">
         <app-info-card
+          [toggle]="isMonthly"
           type="Business"
           btnColor="#B908FF"
           description="Ultimate hiring control & flexibility"

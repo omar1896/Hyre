@@ -14,5 +14,6 @@ export class InfoCardComponent {
   @Input() description: string = "All the basics for one position or pool"
   @Input() image: string = "assets/images/Bootstrap-sub.jpg"
   @Input() btnColor: string = "#035CFF"
+  @Input() toggle: boolean = true
 
 }
