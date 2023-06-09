@@ -1,0 +1,54 @@
+.footer {
+  background-image: url("https://assets-global.website-files.com/6127d83f257132e4fe0bddc6/626ffd05059a6cf743ea261a_grass-tileable.png");
+  background-position: 50% 0;
+  background-repeat: repeat-x;
+  background-size: cover;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  position: relative;
+}
+
+.footer_socials {
+  grid-template-rows: auto;
+  grid-template-columns: max-content max-content max-content max-content;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.icon-1x1-small {
+  width: 2rem;
+  height: 2rem;
+  align-self: center;
+}
+.footer_links {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.w-list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+ul, ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-left: 40px;
+}
+
+.footer_list-item {
+  padding-left: 0;
+}
+li {
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+
+
+a {
+  color: #071124;
+  text-decoration: none;
+
+}
+
+.footer-link:hover {
+  color: #175bd8;
+}
