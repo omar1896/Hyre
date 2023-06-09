@@ -15,8 +15,9 @@ import { InfoCardComponent } from './Components/info-card/info-card.component';
     AboutComponent,
     NotFoundComponent,
     MainComponent,
+    InfoCardComponent,
     RoundedButtonComponent,
-    InfoCardComponent
+
   ],
   imports: [
     BrowserModule,
