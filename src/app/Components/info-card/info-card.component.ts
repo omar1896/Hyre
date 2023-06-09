@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-info-card',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./info-card.component.css']
 })
 export class InfoCardComponent {
+  constructor(){}
+
+  @Input() type: string = "Bootstrap"
+  @Input() price: string = "Free"
+  @Input() description: string = "All the basics for one position or pool"
+  @Input() image: string = "assets/images/free-sub.jpg"
 
 }
