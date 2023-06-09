@@ -1,3 +1,5 @@
+import { HostListener } from '@angular/core';
+import { Input } from '@angular/core';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./rounded-button.component.css']
 })
 export class RoundedButtonComponent {
+  @Input() color: string ="#D9DBDE"
+  @Input() title: string ="Get Started"
+
+  constructor(){
+  }
+  doSomeThing(){
+  }
 
 }
