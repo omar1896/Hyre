@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './Components/AboutComponent/about/about.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { MainComponent } from './Components/main/main.component';
+import { RoundedButtonComponent } from './Components/rounded-button/rounded-button.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { MainComponent } from './Components/main/main.component';
     AppComponent,
     AboutComponent,
     NotFoundComponent,
-    MainComponent
+    MainComponent,
+    RoundedButtonComponent
   ],
   imports: [
     BrowserModule,
