@@ -5,9 +5,7 @@ import { Component , DoCheck } from '@angular/core';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements DoCheck{
-  ngDoCheck(): void {
-    console.log(this.isMonthly)
-  }
+export class MainComponent {
+
   isMonthly:boolean = true
 }

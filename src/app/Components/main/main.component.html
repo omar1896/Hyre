@@ -15,35 +15,37 @@
         >Get Started</a
       >
     </div>
-    <div class="mt-4 d-flex flex-row justify-content-evenly align-items-center">
-      <p>Monthly</p>
+    <div
+      class="mt-4 d-flex flex-row justify-content-evenly align-items-center w-75"
+    >
+      <p [ngClass]="!isMonthly ? 'text-dark' : 'text-primary'">Monthly</p>
       <app-toggle-button (toggle)="isMonthly = $event"></app-toggle-button>
-      <p>Annually</p>
+      <p [ngClass]="isMonthly ? 'text-dark' : 'text-primary'">Annually</p>
     </div>
     <section
       class="row d-flex flex-row justify-content-evenly align-items-center mt-4"
     >
-      <div class="col-12 col-md-3">
+      <div class="col-12 col-md-4">
         <app-info-card type="Bootstrap"></app-info-card>
       </div>
-      <div class="col-12 col-md-3">
+      <div class="col-12 col-md-4">
         <app-info-card
           [toggle]="isMonthly"
           type="Startup"
           btnColor="#EE136B"
           description="Enhanced hiring tools to get off the ground"
-          image="assets/images/Business-sub.jpg"
+          image="assets/images/free-sub.jpg"
           monthlyPrice="$329/mo"
           annuallyPrice="$229/mo"
         ></app-info-card>
       </div>
-      <div class="col-12 col-md-3">
+      <div class="col-12 col-md-4">
         <app-info-card
           [toggle]="isMonthly"
           type="Business"
           btnColor="#B908FF"
           description="Ultimate hiring control & flexibility"
-          image="assets/images/free-sub.jpg"
+          image="assets/images/Business-sub.jpg"
           monthlyPrice="$489/mo"
           annuallyPrice="$369/mo"
         ></app-info-card>
