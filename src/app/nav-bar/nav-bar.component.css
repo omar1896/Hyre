@@ -1,0 +1,28 @@
+.navbar {
+    height: 13vh !important;
+}
+
+.nav-scrolled{
+    background-color: transparent !important;
+}
+
+.nav-link:hover {
+    color: #3F7ADE !important;
+    cursor: pointer;
+}
+
+.nav-link {
+    color: black !important;
+    /* font-weight: lighter !important; */
+}
+
+img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+img {
+    margin-top: 12px;
+    transition: transform 0.3s ease; /* Specifies a transition duration of 0.3 seconds with an ease timing function */
+    object-fit: fill;
+}
