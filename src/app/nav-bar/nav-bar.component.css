@@ -1,9 +1,11 @@
 .navbar {
     height: 13vh !important;
+    position: fixed;
+    z-index: 100;
 }
 
 .nav-scrolled{
-    background-color: transparent !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
 .nav-link:hover {
