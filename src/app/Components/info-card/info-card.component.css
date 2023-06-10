@@ -1,0 +1,15 @@
+.card-container{
+  box-shadow: 6px 6px 10px 10px rgba(129, 129, 129, 0.3);
+  background-color: #FFFFFF;
+  transition: all .5s ease;
+}
+.card-container:hover{
+  transform: translateY(-15px);
+  box-shadow: 0 0 0 0  rgba(255, 255, 255, 1);
+}
+
+.perform-pricing_image{
+  width: 50%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
