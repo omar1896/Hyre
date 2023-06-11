@@ -11,7 +11,7 @@ import { InfoCardComponent } from './Components/info-card/info-card.component';
 import { ToggleButtonComponent } from './Components/toggle-button/toggle-button.component';
 import { SignupFormComponent } from './Components/signup-form/signup-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component'
+import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component'
 @NgModule({
   declarations: [
     AppComponent,
