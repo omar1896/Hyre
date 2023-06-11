@@ -21,8 +21,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ResponseInterceptor } from './intercreptors/response.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastService } from './Services/toast-service.service';
-import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
-import { SignupOptionComponent } from './Components/signup-option/signup-option.component'
 
 @NgModule({
   declarations: [
@@ -39,7 +37,7 @@ import { SignupOptionComponent } from './Components/signup-option/signup-option.
     FooterComponent,
     MytoastComponent,
     ForgotPasswordComponent,
-    SignupOptionComponent
+    SignupOptionComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,13 +47,14 @@ import { SignupOptionComponent } from './Components/signup-option/signup-option.
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [ToastService,
+  providers: [
+    ToastService,
     {
-    provide: HTTP_INTERCEPTORS,
-    useClass: ResponseInterceptor,
-    multi: true
-  }
-],
-  bootstrap: [AppComponent]
+      provide: HTTP_INTERCEPTORS,
+      useClass: ResponseInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
