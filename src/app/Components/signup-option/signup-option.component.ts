@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-signup-option',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./signup-option.component.css']
 })
 export class SignupOptionComponent {
+  @Input() title: any
 
+  constructor(){
+
+  }
 }
