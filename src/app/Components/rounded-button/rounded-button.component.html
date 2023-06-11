@@ -1,11 +1,13 @@
 <div
   class="col-12 mt-2 rounded-btn d-flex justify-content-center align-items-center"
 >
-  <a
-    (click)="doSomeThing()"
-    [style.backgroundColor]="color"
+  <button
+    (click)="onClick()"
+    [style.backgroundColor]="bgColor"
+    [style.color]="fontColor"
+    [type]="type"
     class="button text-light btn rounded rounded-5 py-3 px-5"
-    routerLink=""
-    >{{ title }}</a
   >
+    {{ title }}
+  </button>
 </div>

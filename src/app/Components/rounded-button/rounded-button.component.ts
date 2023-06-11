@@ -1,4 +1,4 @@
-import { Input } from '@angular/core';
+import { Input , Output , EventEmitter } from '@angular/core';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,12 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./rounded-button.component.css']
 })
 export class RoundedButtonComponent {
-  @Input() color: string ="#D9DBDE"
+  @Input() bgColor: string ="#D9DBDE"
+  @Input() fontColor: string ="white"
   @Input() title: string ="Get Started"
+  @Input() type: string ="button"
+  @Output() clicked = new EventEmitter()
 
   constructor(){
   }
-  doSomeThing(){
+  onClick(){
+    this.clicked.emit()
   }
 
 }
