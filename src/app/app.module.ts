@@ -11,7 +11,10 @@ import { InfoCardComponent } from './Components/info-card/info-card.component';
 import { ToggleButtonComponent } from './Components/toggle-button/toggle-button.component';
 import { SignupFormComponent } from './Components/signup-form/signup-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SigninComponent } from './Components/signin/signin.component'
+import { SigninComponent } from './Components/signin/signin.component';
+import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
+import { SignupOptionComponent } from './Components/signup-option/signup-option.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,14 +26,12 @@ import { SigninComponent } from './Components/signin/signin.component'
     RoundedButtonComponent,
     ToggleButtonComponent,
     SignupFormComponent,
-    SigninComponent
+    SigninComponent,
+    ForgotPasswordComponent,
+    SignupOptionComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
