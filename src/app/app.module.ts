@@ -11,6 +11,14 @@ import { InfoCardComponent } from './Components/info-card/info-card.component';
 import { ToggleButtonComponent } from './Components/toggle-button/toggle-button.component';
 import { SignupFormComponent } from './Components/signup-form/signup-form.component';
 import { ReactiveFormsModule } from '@angular/forms'
+import { FooterComponent } from './Components/footer/footer.component';
+import { MytoastComponent } from './Components/mytoast/mytoast.component';
+import { ToastModule } from '@coreui/angular';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ResponseInterceptor } from './intercreptors/response.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastService } from './Services/toast-service.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,14 +29,25 @@ import { ReactiveFormsModule } from '@angular/forms'
     InfoCardComponent,
     RoundedButtonComponent,
     ToggleButtonComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    FooterComponent,
+    MytoastComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ToastService,
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: ResponseInterceptor,
+    multi: true
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
