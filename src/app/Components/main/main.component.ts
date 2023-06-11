@@ -8,4 +8,7 @@ import { Component , DoCheck } from '@angular/core';
 export class MainComponent {
 
   isMonthly:boolean = true
+  onSubmit(data: any){
+    console.log("from parent" , data)
+  }
 }
