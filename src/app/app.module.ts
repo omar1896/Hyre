@@ -11,7 +11,8 @@ import { InfoCardComponent } from './Components/info-card/info-card.component';
 import { ToggleButtonComponent } from './Components/toggle-button/toggle-button.component';
 import { SignupFormComponent } from './Components/signup-form/signup-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component'
+import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
+import { SignupOptionComponent } from './signup-option/signup-option.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { ForgotPasswordComponent } from './Components/forgot-password/forgot-pas
     RoundedButtonComponent,
     ToggleButtonComponent,
     SignupFormComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    SignupOptionComponent
   ],
   imports: [
     BrowserModule,
