@@ -20,7 +20,7 @@
     />
   </div>
   <div *ngIf="!email && isEmailDirty()" class="my-4">
-    <span class="alert alert-danger fs-6 w-100"
+    <span class="alert alert-danger form-error w-100"
       >Enter a valid email address</span
     >
   </div>
@@ -36,7 +36,7 @@
     />
   </div>
   <div *ngIf="!username && isUsernameDirty()" class="my-4">
-    <span class="alert alert-danger fs-6 w-100"
+    <span class="alert alert-danger form-error w-100"
       >username must be more than 3 characters</span
     >
   </div>
@@ -51,7 +51,7 @@
     />
   </div>
   <div *ngIf="!password && isPasswordDirty()" class="my-4">
-    <span class="alert alert-danger fs-6 w-100"
+    <span class="alert alert-danger form-error w-100"
       >password must be more than 10 characters or numbers</span
     >
   </div>
@@ -69,7 +69,9 @@
     *ngIf="!confirmPassword && arePasswordsEqual() && isConfirmPasswordDirty()"
     class="my-4"
   >
-    <span class="alert alert-danger fs-6 w-100">passwords do not match</span>
+    <span class="alert alert-danger form-error w-100"
+      >passwords do not match</span
+    >
   </div>
   <a
     *ngIf="options.forgetPassword"

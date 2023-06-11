@@ -12,7 +12,9 @@ import { ToggleButtonComponent } from './Components/toggle-button/toggle-button.
 import { SignupFormComponent } from './Components/signup-form/signup-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
-import { SignupOptionComponent } from './Components/signup-option/signup-option.component'
+import { SignupOptionComponent } from './Components/signup-option/signup-option.component';
+import { SignupPageComponent } from './Components/signup-page/signup-page.component';
+import { LogoComponent } from './Components/logo/logo.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,9 @@ import { SignupOptionComponent } from './Components/signup-option/signup-option.
     ToggleButtonComponent,
     SignupFormComponent,
     ForgotPasswordComponent,
-    SignupOptionComponent
+    SignupOptionComponent,
+    SignupPageComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,
