@@ -9,6 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class SignupFormComponent {
 
   @Input() options: any
+  @Input() btnOptions: any
   @Output() submitted = new EventEmitter()
   public userData : any = {}
   public error!:string|null;
@@ -18,7 +19,8 @@ export class SignupFormComponent {
       name: true,
       email: true,
       password: true,
-      confirmPassword: true
+      confirmPassword: true,
+      forgetPassword: false
     }
     this.validationForm = new FormGroup({
       email: this.options.email ? new FormControl(null,[Validators.required, Validators.email]) : new FormControl({value: null, disabled: true}),

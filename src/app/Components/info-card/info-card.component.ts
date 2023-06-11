@@ -16,4 +16,8 @@ export class InfoCardComponent {
   @Input() btnColor: string = "#035CFF"
   @Input() toggle: boolean = true
 
+  onClick(){
+
+  }
+
 }

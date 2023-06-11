@@ -1,7 +1,7 @@
-.rounded-btn a{
+.rounded-btn button{
   transition: all .3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-.rounded-btn a:hover{
+.rounded-btn button:hover{
   transform: scale(1.05);
 }

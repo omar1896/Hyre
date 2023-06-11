@@ -51,16 +51,17 @@
         ></app-info-card>
       </div>
     </section>
-    <!-- <div class="col-4 align-self-start">
+    <div class="col-12 col-md-4 align-self-start form-con">
       <app-signup-form
         [options]="{
           email: true,
-          name: false,
+          name: true,
           password: true,
-          confirmPassword: false
+          confirmPassword: true,
+          forgetPassword: true
         }"
         (submitted)="onSubmit($event)"
       ></app-signup-form>
-    </div> -->
+    </div>
   </div>
 </div>
