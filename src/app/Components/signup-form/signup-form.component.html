@@ -1,0 +1,81 @@
+<form
+  [formGroup]="validationForm"
+  (submit)="onSubmit()"
+  class="mt-4 w-100 p-3 text-start"
+>
+  <div *ngIf="error">
+    <span class="bg-danger rounded-1 bg-gradient text-light p-3 m-1 d-block"
+      >{{ error }}
+    </span>
+  </div>
+  <div *ngIf="this.options.email">
+    <label for="exampleFormControlInput1" class="form-label"
+      >Email address</label
+    >
+    <input
+      formControlName="email"
+      type="email"
+      class="form-control"
+      id="exampleFormControlInput1"
+      placeholder="Enter your email"
+    />
+  </div>
+  <div *ngIf="!email && isEmailDirty()" class="my-4">
+    <span class="alert alert-danger fs-6">Enter a valid email address</span>
+  </div>
+  <div *ngIf="this.options.name">
+    <label for="exampleFormControlInput1" class="form-label mt-1"
+      >Display username</label
+    >
+    <input
+      formControlName="username"
+      type="text"
+      class="form-control"
+      id="exampleFormControlInput1"
+      placeholder="Enter your username"
+    />
+  </div>
+  <div *ngIf="!username && isUsernameDirty()" class="my-4">
+    <span class="alert alert-danger fs-6"
+      >username must be more than 3 characters</span
+    >
+  </div>
+  <div *ngIf="this.options.password">
+    <label for="inputPassword5" class="form-label">Password</label>
+    <input
+      formControlName="password"
+      type="password"
+      id="inputPassword5"
+      class="form-control"
+      aria-labelledby="passwordHelpBlock"
+      placeholder="Enter your password"
+    />
+  </div>
+  <div *ngIf="!password && isPasswordDirty()" class="my-4">
+    <span class="alert alert-danger fs-6"
+      >password must be more than 10 characters or numbers</span
+    >
+  </div>
+  <div *ngIf="this.options.confirmPassword">
+    <label for="inputPassword5" class="form-label">Confirm Password</label>
+    <input
+      formControlName="confirmPassword"
+      type="password"
+      id="inputPassword5"
+      class="form-control"
+      aria-labelledby="passwordHelpBlock"
+      placeholder="Your password again"
+    />
+  </div>
+  <div
+    *ngIf="!confirmPassword && arePasswordsEqual() && isConfirmPasswordDirty()"
+    class="my-4"
+  >
+    <span class="alert alert-danger fs-6">passwords do not match</span>
+  </div>
+  <app-rounded-button
+    title="Submit"
+    bgColor="#EE136B"
+    type="submit"
+  ></app-rounded-button>
+</form>
