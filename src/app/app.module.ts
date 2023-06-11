@@ -14,6 +14,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SigninComponent } from './Components/signin/signin.component';
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
 import { SignupOptionComponent } from './Components/signup-option/signup-option.component';
+import { FooterComponent } from './Components/footer/footer.component';
+import { MytoastComponent } from './Components/mytoast/mytoast.component';
+import { ToastModule } from '@coreui/angular';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ResponseInterceptor } from './intercreptors/response.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastService } from './Services/toast-service.service';
+import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
+import { SignupOptionComponent } from './Components/signup-option/signup-option.component'
 
 @NgModule({
   declarations: [
@@ -27,11 +36,26 @@ import { SignupOptionComponent } from './Components/signup-option/signup-option.
     ToggleButtonComponent,
     SignupFormComponent,
     SigninComponent,
+    FooterComponent,
+    MytoastComponent,
     ForgotPasswordComponent,
-    SignupOptionComponent,
+    SignupOptionComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
-  providers: [],
-  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    ToastModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+  ],
+  providers: [ToastService,
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: ResponseInterceptor,
+    multi: true
+  }
+],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

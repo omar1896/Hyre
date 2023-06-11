@@ -5,6 +5,14 @@
   <!-- <app-about></app-about> -->
 <!-- </div> -->
 
-<router-outlet></router-outlet>
+
+<!-- <router-outlet></router-outlet> -->
+
+<app-mytoast
+  [visible]="toastVisible"
+  [title]="toastMessage"
+  [success]="toastSuccess"
+></app-mytoast>
+
 <!-- <app-forgot-password></app-forgot-password> -->
 
