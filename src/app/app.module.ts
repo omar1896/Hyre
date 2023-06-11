@@ -22,6 +22,9 @@ import { ResponseInterceptor } from './intercreptors/response.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastService } from './Services/toast-service.service';
 import { DialogComponent } from './Components/dialog/dialog.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -49,6 +52,11 @@ import { DialogComponent } from './Components/dialog/dialog.component';
     ToastModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatButtonModule,
+    MatInputModule,
+    MatDialogModule
+
+
   ],
   providers: [ToastService,
     {
