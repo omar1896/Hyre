@@ -10,7 +10,8 @@ import { RoundedButtonComponent } from './Components/rounded-button/rounded-butt
 import { InfoCardComponent } from './Components/info-card/info-card.component';
 import { ToggleButtonComponent } from './Components/toggle-button/toggle-button.component';
 import { SignupFormComponent } from './Components/signup-form/signup-form.component';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { SigninComponent } from './Components/signin/signin.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms'
     InfoCardComponent,
     RoundedButtonComponent,
     ToggleButtonComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
