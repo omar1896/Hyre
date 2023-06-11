@@ -1,27 +1,28 @@
 <div class="background-color-sky container-fluid vh-100">
-  <div class="row ">
-    <div class="col-12 col-lg-5">
-      <div>
-        <h1 class="text-center mt-5">Logo</h1>
-        <div class="bg-white shadow">
-          <app-signup-form
-          [options] = "{
-            name:false,
-            email:true,
-            password:true,
-            confirmPassword:false,
-            forgetPassword:false}"
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-5">
+        <div>
+          <h1 class="text-center my-5">Logo</h1>
+          <div class="bg-white shadow px-3 py-1">
+            <app-signup-form
+              [options]="{
+                name: false,
+                email: true,
+                password: true,
+                confirmPassword: false,
+                forgetPassword: false
+              }"
             ></app-signup-form>
+          </div>
         </div>
+      </div>
 
+      <div class="col-12 offset-md-1 col-md-5 signin-request">
+        <div class="d-flex align-items-center vh-100">
+          <app-signup-option title="Don't have an account?"></app-signup-option>
+        </div>
       </div>
     </div>
-
-    <div class="col-12 offset-md-2 col-md-4 signin-request">
-      <div class="d-flex align-items-center  vh-100">
-        <h1>hello</h1>
-      </div>
-    </div>
-
   </div>
 </div>
