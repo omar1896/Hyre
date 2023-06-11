@@ -9,6 +9,8 @@ import { MainComponent } from './Components/main/main.component';
 import { RoundedButtonComponent } from './Components/rounded-button/rounded-button.component';
 import { InfoCardComponent } from './Components/info-card/info-card.component';
 import { ToggleButtonComponent } from './Components/toggle-button/toggle-button.component';
+import { SignupFormComponent } from './Components/signup-form/signup-form.component';
+import { ReactiveFormsModule } from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,11 +20,13 @@ import { ToggleButtonComponent } from './Components/toggle-button/toggle-button.
     MainComponent,
     InfoCardComponent,
     RoundedButtonComponent,
-    ToggleButtonComponent
+    ToggleButtonComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

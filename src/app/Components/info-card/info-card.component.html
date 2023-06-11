@@ -15,5 +15,8 @@
     </h2>
   </div>
   <p class="fs-6 px-5 my-3 fw-bold text-center">{{ description }}</p>
-  <app-rounded-button [color]="btnColor"></app-rounded-button>
+  <app-rounded-button
+    (clicked)="onClick()"
+    [bgColor]="btnColor"
+  ></app-rounded-button>
 </div>
