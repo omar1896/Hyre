@@ -10,7 +10,10 @@ import { RoundedButtonComponent } from './Components/rounded-button/rounded-butt
 import { InfoCardComponent } from './Components/info-card/info-card.component';
 import { ToggleButtonComponent } from './Components/toggle-button/toggle-button.component';
 import { SignupFormComponent } from './Components/signup-form/signup-form.component';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { SigninComponent } from './Components/signin/signin.component';
+import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
+import { SignupOptionComponent } from './Components/signup-option/signup-option.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { MytoastComponent } from './Components/mytoast/mytoast.component';
 import { ToastModule } from '@coreui/angular';
@@ -32,6 +35,7 @@ import { SignupOptionComponent } from './Components/signup-option/signup-option.
     RoundedButtonComponent,
     ToggleButtonComponent,
     SignupFormComponent,
+    SigninComponent,
     FooterComponent,
     MytoastComponent,
     ForgotPasswordComponent,
@@ -54,4 +58,4 @@ import { SignupOptionComponent } from './Components/signup-option/signup-option.
 ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

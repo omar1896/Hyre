@@ -1,0 +1,20 @@
+.background-color-sky {
+  background-color: #dcf2f5;
+  background-image: url("/assets/images/clouds.jpg");
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media  (max-width: 992px) {
+  .signin-request {
+    display: none;
+  }
+}
+
+
+/* @media  (max-width: 1200px) {
+  .signin-request {
+    display: block;
+  }
+} */
