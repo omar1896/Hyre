@@ -14,6 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SigninComponent } from './Components/signin/signin.component';
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
 import { SignupOptionComponent } from './Components/signup-option/signup-option.component';
+import { SignupPageComponent } from './Components/signup-page/signup-page.component';
+import { LogoComponent } from './Components/logo/logo.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { MytoastComponent } from './Components/mytoast/mytoast.component';
 import { ToastModule } from '@coreui/angular';
@@ -25,7 +27,6 @@ import { DialogComponent } from './Components/dialog/dialog.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
-
 
 
 @NgModule({
@@ -44,6 +45,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MytoastComponent,
     ForgotPasswordComponent,
     SignupOptionComponent,
+    signup-page,
+    SignupPageComponent,
+    LogoComponent,
     DialogComponent
   ],
   imports: [

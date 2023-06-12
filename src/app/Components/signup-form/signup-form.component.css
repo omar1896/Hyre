@@ -16,3 +16,7 @@
   color:#747474;
   font-size: 1rem;
 }
+.form-error{
+  font-size: .9rem;
+  padding: 7px;
+}
