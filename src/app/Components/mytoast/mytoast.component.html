@@ -1,0 +1,18 @@
+<div >
+    <c-toaster placement="top-end" class="mt-5" position="fixed" >
+    <c-toast [autohide]="true" [fade]="true" [visible]="visible" >
+        <c-toast-body [ngStyle]="{'border-left':success?'6px solid #1d7a0b':'6px solid #f8cc30'}">
+            <div class="row justify-content-start align-items-center" >
+                <div class="col-2" *ngIf="success" >
+                    <!-- <i class="fa-solid fa-circle-check fa-2xl" style="color: #1d7a0b;"></i> -->
+                    <i  style="font-size: 1.5rem;color: #1d7a0b;" class="bi bi-check-circle-fill"></i></div>
+                <div class="col-2" *ngIf="!success" >
+                    <!-- <i class="fa-solid fa-triangle-exclamation fa-2xl" style="color: #f8cc30;"></i> -->
+                    <i class="bi bi-exclamation-triangle-fill" style="font-size: 1.5rem;color: #f8cc30;"></i>
+                    </div>
+                <p class="col-10  mt-3">{{title}}</p>
+            </div>
+        </c-toast-body>
+    </c-toast>
+</c-toaster>
+</div>

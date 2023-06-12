@@ -11,10 +11,24 @@ import { InfoCardComponent } from './Components/info-card/info-card.component';
 import { ToggleButtonComponent } from './Components/toggle-button/toggle-button.component';
 import { SignupFormComponent } from './Components/signup-form/signup-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SigninComponent } from './Components/signin/signin.component';
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
 import { SignupOptionComponent } from './Components/signup-option/signup-option.component';
 import { SignupPageComponent } from './Components/signup-page/signup-page.component';
-import { LogoComponent } from './Components/logo/logo.component'
+import { LogoComponent } from './Components/logo/logo.component';
+import { FooterComponent } from './Components/footer/footer.component';
+import { MytoastComponent } from './Components/mytoast/mytoast.component';
+import { ToastModule } from '@coreui/angular';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ResponseInterceptor } from './intercreptors/response.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastService } from './Services/toast-service.service';
+import { DialogComponent } from './Components/dialog/dialog.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,17 +40,37 @@ import { LogoComponent } from './Components/logo/logo.component'
     RoundedButtonComponent,
     ToggleButtonComponent,
     SignupFormComponent,
+    SigninComponent,
+    FooterComponent,
+    MytoastComponent,
     ForgotPasswordComponent,
     SignupOptionComponent,
+    signup-page,
     SignupPageComponent,
-    LogoComponent
+    LogoComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatInputModule,
+    MatDialogModule
+
+
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    ToastService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ResponseInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
