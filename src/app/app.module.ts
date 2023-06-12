@@ -21,8 +21,11 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ResponseInterceptor } from './intercreptors/response.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastService } from './Services/toast-service.service';
-import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
-import { SignupOptionComponent } from './Components/signup-option/signup-option.component'
+import { DialogComponent } from './Components/dialog/dialog.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +42,8 @@ import { SignupOptionComponent } from './Components/signup-option/signup-option.
     FooterComponent,
     MytoastComponent,
     ForgotPasswordComponent,
-    SignupOptionComponent
+    SignupOptionComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,11 @@ import { SignupOptionComponent } from './Components/signup-option/signup-option.
     ToastModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatButtonModule,
+    MatInputModule,
+    MatDialogModule
+
+
   ],
   providers: [ToastService,
     {
