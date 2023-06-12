@@ -27,6 +27,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,13 +59,14 @@ import {MatDialogModule} from '@angular/material/dialog';
 
 
   ],
-  providers: [ToastService,
+  providers: [
+    ToastService,
     {
-    provide: HTTP_INTERCEPTORS,
-    useClass: ResponseInterceptor,
-    multi: true
-  }
-],
-  bootstrap: [AppComponent]
+      provide: HTTP_INTERCEPTORS,
+      useClass: ResponseInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
