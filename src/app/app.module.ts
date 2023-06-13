@@ -27,6 +27,7 @@ import { DialogComponent } from './Components/dialog/dialog.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
+import { LayoutComponent } from './Components/layout/layout.component';
 
 
 @NgModule({
@@ -45,10 +46,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     MytoastComponent,
     ForgotPasswordComponent,
     SignupOptionComponent,
-    signup-page,
     SignupPageComponent,
     LogoComponent,
-    DialogComponent
+    DialogComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +60,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     HttpClientModule,
     MatButtonModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
 
 
   ],
