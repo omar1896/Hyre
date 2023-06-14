@@ -69,4 +69,8 @@ export class AppComponent {
     });
     }
 
+    onClick(){
+      console.log('emitted succefully')
+    }
+
 }
