@@ -45,7 +45,6 @@ import {MatDialogModule} from '@angular/material/dialog';
     MytoastComponent,
     ForgotPasswordComponent,
     SignupOptionComponent,
-    signup-page,
     SignupPageComponent,
     LogoComponent,
     DialogComponent
