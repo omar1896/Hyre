@@ -27,6 +27,7 @@ import { DialogComponent } from './Components/dialog/dialog.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
+import { DashboardCardComponent } from './Components/dashboard-card/dashboard-card.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     SignupOptionComponent,
     SignupPageComponent,
     LogoComponent,
-    DialogComponent
+    DialogComponent,
+    DashboardCardComponent
   ],
   imports: [
     BrowserModule,
