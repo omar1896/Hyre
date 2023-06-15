@@ -1,0 +1,72 @@
+<!--sidebar-->
+
+<c-sidebar
+  #sidebar="cSidebar"
+  class="d-print-none sidebar sidebar-fixed"
+  id="sidebar"
+  visible
+  style="background-color: #292C31;"
+>
+<div class="d-flex flex-column justify-content-around">
+  <!-- Company data -->
+  <div>
+    <c-sidebar-brand
+    class="p-2"
+    style="background-color: transparent;"
+    [brandFull]="{
+      src: user.image,
+      width: 70,
+      height: 90,
+      alt: 'Hyre',
+      style: 'border-radius: 100%;'
+    }"
+    [brandNarrow]="{
+      src: user.image,
+      width: 46,
+      height: 60,
+      style: 'border-radius: 100%;',
+      alt: 'Hyre'
+    }"
+    [routerLink]="'/users/' + user._id"
+  ></c-sidebar-brand>
+
+  <span class="mt-4"  style="display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 90%; font-weight: bolder;">
+    <ul style="list-style: none;">
+      <li>{{ user.company }}</li>
+      <li class="mt-2">{{ user.name }}</li>
+    </ul>
+  </span>
+  </div>
+</div>
+
+
+  <perfect-scrollbar [config]="perfectScrollbarConfig">
+    <c-sidebar-nav
+      [navItems]="navItems"
+      dropdownMode="close"
+    >
+    </c-sidebar-nav>
+  </perfect-scrollbar>
+
+  
+  <c-sidebar-toggler
+  *ngIf="!sidebar.narrow"
+  toggle="unfoldable"
+  cSidebarToggle="sidebar"
+  ></c-sidebar-toggler>
+
+</c-sidebar>
+
+<!--main-->
+<div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-transparent">
+  <!--app-header-->
+  <app-default-header class="mb-4 d-print-none header header-sticky" position="sticky" [sidebarId]="'sidebar'"></app-default-header>
+  <!--app-body-->
+  <div class="body flex-grow-1">
+    <c-container breakpoint="lg" class="h-auto">
+      <router-outlet></router-outlet>
+    </c-container>
+  </div>
+  <!--app footer-->
+  <app-default-footer></app-default-footer>
+</div>
