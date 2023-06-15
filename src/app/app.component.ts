@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { ToastService } from './Services/toast-service.service';
 import { Router, NavigationEnd } from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
-
-
 import {DialogComponent} from "./Components/dialog/dialog.component"
 
 
