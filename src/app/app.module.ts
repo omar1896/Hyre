@@ -27,6 +27,29 @@ import { DialogComponent } from './Components/dialog/dialog.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
+import { DefaultLayoutComponent,DefaultHeaderComponent, DefaultFooterComponent} from './Components/dashboard/containers';
+import { IconModule, IconSetService } from '@coreui/icons-angular';
+
+import {
+  PERFECT_SCROLLBAR_CONFIG,
+  PerfectScrollbarConfigInterface,
+  PerfectScrollbarModule,
+} from 'ngx-perfect-scrollbar';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true,
+};
+
+import {
+  SidebarModule,
+  NavModule,
+  HeaderModule,
+  GridModule,
+  TableModule,
+  UtilitiesModule,
+  CardModule
+} from '@coreui/angular';
+
 
 
 @NgModule({
@@ -45,10 +68,12 @@ import {MatDialogModule} from '@angular/material/dialog';
     MytoastComponent,
     ForgotPasswordComponent,
     SignupOptionComponent,
-    signup-page,
     SignupPageComponent,
     LogoComponent,
-    DialogComponent
+    DialogComponent,
+    DefaultLayoutComponent,
+    DefaultHeaderComponent,
+    DefaultFooterComponent
   ],
   imports: [
     BrowserModule,
@@ -59,17 +84,29 @@ import {MatDialogModule} from '@angular/material/dialog';
     HttpClientModule,
     MatButtonModule,
     MatInputModule,
-    MatDialogModule
-
-
+    MatDialogModule,
+    SidebarModule,
+    NavModule,
+    HeaderModule,
+    GridModule,
+    TableModule,
+    UtilitiesModule,
+    CardModule,
+    IconModule,
+    PerfectScrollbarModule
   ],
   providers: [
     ToastService,
+    IconSetService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ResponseInterceptor,
       multi: true,
     },
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
+    }
   ],
   bootstrap: [AppComponent],
 })
