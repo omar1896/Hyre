@@ -1,0 +1,11 @@
+.card-container{
+  border: solid 1px #EDEFF0 ;
+  border-radius: 1%;
+  padding: 3%;
+}
+
+.card-container h3{
+    font-weight: bold;
+    font-size: large;
+    margin: 0;
+}
