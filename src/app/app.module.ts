@@ -75,12 +75,10 @@ import { LayoutComponent } from './Components/layout/layout.component';
     SignupOptionComponent,
     SignupPageComponent,
     LogoComponent,
-feat/dashboard
     DefaultLayoutComponent,
     DefaultHeaderComponent,
-    DefaultFooterComponent
-    Dashboard-Card
-    DashboardCardComponent
+    DefaultFooterComponent,
+    DashboardCardComponent,
     LayoutComponent,
   ],
   imports: [
@@ -93,7 +91,6 @@ feat/dashboard
     MatButtonModule,
     MatInputModule,
     MatDialogModule,
-    feat/dashboard
     SidebarModule,
     NavModule,
     HeaderModule,
