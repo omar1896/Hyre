@@ -3,7 +3,8 @@ import { ToastService } from './Services/toast-service.service';
 import { Router, NavigationEnd } from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogComponent} from "./Components/dialog/dialog.component"
-
+import { IconSetService } from '@coreui/icons-angular';
+import { iconSubset } from './icons/icon-subset';
 
 @Component({
   selector: 'app-root',
@@ -19,10 +20,10 @@ export class AppComponent {
     private router: Router,
     private toastService: ToastService,
     public dialog: MatDialog,
-
-
+    private iconSetService: IconSetService,
   ) {
-    // titleService.setTitle(this.title);
+    iconSetService.icons = { ...iconSubset };
+
     // iconSet singleton
   }
 

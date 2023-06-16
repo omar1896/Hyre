@@ -54,6 +54,7 @@ import {
 import { DashboardCardComponent } from './Components/dashboard-card/dashboard-card.component';
 
 import { LayoutComponent } from './Components/layout/layout.component';
+import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
 
 
 
@@ -80,6 +81,7 @@ import { LayoutComponent } from './Components/layout/layout.component';
     DefaultFooterComponent,
     DashboardCardComponent,
     LayoutComponent,
+    DashboardHomeComponent,
   ],
   imports: [
     BrowserModule,
