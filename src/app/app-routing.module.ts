@@ -8,6 +8,7 @@ import { LayoutComponent } from './Components/layout/layout.component';
 import { AboutComponent } from './Components/AboutComponent/about/about.component';
 import { DefaultLayoutComponent } from './Components/dashboard/containers/default-layout/default-layout.component';
 import {  DashboardPositionsComponent} from './Components/dashboard-positions/dashboard-positions.component';
+import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
 const routes: Routes = [
   { path: '', redirectTo:"/home",pathMatch:"full" },
   { path: '',
@@ -19,7 +20,9 @@ const routes: Routes = [
   },
   { path: "dashboard" ,component:DefaultLayoutComponent,children:[
     // ALL Dashboard endpoints --> example for dashboard/applicants--> { path : "applicants" , component : applicants }
-    { path : "positions" , component : DashboardPositionsComponent }
+    { path : "positions" , component : DashboardPositionsComponent },
+    { path: '', component: DashboardHomeComponent },
+
   ]},
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupPageComponent },
