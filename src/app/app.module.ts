@@ -99,7 +99,7 @@ import { LayoutComponent } from './Components/layout/layout.component';
     UtilitiesModule,
     CardModule,
     IconModule,
-    PerfectScrollbarModule
+
 
   ],
   providers: [
