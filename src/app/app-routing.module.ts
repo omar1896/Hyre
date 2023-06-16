@@ -6,7 +6,7 @@ import { SignupPageComponent } from './Components/signup-page/signup-page.compon
 import { MainComponent } from './Components/main/main.component';
 import { LayoutComponent } from './Components/layout/layout.component';
 import { AboutComponent } from './Components/AboutComponent/about/about.component';
-
+import { DefaultLayoutComponent } from './Components/dashboard/containers/default-layout/default-layout.component';
 const routes: Routes = [
   { path: '', redirectTo:"/home",pathMatch:"full" },
   { path: '', 
@@ -16,6 +16,9 @@ const routes: Routes = [
       { path: 'about', component:AboutComponent },
     ] 
   },
+  { path: "dashboard" ,component:DefaultLayoutComponent,children:[
+    // ALL Dashboard endpoints --> example for dashboard/applicants--> { path : "applicants" , component : applicants }
+  ]},
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupPageComponent },
   { path: '**', component: NotFoundComponent },
