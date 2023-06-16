@@ -81,7 +81,7 @@ import { WebsocketComponent } from './Components/websocket/websocket.component';
     DefaultFooterComponent,
     DashboardCardComponent,
     LayoutComponent,
-    WebsocketComponent,
+    WebsocketComponent
   ],
   imports: [
     BrowserModule,
