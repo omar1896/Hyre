@@ -16,7 +16,9 @@ const routes: Routes = [
       { path: 'about', component:AboutComponent },
     ] 
   },
-  { path : 'dashboard', component : DefaultLayoutComponent },
+  { path: "dashboard" ,component:DefaultLayoutComponent,children:[
+    // ALL Dashboard endpoints --> example for dashboard/applicants--> { path : "applicants" , component : applicants }
+  ]},
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupPageComponent },
   { path: '**', component: NotFoundComponent },
