@@ -9,6 +9,11 @@ import { AboutComponent } from './Components/AboutComponent/about/about.componen
 import { DefaultLayoutComponent } from './Components/dashboard/containers/default-layout/default-layout.component';
 import {  DashboardPositionsComponent} from './Components/dashboard-positions/dashboard-positions.component';
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
+
+import { PositionFormComponent } from './Components/position-form/position-form.component';
+
+
+
 const routes: Routes = [
   { path: '', redirectTo:"/home",pathMatch:"full" },
   { path: '',
@@ -21,6 +26,7 @@ const routes: Routes = [
   { path: "dashboard" ,component:DefaultLayoutComponent,children:[
     // ALL Dashboard endpoints --> example for dashboard/applicants--> { path : "applicants" , component : applicants }
     { path : "positions" , component : DashboardPositionsComponent },
+    { path : "positions/create" , component : PositionFormComponent },
     { path: '', component: DashboardHomeComponent },
 
   ]},
