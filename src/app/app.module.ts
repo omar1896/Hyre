@@ -51,6 +51,11 @@ import {
 } from '@coreui/angular';
 
 
+import { DashboardCardComponent } from './Components/dashboard-card/dashboard-card.component';
+
+import { LayoutComponent } from './Components/layout/layout.component';
+
+
 
 @NgModule({
   declarations: [
@@ -70,10 +75,13 @@ import {
     SignupOptionComponent,
     SignupPageComponent,
     LogoComponent,
-    DialogComponent,
+feat/dashboard
     DefaultLayoutComponent,
     DefaultHeaderComponent,
     DefaultFooterComponent
+    Dashboard-Card
+    DashboardCardComponent
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,6 +93,7 @@ import {
     MatButtonModule,
     MatInputModule,
     MatDialogModule,
+    feat/dashboard
     SidebarModule,
     NavModule,
     HeaderModule,
@@ -94,6 +103,7 @@ import {
     CardModule,
     IconModule,
     PerfectScrollbarModule
+
   ],
   providers: [
     ToastService,
