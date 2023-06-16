@@ -56,6 +56,7 @@ import { DashboardCardComponent } from './Components/dashboard-card/dashboard-ca
 import { LayoutComponent } from './Components/layout/layout.component';
 import { DashboardPositionsComponent } from './Components/dashboard-positions/dashboard-positions.component';
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
+import { PositionFormComponent } from './Components/position-form/position-form.component';
 
 
 
@@ -84,6 +85,7 @@ import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-h
     LayoutComponent,
     DashboardPositionsComponent,
     DashboardHomeComponent,
+    PositionFormComponent,
   ],
   imports: [
     BrowserModule,
