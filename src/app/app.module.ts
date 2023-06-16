@@ -54,6 +54,7 @@ import {
 import { DashboardCardComponent } from './Components/dashboard-card/dashboard-card.component';
 
 import { LayoutComponent } from './Components/layout/layout.component';
+import { WebsocketComponent } from './Components/websocket/websocket.component';
 
 
 
@@ -80,6 +81,7 @@ import { LayoutComponent } from './Components/layout/layout.component';
     DefaultFooterComponent,
     DashboardCardComponent,
     LayoutComponent,
+    WebsocketComponent,
   ],
   imports: [
     BrowserModule,
@@ -99,7 +101,7 @@ import { LayoutComponent } from './Components/layout/layout.component';
     UtilitiesModule,
     CardModule,
     IconModule,
-
+    PerfectScrollbarModule
 
   ],
   providers: [

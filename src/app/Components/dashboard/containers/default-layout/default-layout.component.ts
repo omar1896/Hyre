@@ -8,7 +8,7 @@ import { navItems } from './_nav';
 export class DefaultLayoutComponent implements OnInit{
   user:any = {
     _id : 15 ,
-    image : "assets/images/iti-logo.png", // Will be dynamic from a service 
+    image : "assets/images/iti-logo.png", // Will be dynamic from a service
     name : "Ahmed Zein",
     company : "Information technology institute"
   };
@@ -16,7 +16,7 @@ export class DefaultLayoutComponent implements OnInit{
 
   }
   ngOnInit(): void {
-    
+
   }
 
   public navItems = navItems;

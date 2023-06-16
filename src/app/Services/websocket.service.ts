@@ -14,10 +14,12 @@ export class WebsocketService {
 
 
 onmessage(onmessage:any) {
+  console.log(this.webSocketSubject.next(onmessage))
   this.webSocketSubject.next(onmessage);
 }
 
 getMessage() {
+
   return this.webSocketSubject.asObservable();
 }
 }
