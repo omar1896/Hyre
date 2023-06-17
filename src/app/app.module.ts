@@ -64,6 +64,7 @@ import {
 } from '@coreui/angular';
 
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
+import { InterviewsComponent } from './Components/interviews/interviews.component';
 
 @NgModule({
   declarations: [
@@ -92,6 +93,7 @@ import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-h
     DialogComponent,
     InterviewFormComponent,
     DashboardHomeComponent,
+    InterviewsComponent,
   ],
   imports: [
     BrowserModule,
