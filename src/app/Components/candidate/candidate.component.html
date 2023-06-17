@@ -22,7 +22,11 @@
           </ng-container>
           <ng-template #cancelInterview>
             <!-- this button will open modal to cancel interview -->
-            <a class="btn btn-primary">Schedule</a>
+            <a
+              class="btn btn-primary"
+              (click)="scheduleInterview(candidate.id, candidate.position)"
+              >Schedule</a
+            >
           </ng-template>
           <a class="btn btn-danger" (click)="deleteCandidate(candidate.id)"
             >Delete</a
