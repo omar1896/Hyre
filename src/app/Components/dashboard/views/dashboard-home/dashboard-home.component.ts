@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-home',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard-home.component.css']
 })
 export class DashboardHomeComponent {
+
+  constructor(private route: Router){
+
+  }
+
+  createPosition(){
+    this.route.navigateByUrl('dashboard/candidates')
+  }
+  createUser(){
+    this.route.navigateByUrl('dashboard/candidates')
+  }
+  updateSubscription(){
+    this.route.navigateByUrl('dashboard/candidates')
+  }
 
 }
