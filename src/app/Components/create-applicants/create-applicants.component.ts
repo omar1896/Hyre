@@ -11,7 +11,7 @@ export class CreateApplicantsComponent implements OnInit {
   company : any =  {
     image : "assets/images/iti-logo.png",
     positions : [{
-      id : 10,
+      id : 2,
       name : "FrontEnd"
     },
     {
@@ -50,21 +50,19 @@ export class CreateApplicantsComponent implements OnInit {
       formData.append('gender', this.applicantForm.value.gender);
       formData.append('edu_degree', this.applicantForm.value.edu_degree);
       formData.append('position' , this.applicantForm.value.position);
-      formData.append('birthday' , this.applicantForm.value.birthday);
+      formData.append('birth_date' , this.applicantForm.value.birthday);
       formData.append('resume', this.applicantForm.value.resume);
-
-      console.log(formData);
       
-      // this.dataService.sendData(formData).subscribe(
-      //   {
-      //     next:(data:any) => {
-      //       if (data.success){
-      //         console.log(data); // Use Tostar ,  this.route.navigateByUrl ('anguler server route')
-      //       }
-      //       console.log(data.message);
-      //     }
-      //   }
-      // );
+      this.dataService.sendData(formData).subscribe(
+        {
+          next:(data:any) => {
+            if (data.success){
+              console.log(data); // Use Tostar ,  this.route.navigateByUrl ('anguler server route')
+            }
+            console.log(data.message);
+          }
+        }
+      );
     }
   }
 
