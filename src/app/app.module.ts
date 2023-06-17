@@ -29,6 +29,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DefaultLayoutComponent,DefaultHeaderComponent, DefaultFooterComponent} from './Components/dashboard/containers';
 import { IconModule, IconSetService } from '@coreui/icons-angular';
+import { CreateApplicantsComponent } from './Components/create-applicants/create-applicants.component';
 
 import {
   PERFECT_SCROLLBAR_CONFIG,
@@ -82,6 +83,7 @@ import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-h
     DashboardCardComponent,
     LayoutComponent,
     DashboardHomeComponent,
+    CreateApplicantsComponent,
   ],
   imports: [
     BrowserModule,
