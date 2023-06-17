@@ -9,23 +9,16 @@ export class CandidateService {
 
   URL: string
   constructor(private http: HttpClient) {
-    this.URL = Environment.apiUrl
+    this.URL = Environment.apiUrl + 'tenant/candidates'
    }
 
   getCandidates(){
-    // return this.http.get(this.URL)
-    return [{id: 1 , name:"mohamed" , email: "13mohamed.yossef@gmail.com" , position:"Fullstack developer" , hasInterview: true}]
-  }
-
-  createInterview(data: any){
-    // return this.http.post(this.URL , data)
-  }
-
-  deleteInterview(id:any){
-    // return this.http.delete(this.URL , id)
+    return this.http.get(this.URL)
   }
 
   deleteCandidate(id:any){
-    // return this.http.delete(this.URL , id)
+    return this.http.delete(`${this.URL}/${id}`);
   }
+
+
 }
