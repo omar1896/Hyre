@@ -1,0 +1,39 @@
+<div
+  class="container d-flex flex-column justify-content-center align-items-center mt-4"
+>
+  <div class="d-flex flex-row justify-content-between col-12 col-md-8">
+    <h2 class="fs-3 mb-4">Create a New Interview Schedule</h2>
+    <a routerLink="/dashboard/candidates"
+      ><i class="bi bi-x-circle text-dark fs-3"></i
+    ></a>
+  </div>
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    class="col-12 col-md-8 d-flex flex-column justify-content-between align-items-center mt-3"
+  >
+    <mat-form-field class="w-100 my-3">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="dp3" formControlName="date" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="dp3"></mat-datepicker-toggle>
+      <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+    </mat-form-field>
+    <div *ngIf="!date && isDateDirty()" class="my-4 w-100">
+      <span class="alert alert-danger form-error w-100">Date is required</span>
+    </div>
+    <input
+      [ngxTimepicker]="timePicker"
+      id="time-input"
+      formControlName="time"
+      class="w-100 my-3"
+    />
+    <ngx-material-timepicker #timePicker></ngx-material-timepicker>
+    <div *ngIf="!time && isTimeDirty()" class="my-4 w-100">
+      <span class="alert alert-danger form-error w-100">Time is required</span>
+    </div>
+    <button class="btn btn-dark mt-3 align-self-start" type="submit">
+      Submit
+    </button>
+  </form>
+</div>

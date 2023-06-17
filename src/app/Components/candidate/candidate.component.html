@@ -1,0 +1,38 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Position</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let candidate of candidates">
+      <td>{{ candidate.id }}</td>
+      <td>{{ candidate.name }}</td>
+      <td>{{ candidate.email }}</td>
+      <td>{{ candidate.position }}</td>
+      <td>
+        <div class="">
+          <ng-container *ngIf="candidate.hasInterview; else cancelInterview">
+            <!-- this button will open modal to create interview -->
+            <a class="btn btn-success">Cancel</a>
+          </ng-container>
+          <ng-template #cancelInterview>
+            <!-- this button will open modal to cancel interview -->
+            <a
+              class="btn btn-primary"
+              (click)="scheduleInterview(candidate.id, candidate.position)"
+              >Schedule</a
+            >
+          </ng-template>
+          <a class="btn btn-danger" (click)="deleteCandidate(candidate.id)"
+            >Delete</a
+          >
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

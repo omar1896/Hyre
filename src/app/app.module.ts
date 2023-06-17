@@ -30,6 +30,16 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DefaultLayoutComponent,DefaultHeaderComponent, DefaultFooterComponent} from './Components/dashboard/containers';
 import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { CreateApplicantsComponent } from './Components/create-applicants/create-applicants.component';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { InterviewFormComponent } from './Components/interview-form/interview-form.component';
+import { DashboardCardComponent } from './Components/dashboard-card/dashboard-card.component';
+import { LayoutComponent } from './Components/layout/layout.component';
+import { CandidateComponent } from './Components/candidate/candidate.component';
+import { FormsModule } from '@angular/forms';
+
 
 import {
   PERFECT_SCROLLBAR_CONFIG,
@@ -51,13 +61,7 @@ import {
   CardModule
 } from '@coreui/angular';
 
-
-import { DashboardCardComponent } from './Components/dashboard-card/dashboard-card.component';
-
-import { LayoutComponent } from './Components/layout/layout.component';
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
-
-
 
 @NgModule({
   declarations: [
@@ -82,6 +86,9 @@ import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-h
     DefaultFooterComponent,
     DashboardCardComponent,
     LayoutComponent,
+    CandidateComponent,
+    DialogComponent,
+    InterviewFormComponent,
     DashboardHomeComponent,
     CreateApplicantsComponent,
   ],
@@ -103,7 +110,12 @@ import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-h
     UtilitiesModule,
     CardModule,
     IconModule,
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    NgxMaterialTimepickerModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    FormsModule,
 
   ],
   providers: [
