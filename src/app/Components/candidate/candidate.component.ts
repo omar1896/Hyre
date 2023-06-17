@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {CandidateService} from '../../Services/candidate.service'
+import {MatDialog} from '@angular/material/dialog';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-candidate',
@@ -7,23 +11,75 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CandidateComponent implements OnInit {
   candidates: any
-  constructor(){
-    this.candidates = [{id: 1 , name:"mohamed" , email: "13mohamed.yossef@gmail.com" , position:"Fullstack developer" , hasInterview: true}]
-  }
+  constructor(
+    private candidateService: CandidateService,
+    public dialog: MatDialog,
+    private router: Router
+    ){}
+
   ngOnInit(): void {
-      // send http request to server to retrieve data of this.candidates
+    this.candidates = this.candidateService.getCandidates().subscribe({
+      next:(response: any)=>{
+        this.candidates = response.data
+      }
+    })
   }
 
   deleteCandidate(id: any){
-    // will send http req to delete this candidate
+
+      this.candidateService.deleteCandidate(id).subscribe({
+        next:(response: any)=>{
+          this.candidates = response.data
+        }
+      })
   }
 
-  scheduleInterview(){
+  cancelInterview(data: any){
+
+    // this.candidateService.deleteInterview(data).subscribe({
+    //   next: (response)=>{
+    //       console.log(response)
+    //   },
+    //   error: ()=>{
+
+    //   }
+
+    // })
 
   }
-
-  cancelInterview(){
-
+  scheduleInterview(id: any , position: string){
+    this.router.navigate(
+      ['/dashboard/candidates', id],
+      { queryParams: { positionName: position }});
   }
+
+
+    // openDialog() {
+  //   const dialogRef = this.dialog.open(DialogComponent, {
+  //     data: {
+  //       title: 'Hello world',
+  //       body: '<p>mohamed yossef</p>',
+  //       cancelButton: 'Cancel',
+  //       nextButton: 'Next'
+  //     }
+  //   });
+
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     if (result === true) {
+  //       const nextDialogRef = this.dialog.open(DialogComponent, {
+  //         data: {
+  //           title: 'Second dialog',
+  //           body: '',
+  //           cancelButton: 'Cancel',
+  //           nextButton: 'Next'
+  //         }
+  //       });
+
+  //       nextDialogRef.afterClosed().subscribe(result => {
+  //         console.log(`Second dialog result: ${result}`);
+  //       });
+  //     }
+  //   });
+  // }
 
 }
