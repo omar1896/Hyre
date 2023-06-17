@@ -8,6 +8,7 @@ import { LayoutComponent } from './Components/layout/layout.component';
 import { AboutComponent } from './Components/AboutComponent/about/about.component';
 import { DefaultLayoutComponent } from './Components/dashboard/containers/default-layout/default-layout.component';
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
+import { CreateApplicantsComponent } from './Components/create-applicants/create-applicants.component';
 const routes: Routes = [
   { path: '', redirectTo:"/home",pathMatch:"full" },
   { path: '', 
@@ -22,6 +23,7 @@ const routes: Routes = [
     { path: '', component: DashboardHomeComponent },
 
   ]},
+  { path : 'applicants/create' , component : CreateApplicantsComponent},
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupPageComponent },
   { path: '**', component: NotFoundComponent },
