@@ -58,7 +58,14 @@ import {
   GridModule,
   TableModule,
   UtilitiesModule,
-  CardModule,
+  CardModule
+} from '@coreui/angular';
+
+
+import { DashboardCardComponent } from './Components/dashboard-card/dashboard-card.component';
+
+import { LayoutComponent } from './Components/layout/layout.component';
+import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
 
 } from '@coreui/angular';
 
@@ -86,9 +93,11 @@ import {
     DefaultFooterComponent,
     DashboardCardComponent,
     LayoutComponent,
+    candidates-page
     CandidateComponent,
     DialogComponent,
     InterviewFormComponent,
+    DashboardHomeComponent,
   ],
   imports: [
     BrowserModule,

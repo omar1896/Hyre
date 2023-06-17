@@ -4,12 +4,12 @@ export const navItems: INavData[] = [
   {
     name: 'Home',
     url: '/dashboard',
-    iconComponent: {  name: 'cilHome' },
+    iconComponent: {  name: 'cil-home' },
   },
   {
     name: 'Applicants',
     url: './applicants',
-    iconComponent: { name: 'cilHome' },
+    iconComponent: { name: 'cil-user' },
   },
   {
     name: 'Inbox',
@@ -39,6 +39,6 @@ export const navItems: INavData[] = [
   {
     name: 'Candidates',
     url: './candidates',
-    iconComponent: { name: 'cil-chart-pie' }
+    iconComponent: { name: 'cil-user' }
   }
 ];
