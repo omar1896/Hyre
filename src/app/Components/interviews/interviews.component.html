@@ -1,1 +1,28 @@
-<p>interviews works!</p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Interviewer</th>
+      <th scope="col">Applicant</th>
+      <th scope="col">Position</th>
+      <th scope="col">date</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let interview of interviews">
+      <td>{{ interview.id }}</td>
+      <td>{{ interview.interviewer }}</td>
+      <td>{{ interview.applicant }}</td>
+      <td>{{ interview.position }}</td>
+      <td>{{ interview.date }}</td>
+      <td>
+        <div class="">
+          <a class="btn btn-danger" (click)="deleteInterview(interview.id)"
+            >Delete</a
+          >
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
