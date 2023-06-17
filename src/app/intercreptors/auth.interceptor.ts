@@ -9,11 +9,11 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
 
-      const token = localStorage.getItem('X-Auth-Token')
+      const token = localStorage.getItem('Authorization')
 
       return next.handle(req.clone({
         setHeaders: {
-          Authorization: `${token}`
+          Authorization: `Token ${token}`
         }
       }));
 
