@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-info-card',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./info-card.component.css']
 })
 export class InfoCardComponent {
-  constructor(){}
+  constructor(private router:Router){}
 
   @Input() type: string = "Bootstrap"
   @Input() monthlyPrice: string = "Free"
@@ -17,7 +18,7 @@ export class InfoCardComponent {
   @Input() toggle: boolean = true
 
   onClick(){
-
+    this.router.navigateByUrl("signup")
   }
 
 }

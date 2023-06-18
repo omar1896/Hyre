@@ -32,10 +32,12 @@ export class SignupFormComponent {
 
 
   onSubmit() {
+    console.log("before send")
     if (this.validationForm.valid ||
         (this.validationForm.controls["email"].valid && this.validationForm.controls["password"].valid) ||
         (this.validationForm.controls["email"].valid && !this.options.password)) {
       this.submitted.emit(this.validationForm.value);
+      console.log("sending")
     }
   }
 

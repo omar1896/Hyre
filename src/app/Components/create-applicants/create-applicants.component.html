@@ -1,0 +1,92 @@
+
+<div class="d-flex flex-column flex-md-row align-items-center justify-content-center mt-3 mb-0">
+    <h1><img src="assets/images/logo.png" height="110" alt="Hyre"></h1>
+    <h2> <img class="ps-md-5" src="{{company.image}}" height="100" alt=""> </h2>
+</div>
+
+<form [formGroup]="applicantForm" (ngSubmit)="submitForm()" class="d-flex flex-column align-items-center justify-content-center" style="height: 100%;" enctype="multipart/form-data">
+    <div class="d-flex flex-column col-md-4 col-8">
+        <div class="m-1">
+            <label for="name" class="fw-bold">Name:</label>
+            <input type="text" id="name" name="name" formControlName="name" class="form-control">
+            <div class="text-danger" *ngIf="applicantForm.get('name')?.invalid && (applicantForm.get('name')?.dirty || applicantForm.get('name')?.touched)">
+              <div *ngIf="applicantForm.get('name')?.errors?.['required']">Name is required.</div>
+              <div *ngIf="applicantForm.get('name')?.errors?.['minlength']">Name should be at least 15 characters.</div>
+              <div *ngIf="applicantForm.get('name')?.errors?.['maxlength']">Name should not exceed 100 characters.</div>
+            </div>
+          </div>
+          <div class="m-2">
+            <label for="email" class="fw-bold">Email:</label>
+            <input type="email" id="email" name="email" formControlName="email" class="form-control">
+            <div class="text-danger" *ngIf="applicantForm.get('email')?.invalid && (applicantForm.get('email')?.dirty || applicantForm.get('email')?.touched)">
+              <div *ngIf="applicantForm.get('email')?.errors?.['required']">Email is required.</div>
+              <div *ngIf="applicantForm.get('email')?.errors?.['email']">Invalid email format.</div>
+            </div>
+          </div>
+          <div class="m-2">
+            <label for="mobile" class="fw-bold">Mobile:</label>
+            <input type="text" id="mobile" name="mobile" formControlName="mobile" class="form-control">
+            <div  class="text-danger" *ngIf="applicantForm.get('mobile')?.invalid && (applicantForm.get('mobile')?.dirty || applicantForm.get('mobile')?.touched)">
+              <div *ngIf="applicantForm.get('mobile')?.errors?.['required']">Mobile is required.</div>
+              <div *ngIf="applicantForm.get('mobile')?.errors?.['pattern']">Invalid mobile format.</div>
+            </div>
+          </div>
+          <div class="m-2">
+            <label for="birthday" class="fw-bold">Birthday:</label>
+            <input type="date" id="birthday" name="birthday" formControlName="birthday" class="form-control">
+            <div class="text-danger" *ngIf="applicantForm.get('birthday')?.invalid && (applicantForm.get('birthday')?.dirty || applicantForm.get('birthday')?.touched)">
+              <div *ngIf="applicantForm.get('birthday')?.errors?.['required']">Birthday is required.</div>
+            </div>
+          </div>
+          <div class="m-2">
+            <label class="fw-bold">Gender:</label>
+            <div class="d-flex justify-content-around">
+              <label for="male">
+                <input type="radio" id="male" name="gender" formControlName="gender" value="Male">
+                Male
+              </label>
+              <label for="female">
+                <input type="radio" id="female" name="gender" formControlName="gender" value="Female">
+                Female
+              </label>
+            </div>
+            <div class="text-danger" *ngIf="applicantForm.get('gender')?.invalid && (applicantForm.get('gender')?.dirty || applicantForm.get('gender')?.touched)">
+              <div *ngIf="applicantForm.get('gender')?.errors?.['required']">Gender is required.</div>
+            </div>
+          </div>
+          <div class="m-2">
+            <label for="position" class="fw-bold">Available Positions:</label>
+            <select id="position" name="position" formControlName="position" class="form-control">
+              <option [ngValue]="null" disabled selected>Select an available position</option>
+              <option *ngFor="let position of company.positions" [ngValue]="position.id">{{ position.name }}</option>
+            </select>
+            <div class="text-danger" *ngIf="applicantForm.get('position')?.invalid && (applicantForm.get('position')?.dirty || applicantForm.get('position')?.touched)">
+              <div *ngIf="applicantForm.get('position')?.errors?.['required']">Position selection is required.</div>
+            </div>
+          </div>                              
+          <div class="m-2">
+              <label for="edu_degree" class="fw-bold">Education Degree:</label>
+              <select id="edu_degree" name="edu_degree" formControlName="edu_degree" class="form-control">
+                <option value="">Select an education degree</option>
+                <option value="High School">High School</option>
+                <option value="Bachelor">Bachelor</option>
+                <option value="Master">Master</option>
+                <option value="PhD">PhD</option>
+              </select>
+              <div class="text-danger" *ngIf="applicantForm.get('edu_degree')?.invalid && (applicantForm.get('edu_degree')?.dirty || applicantForm.get('edu_degree')?.touched)">
+                <div *ngIf="applicantForm.get('edu_degree')?.errors?.['required']">Education Degree is required.</div>
+                <div *ngIf="applicantForm.get('edu_degree')?.errors?.['maxlength']">Education Degree should not exceed 128 characters.</div>
+              </div>
+            </div>      
+          <div class="m-2">
+            <label for="resume" class="fw-bold">Resume (PDF only):</label>
+            <input type="file" id="resume" name="resume" formControlName="resume" accept=".pdf" class="form-control" required>
+            <div class="text-danger" *ngIf="applicantForm.get('resume')?.invalid && (applicantForm.get('resume')?.dirty || applicantForm.get('resume')?.touched)">
+              <div *ngIf="applicantForm.get('resume')?.errors?.['required']">Resume is required.</div>
+            </div>
+          </div>
+    </div>
+    <!--[disabled]="!applicantForm.valid"-->
+    <button type="submit" class="btn btn-success mt-2" >Submit</button>
+</form>
+  

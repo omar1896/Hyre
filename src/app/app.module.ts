@@ -24,12 +24,16 @@ import { ResponseInterceptor } from './intercreptors/response.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastService } from './Services/toast-service.service';
 import { DialogComponent } from './Components/dialog/dialog.component';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatDialogModule} from '@angular/material/dialog';
-import { DefaultLayoutComponent,DefaultHeaderComponent, DefaultFooterComponent} from './Components/dashboard/containers';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import {
+  DefaultLayoutComponent,
+  DefaultHeaderComponent,
+  DefaultFooterComponent,
+} from './Components/dashboard/containers';
 import { IconModule, IconSetService } from '@coreui/icons-angular';
-import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { CreateApplicantsComponent } from './Components/create-applicants/create-applicants.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -38,7 +42,15 @@ import { DashboardCardComponent } from './Components/dashboard-card/dashboard-ca
 import { LayoutComponent } from './Components/layout/layout.component';
 import { CandidateComponent } from './Components/candidate/candidate.component';
 import { FormsModule } from '@angular/forms';
-
+import { DashboardPositionsComponent } from './Components/dashboard-positions/dashboard-positions.component';
+import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
+import { PositionFormComponent } from './Components/position-form/position-form.component';
+import { PositionUpdateComponent } from './Components/position-update/position-update.component';
+import { InterviewsComponent } from './Components/interviews/interviews.component';
+import { CompanyregisterformComponent } from './Components/companyregisterform/companyregisterform.component';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { AuthInterceptor } from './intercreptors/auth.interceptor';
+import { DashboardApplicantComponent } from './Components/dashboard-applicant/dashboard-applicant.component';
 
 
 import {
@@ -58,11 +70,8 @@ import {
   GridModule,
   TableModule,
   UtilitiesModule,
-  CardModule
+  CardModule,
 } from '@coreui/angular';
-
-import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
-import { DashboardApplicantComponent } from './Components/dashboard-applicant/dashboard-applicant.component';
 
 
 @NgModule({
@@ -88,11 +97,17 @@ import { DashboardApplicantComponent } from './Components/dashboard-applicant/da
     DefaultFooterComponent,
     DashboardCardComponent,
     LayoutComponent,
+    DashboardPositionsComponent,
+    PositionFormComponent,
+    PositionUpdateComponent,
     CandidateComponent,
     DialogComponent,
     InterviewFormComponent,
     DashboardHomeComponent,
     DashboardApplicantComponent,
+    CreateApplicantsComponent,
+    InterviewsComponent,
+    CompanyregisterformComponent,
   ],
   imports: [
     BrowserModule,
@@ -118,7 +133,6 @@ import { DashboardApplicantComponent } from './Components/dashboard-applicant/da
     MatFormFieldModule,
     MatNativeDateModule,
     FormsModule,
-
   ],
   providers: [
     ToastService,
@@ -129,9 +143,14 @@ import { DashboardApplicantComponent } from './Components/dashboard-applicant/da
       multi: true,
     },
     {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+    {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
-    }
+    },
   ],
   bootstrap: [AppComponent],
 })
