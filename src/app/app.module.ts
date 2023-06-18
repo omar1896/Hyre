@@ -24,13 +24,18 @@ import { ResponseInterceptor } from './intercreptors/response.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastService } from './Services/toast-service.service';
 import { DialogComponent } from './Components/dialog/dialog.component';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatDialogModule} from '@angular/material/dialog';
-import { DefaultLayoutComponent,DefaultHeaderComponent, DefaultFooterComponent} from './Components/dashboard/containers';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import {
+  DefaultLayoutComponent,
+  DefaultHeaderComponent,
+  DefaultFooterComponent,
+} from './Components/dashboard/containers';
 import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { CreateApplicantsComponent } from './Components/create-applicants/create-applicants.component';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -58,10 +63,16 @@ import {
   GridModule,
   TableModule,
   UtilitiesModule,
-  CardModule
+  CardModule,
 } from '@coreui/angular';
 
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
+import { InterviewsComponent } from './Components/interviews/interviews.component';
+
+import { CompanyregisterformComponent } from './Components/companyregisterform/companyregisterform.component';
+
+
+} from '@coreui/angular';
 
 @NgModule({
   declarations: [
@@ -90,7 +101,14 @@ import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-h
     DialogComponent,
     InterviewFormComponent,
     DashboardHomeComponent,
+    feat/applicantForm
     CreateApplicantsComponent,
+
+    feat-interview-dashboard
+    InterviewsComponent,
+
+    CompanyregisterformComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -116,7 +134,6 @@ import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-h
     MatFormFieldModule,
     MatNativeDateModule,
     FormsModule,
-
   ],
   providers: [
     ToastService,
@@ -129,7 +146,7 @@ import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-h
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
-    }
+    },
   ],
   bootstrap: [AppComponent],
 })
