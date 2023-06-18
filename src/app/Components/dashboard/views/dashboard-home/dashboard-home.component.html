@@ -1,1 +1,34 @@
-<h1>dashboard home works</h1>
+<section
+  id="dash-body"
+  class="container d-flex flex-column justify-content-between align-items-center"
+>
+  <div class="col-12 col-md-8 my-3 h-50">
+    <h2 class="w-100 text-center fs-1 mb-5">Welcome to Hyre 👋</h2>
+    <p class="w-100 text-center fs-3 mt-5">
+      Interested in a quick live demo?<a routerLink="">Just click here</a>
+    </p>
+  </div>
+  <div
+    class="row d-flex flex-row justify-content-between align-items-center w-100"
+  >
+    <div class="col-12 col-md-4">
+      <app-dashboard-card (clicked)="createPosition()"></app-dashboard-card>
+    </div>
+    <div class="col-12 col-md-4">
+      <app-dashboard-card
+        (clicked)="createUser()"
+        cardTitle="Invite your Team"
+        cardContent="Hiring is usually a team effort. Invite your team and get them involved."
+        btnTitle="Invite Team"
+      ></app-dashboard-card>
+    </div>
+    <div class="col-12 col-md-4">
+      <app-dashboard-card
+        (clicked)="updateSubscription()"
+        cardTitle="Change your Subscription"
+        cardContent="You are free to change in any time you want."
+        btnTitle="Change Subscription"
+      ></app-dashboard-card>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+<form [formGroup]="validationForm" (submit)="onSubmit()" class="mt-4 w-100 p-3 text-start">
+    <div>
+        <label for="exampleFormControlInput1" class="form-label">Company Name*</label>
+        <input formControlName="name" type="text" name="name" class="form-input" id="exampleFormControlInput1" />
+    </div>
+    <div *ngIf="(!name?.valid && name?.dirty) || errors?.name" class="my-3">
+        <span class="alert alert-danger form-error w-100" *ngIf="!name?.valid">Company Name not Avilable</span>
+        <span class="alert alert-danger form-error w-100" *ngIf="errors?.name">{{errors?.name[0]}}</span>
+        
+    </div>
+    
+    <ng-container formGroupName="user">
+        <div class="mt-2">
+            <label for="exampleFormControlInput1" class="form-label">Company Email Address*</label>
+            <input formControlName="email" type="email" name="email" class="form-input" id="exampleFormControlInput1" />
+        </div>
+        <div *ngIf="(!email?.valid && email?.dirty) || errors?.user?.email " class="my-3">
+            <span *ngIf="!email?.valid" class="alert alert-danger form-error w-100">Enter a valid email address</span>    
+            <span *ngIf="errors?.user?.email" class="alert alert-danger form-error w-100" >{{errors?.user?.email[0]}}</span>
+        </div>
+        <div class="mt-2">
+            <label for="exampleFormControlInput2" class="form-label mt-1">Full Name*
+            </label>
+            <input formControlName="username" type="text" name="username" class="form-input"
+                id="exampleFormControlInput2" />
+        </div>
+        <div *ngIf="(!username?.valid && username?.dirty) ||errors?.user?.username" class="my-3">
+            <span *ngIf="!username?.valid" class="alert alert-danger form-error w-100">username must be more than 3 characters</span>
+            <span *ngIf="errors?.user?.username" class="alert alert-danger form-error w-100" >{{errors?.user?.username[0]}}</span>
+        </div>
+        <div class="mt-2">
+            <label for="inputPassword5" class="form-label">Password*</label>
+            <input formControlName="password" type="password" name="password" id="inputPassword5" class="form-input"
+                aria-labelledby="passwordHelpBlock" />
+        </div>
+        <div *ngIf="!password?.valid && password?.dirty" class="my-3">
+            <span class="alert alert-danger form-error w-100">password must be more than 10 characters or numbers</span>
+            
+        </div>
+        <div class="mt-2">
+            <label for="inputPassword6" class="form-label">Confirm Password*</label>
+            <input formControlName="password_confirm" type="password" name="password_confirm" id="inputPassword6"
+                class="form-input" aria-labelledby="passwordHelpBlock" />
+        </div>
+        <div *ngIf="confirmPassword?.dirty && !arePasswordsEqual()" class="my-3">
+            <span class="alert alert-danger form-error w-100">passwords do not match</span>
+        </div>
+    </ng-container>
+    
+    <div class="d-flex flex-row justify-content-between align-items-center">
+        <app-rounded-button title="Submit" bgColor="#EE136B" type="submit" onclick="onsubmit"></app-rounded-button>
+        <p class="form-label">* Indicates a required field</p>
+    </div>
+</form>

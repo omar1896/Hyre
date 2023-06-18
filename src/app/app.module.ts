@@ -24,11 +24,25 @@ import { ResponseInterceptor } from './intercreptors/response.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastService } from './Services/toast-service.service';
 import { DialogComponent } from './Components/dialog/dialog.component';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatDialogModule} from '@angular/material/dialog';
-import { DefaultLayoutComponent,DefaultHeaderComponent, DefaultFooterComponent} from './Components/dashboard/containers';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import {
+  DefaultLayoutComponent,
+  DefaultHeaderComponent,
+  DefaultFooterComponent,
+} from './Components/dashboard/containers';
 import { IconModule, IconSetService } from '@coreui/icons-angular';
+import { CreateApplicantsComponent } from './Components/create-applicants/create-applicants.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { InterviewFormComponent } from './Components/interview-form/interview-form.component';
+import { DashboardCardComponent } from './Components/dashboard-card/dashboard-card.component';
+import { LayoutComponent } from './Components/layout/layout.component';
+import { CandidateComponent } from './Components/candidate/candidate.component';
+import { FormsModule } from '@angular/forms';
+
 
 import {
   PERFECT_SCROLLBAR_CONFIG,
@@ -47,19 +61,19 @@ import {
   GridModule,
   TableModule,
   UtilitiesModule,
-  CardModule
+  CardModule,
 } from '@coreui/angular';
 
 
 import { DashboardCardComponent } from './Components/dashboard-card/dashboard-card.component';
-
 import { LayoutComponent } from './Components/layout/layout.component';
 import { DashboardPositionsComponent } from './Components/dashboard-positions/dashboard-positions.component';
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
 import { PositionFormComponent } from './Components/position-form/position-form.component';
 import { PositionUpdateComponent } from './Components/position-update/position-update.component';
-
-
+import { InterviewsComponent } from './Components/interviews/interviews.component';
+import { CompanyregisterformComponent } from './Components/companyregisterform/companyregisterform.component';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 @NgModule({
   declarations: [
@@ -84,10 +98,16 @@ import { PositionUpdateComponent } from './Components/position-update/position-u
     DefaultFooterComponent,
     DashboardCardComponent,
     LayoutComponent,
-    DashboardPositionsComponent,
-    DashboardHomeComponent,
+    DashboardPositionsComponent, 
     PositionFormComponent,
     PositionUpdateComponent,
+    CandidateComponent,
+    DialogComponent,
+    InterviewFormComponent,
+    DashboardHomeComponent,
+    CreateApplicantsComponent,
+    InterviewsComponent,
+    CompanyregisterformComponent,
   ],
   imports: [
     BrowserModule,
@@ -107,8 +127,12 @@ import { PositionUpdateComponent } from './Components/position-update/position-u
     UtilitiesModule,
     CardModule,
     IconModule,
-    PerfectScrollbarModule
-
+    PerfectScrollbarModule,
+    NgxMaterialTimepickerModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    FormsModule,
   ],
   providers: [
     ToastService,
@@ -121,7 +145,7 @@ import { PositionUpdateComponent } from './Components/position-update/position-u
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
-    }
+    },
   ],
   bootstrap: [AppComponent],
 })

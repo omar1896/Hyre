@@ -38,7 +38,7 @@ export class AppComponent {
         data=JSON.parse(data)
         this.toastMessage = data.message;
         this.toastSuccess=data.success;
-        console.log(this.toastMessage)
+        // console.log(this.toastMessage)
         this.show()
       });
 
