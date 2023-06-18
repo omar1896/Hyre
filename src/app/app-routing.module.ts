@@ -37,6 +37,7 @@ const routes: Routes = [
     ],
   },
   { path : 'applicants/create' , component : CreateApplicantsComponent},
+  { path : 'about' , component : AboutComponent},
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupPageComponent },
   { path: '**', component: NotFoundComponent },
