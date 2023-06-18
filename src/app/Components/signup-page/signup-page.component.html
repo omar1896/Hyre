@@ -1,21 +1,13 @@
-<section
-  class="container-fluid bg-img d-flex flex-row justify-content-center align-items-center"
->
+<section class="container-fluid bg-img d-flex flex-row justify-content-center align-items-center">
   <div class="row d-flex flex-row justify-content-between align-items-center">
-    <div
-      class="d-flex flex-column justify-content-between align-items-center col-12 col-md-6"
-    >
-      <app-logo></app-logo>
-      <app-signup-option
-        btnTitle="Sign In"
-        btnColor="white"
-        btnBgColor="#4B2D9F"
-        image="assets/images/fly.png"
-        route="/signin"
-      ></app-signup-option>
+    <div class="row justify-content-start align-items-center col-12 col-md-6">
+      <app-logo class="col-12"></app-logo>
+      <app-signup-option class="col-12" btnTitle="Sign In" btnColor="white" btnBgColor="#4B2D9F" image="assets/images/fly.png"
+        route="/signin"></app-signup-option>
     </div>
     <div class="col-12 col-md-5 my-3 bg-white">
-      <app-signup-form (submitted)="onSubmit()"></app-signup-form>
+      <app-companyregisterform></app-companyregisterform>
+      <!-- <app-signup-form (submitted)="onSubmit()"></app-signup-form> -->
     </div>
   </div>
 </section>

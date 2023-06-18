@@ -14,6 +14,7 @@ import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-h
 import { InterviewsComponent } from './Components/interviews/interviews.component';
 
 const routes: Routes = [
+
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: '',
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: 'home', component: MainComponent },
       { path: 'about', component: AboutComponent },
     ],
+
   },
   {
     path: 'dashboard',
@@ -29,12 +31,15 @@ const routes: Routes = [
     children: [
       // ALL Dashboard endpoints --> example for dashboard/applicants--> { path : "applicants" , component : applicants }
 
+
       { path: 'candidates', component: CandidateComponent },
       { path: 'interviews', component: InterviewsComponent },
       { path: 'candidates/:id', component: InterviewFormComponent },
       { path: '', component: DashboardHomeComponent },
     ],
   },
+
+
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupPageComponent },
   { path: '**', component: NotFoundComponent },

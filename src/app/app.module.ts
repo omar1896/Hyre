@@ -66,6 +66,12 @@ import {
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
 import { InterviewsComponent } from './Components/interviews/interviews.component';
 
+import { CompanyregisterformComponent } from './Components/companyregisterform/companyregisterform.component';
+
+} from '@coreui/angular';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,7 +99,11 @@ import { InterviewsComponent } from './Components/interviews/interviews.componen
     DialogComponent,
     InterviewFormComponent,
     DashboardHomeComponent,
+    feat-interview-dashboard
     InterviewsComponent,
+
+    CompanyregisterformComponent,
+
   ],
   imports: [
     BrowserModule,

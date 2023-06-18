@@ -1,19 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h2 class="h2-font">{{ title }}</h2>
+      <h2 class="h1">{{ title }}</h2>
     </div>
 
-    <div class="col-7">
-      <img [src]="image" alt="cloud-icon" />
-    </div>
-    <div class="col-3">
+    <div class="col-4">
       <app-rounded-button
         [title]="btnTitle"
         [bgColor]="btnBgColor"
         [fontColor]="btnColor"
         (clicked)="onClick()"
       ></app-rounded-button>
+    </div>
+    <div class="col-10">
+      <img [src]="image" alt="cloud-icon" />
     </div>
   </div>
 </div>
