@@ -29,6 +29,17 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DefaultLayoutComponent,DefaultHeaderComponent, DefaultFooterComponent} from './Components/dashboard/containers';
 import { IconModule, IconSetService } from '@coreui/icons-angular';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { InterviewFormComponent } from './Components/interview-form/interview-form.component';
+import { DashboardCardComponent } from './Components/dashboard-card/dashboard-card.component';
+import { LayoutComponent } from './Components/layout/layout.component';
+import { CandidateComponent } from './Components/candidate/candidate.component';
+import { FormsModule } from '@angular/forms';
+
+
 
 import {
   PERFECT_SCROLLBAR_CONFIG,
@@ -57,6 +68,7 @@ import { LayoutComponent } from './Components/layout/layout.component';
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
 import { CompanyregisterformComponent } from './Components/companyregisterform/companyregisterform.component';
 
+} from '@coreui/angular';
 
 
 @NgModule({
@@ -82,6 +94,10 @@ import { CompanyregisterformComponent } from './Components/companyregisterform/c
     DefaultFooterComponent,
     DashboardCardComponent,
     LayoutComponent,
+    candidates-page
+    CandidateComponent,
+    DialogComponent,
+    InterviewFormComponent,
     DashboardHomeComponent,
     CompanyregisterformComponent,
   ],
@@ -103,7 +119,12 @@ import { CompanyregisterformComponent } from './Components/companyregisterform/c
     UtilitiesModule,
     CardModule,
     IconModule,
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    NgxMaterialTimepickerModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    FormsModule,
 
   ],
   providers: [
