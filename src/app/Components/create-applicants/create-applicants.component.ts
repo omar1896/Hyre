@@ -25,7 +25,7 @@ export class CreateApplicantsComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    // Get all Positions and the image for this company  
+     
   }
 
   constructor(private dataService : ApplicantService) {
@@ -51,7 +51,15 @@ export class CreateApplicantsComponent implements OnInit {
       formData.append('edu_degree', this.applicantForm.value.edu_degree);
       formData.append('position' , this.applicantForm.value.position);
       formData.append('birth_date' , this.applicantForm.value.birthday);
-      formData.append('resume', this.applicantForm.value.resume);
+
+      const resumeFormControl = this.applicantForm.get('resume');
+      if (resumeFormControl && resumeFormControl.value) {
+        const resumeFile = resumeFormControl.value.files?.[0]; // Access the files property safely
+        
+        if (resumeFile) {
+          formData.append('resume', resumeFile);
+        }
+      }
       
       this.dataService.sendData(formData).subscribe(
         {
