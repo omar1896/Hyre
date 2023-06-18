@@ -1,27 +1,44 @@
 import { Component, OnInit } from '@angular/core';
-import { WebsocketService } from '../../Services/websocket.service'
+import { WebsocketService } from '../../Services/websocket.service';
+import { Connection, Message } from 'amqp-ts';
 @Component({
   selector: 'app-websocket',
 
-  template: `
-    <h1>Web Socket Example</h1>
-    <ul>
-      <li *ngFor="let message of messages">{{ message }}</li>
-    </ul>
-  `
+  template: ` <p>{{msg}}</p> `,
 })
 export class WebsocketComponent {
-  messages: any[] = [];
+  connection: any;
+  msg:any;
+  // queueName: any;
+  //   messages: any[] = [];
 
-  constructor(private webSocketService: WebsocketService) {}
+  //   constructor(private webSocketService: WebsocketService) {}
 
-  ngOnInit() {
-    this.webSocketService.getMessage().subscribe(message => {
-      this.messages.push(message);
-    });
-  }
+  //   ngOnInit() {
+  //     this.webSocketService.getMessage().subscribe(message => {
+  //       this.messages.push(message);
+  //     });
+  //   }
 
-  sendMessage() {
-    this.webSocketService.sendMessage('Hello, world!');
+  //   sendMessage() {
+  //     this.webSocketService.sendMessage('Hello, world!');
+  //   }
+
+  constructor() {
+    this.connection = new Connection('amqp://localhost');
+    const queueName = `notification`;
+    const queue = this.connection.declareQueue(queueName);
+
+    queue.activateConsumer(
+      (message: Message) => {
+
+        const notificationMessage = message.getContent();
+        // Display the notification message to the user
+        console.log(notificationMessage);
+        this.msg=notificationMessage
+
+      },
+      { noAck: true }
+    );
   }
 }

@@ -29,7 +29,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DefaultLayoutComponent,DefaultHeaderComponent, DefaultFooterComponent} from './Components/dashboard/containers';
 import { IconModule, IconSetService } from '@coreui/icons-angular';
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+// import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 import {
   PERFECT_SCROLLBAR_CONFIG,
@@ -57,7 +57,7 @@ import { DashboardCardComponent } from './Components/dashboard-card/dashboard-ca
 import { LayoutComponent } from './Components/layout/layout.component';
 import { WebsocketComponent } from './Components/websocket/websocket.component';
 
-const config: SocketIoConfig = { url: 'ws://127.0.0.1:8000/api/check_interview', options: {} };
+// const config: SocketIoConfig = { url: 'ws://127.0.0.1:8000/api/check_interview', options: {} };
 
 @NgModule({
   declarations: [
@@ -104,7 +104,7 @@ const config: SocketIoConfig = { url: 'ws://127.0.0.1:8000/api/check_interview',
     IconModule,
     PerfectScrollbarModule,
     BrowserModule,
-    SocketIoModule.forRoot(config)
+    // SocketIoModule.forRoot(config)
 
   ],
   providers: [
