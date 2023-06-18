@@ -11,25 +11,35 @@ import { CandidateComponent } from './Components/candidate/candidate.component';
 import { InterviewFormComponent } from './Components/interview-form/interview-form.component';
 
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
+import { InterviewsComponent } from './Components/interviews/interviews.component';
 
 const routes: Routes = [
-  { path: '', redirectTo:"/home",pathMatch:"full" },
-  { path: '',
-    component:LayoutComponent,
-    children:[
-      { path: 'home', component:MainComponent },
 
-    ] 
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      { path: 'home', component: MainComponent },
+      { path: 'about', component: AboutComponent },
+    ],
+
   },
-  { path: "dashboard" ,component:DefaultLayoutComponent,children:[
-    // ALL Dashboard endpoints --> example for dashboard/applicants--> { path : "applicants" , component : applicants }
+  {
+    path: 'dashboard',
+    component: DefaultLayoutComponent,
+    children: [
+      // ALL Dashboard endpoints --> example for dashboard/applicants--> { path : "applicants" , component : applicants }
 
-    { path : "candidates" , component : CandidateComponent },
-    { path : "candidates/:id" , component : InterviewFormComponent },
-    { path: '', component: DashboardHomeComponent },
 
-  ]},
-  { path: 'about', component:AboutComponent },
+      { path: 'candidates', component: CandidateComponent },
+      { path: 'interviews', component: InterviewsComponent },
+      { path: 'candidates/:id', component: InterviewFormComponent },
+      { path: '', component: DashboardHomeComponent },
+    ],
+  },
+
+
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupPageComponent },
   { path: '**', component: NotFoundComponent },
