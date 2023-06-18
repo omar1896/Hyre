@@ -11,8 +11,8 @@ export class CompanyService {
 
   constructor(private http: HttpClient) {}
 
-  getCompanyData(formData: FormData) {
-    return this.http.post(`${this.Base_URL}/company/positions`, formData , {observe:'response'});
+  getCompanyData(company_token: any) {
+    return this.http.get(`${this.Base_URL}/company/positions`, company_token);
   }
   
 }
