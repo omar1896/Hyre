@@ -1,7 +1,9 @@
-<a
+<div [style.width]="mWidth">
+  <a
   routerLink="/home"
-  class="d-flex flex-row justify-content-around align-items-center logo my-2"
+  class="d-flex flex-row justify-content-between align-items-center text-dark logo my-2 text-decoration-none"
 >
-  <img class="cus-img" [src]="image" alt="logo" />
-  <h1>{{ title }}</h1>
+  <img class="image-fluid w-100" [src]="image" alt="logo" />
+  <h1 class="ms-5" style="font-size: 30px; font-weight: 600; letter-spacing: 3px;">{{ title }}</h1>
 </a>
+</div>
