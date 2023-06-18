@@ -42,6 +42,13 @@ import { DashboardCardComponent } from './Components/dashboard-card/dashboard-ca
 import { LayoutComponent } from './Components/layout/layout.component';
 import { CandidateComponent } from './Components/candidate/candidate.component';
 import { FormsModule } from '@angular/forms';
+import { DashboardPositionsComponent } from './Components/dashboard-positions/dashboard-positions.component';
+import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
+import { PositionFormComponent } from './Components/position-form/position-form.component';
+import { PositionUpdateComponent } from './Components/position-update/position-update.component';
+import { InterviewsComponent } from './Components/interviews/interviews.component';
+import { CompanyregisterformComponent } from './Components/companyregisterform/companyregisterform.component';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 
 import {
@@ -63,11 +70,9 @@ import {
   UtilitiesModule,
   CardModule,
 } from '@coreui/angular';
+import { AuthInterceptor } from './intercreptors/auth.interceptor';
 
-import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
-import { InterviewsComponent } from './Components/interviews/interviews.component';
-import { CompanyregisterformComponent } from './Components/companyregisterform/companyregisterform.component';
-import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+
 
 
 @NgModule({
@@ -93,6 +98,9 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     DefaultFooterComponent,
     DashboardCardComponent,
     LayoutComponent,
+    DashboardPositionsComponent,
+    PositionFormComponent,
+    PositionUpdateComponent,
     CandidateComponent,
     DialogComponent,
     InterviewFormComponent,
@@ -100,7 +108,6 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     CreateApplicantsComponent,
     InterviewsComponent,
     CompanyregisterformComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -133,6 +140,11 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ResponseInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
       multi: true,
     },
     {
