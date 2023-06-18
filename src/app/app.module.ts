@@ -64,11 +64,16 @@ import {
   CardModule,
 } from '@coreui/angular';
 
+
+import { DashboardCardComponent } from './Components/dashboard-card/dashboard-card.component';
+import { LayoutComponent } from './Components/layout/layout.component';
+import { DashboardPositionsComponent } from './Components/dashboard-positions/dashboard-positions.component';
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
+import { PositionFormComponent } from './Components/position-form/position-form.component';
+import { PositionUpdateComponent } from './Components/position-update/position-update.component';
 import { InterviewsComponent } from './Components/interviews/interviews.component';
 import { CompanyregisterformComponent } from './Components/companyregisterform/companyregisterform.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
-
 
 @NgModule({
   declarations: [
@@ -93,6 +98,9 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     DefaultFooterComponent,
     DashboardCardComponent,
     LayoutComponent,
+    DashboardPositionsComponent, 
+    PositionFormComponent,
+    PositionUpdateComponent,
     CandidateComponent,
     DialogComponent,
     InterviewFormComponent,
@@ -100,7 +108,6 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     CreateApplicantsComponent,
     InterviewsComponent,
     CompanyregisterformComponent,
-
   ],
   imports: [
     BrowserModule,

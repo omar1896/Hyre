@@ -1,0 +1,45 @@
+<div class="text-center">
+  <a
+    routerLinkActive="active"
+    routerLink="/dashboard/positions/create"
+    class="m-4 btn btn-success"
+    >Create Position</a
+  >
+</div>
+
+<table [striped]="true" cTable>
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Vacancies</th>
+      <th scope="col">Description</th>
+      <th scope="col">End Date</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngIf="positions">
+      <tr *ngFor="let p of positions.data">
+        <th scope="row">{{ p.id }}</th>
+        <td>{{ p.name }}</td>
+        <td>{{ p.vacancies }}</td>
+        <td>{{ p.description }}</td>
+        <td>{{ p.end_date }}</td>
+        <td>
+          <a
+            class="btn btn-outline-warning m-1"
+            routerLink="/dashboard/positions/{{ p.id }}/update"
+            >Edit</a
+          >
+          <a
+            class="btn btn-outline-danger m-1"
+            (click)="showAlert($event)"
+            id="{{ p.id }}"
+            >Delete</a
+          >
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
