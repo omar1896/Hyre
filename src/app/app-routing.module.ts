@@ -31,17 +31,12 @@ const routes: Routes = [
     component: DefaultLayoutComponent,
     children: [
       // ALL Dashboard endpoints --> example for dashboard/applicants--> { path : "applicants" , component : applicants }
-
-
       { path: 'candidates', component: CandidateComponent },
       { path: 'interviews', component: InterviewsComponent },
       { path: 'candidates/:id', component: InterviewFormComponent },
       { path: '', component: DashboardHomeComponent },
     ],
   },
-
-
-  ]},
   { path : 'applicants/create' , component : CreateApplicantsComponent},
 
   { path: 'signin', component: SigninComponent },
