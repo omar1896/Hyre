@@ -11,6 +11,7 @@ import { CandidateComponent } from './Components/candidate/candidate.component';
 import { InterviewFormComponent } from './Components/interview-form/interview-form.component';
 
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
+import { DashboardApplicantComponent } from './Components/dashboard-applicant/dashboard-applicant.component';
 
 const routes: Routes = [
   { path: '', redirectTo:"/home",pathMatch:"full" },
@@ -22,13 +23,10 @@ const routes: Routes = [
     ]
   },
   { path: "dashboard" ,component:DefaultLayoutComponent,children:[
-    // ALL Dashboard endpoints --> example for dashboard/applicants--> { path : "applicants" , component : applicants }
-
+    { path : 'applicants' , component : DashboardApplicantComponent },
     { path : "candidates" , component : CandidateComponent },
     { path : "candidates/:id" , component : InterviewFormComponent },
     { path: '', component: DashboardHomeComponent },
-
-
   ]},
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupPageComponent },

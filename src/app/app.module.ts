@@ -61,13 +61,8 @@ import {
   CardModule
 } from '@coreui/angular';
 
-
-import { DashboardCardComponent } from './Components/dashboard-card/dashboard-card.component';
-
-import { LayoutComponent } from './Components/layout/layout.component';
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
-
-} from '@coreui/angular';
+import { DashboardApplicantComponent } from './Components/dashboard-applicant/dashboard-applicant.component';
 
 
 @NgModule({
@@ -93,11 +88,11 @@ import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-h
     DefaultFooterComponent,
     DashboardCardComponent,
     LayoutComponent,
-    candidates-page
     CandidateComponent,
     DialogComponent,
     InterviewFormComponent,
     DashboardHomeComponent,
+    DashboardApplicantComponent,
   ],
   imports: [
     BrowserModule,
