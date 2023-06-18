@@ -18,11 +18,11 @@ export class PositionServiceService {
   GetPositionByID(id:any){
     return this.myClient.get(this.Base_URL+"/"+id);
   }
-  AddNewPosition(newUser:any){
-    return this.myClient.post(this.Base_URL, newUser);
+  AddNewPosition(newPosition:any){
+    return this.myClient.post(this.Base_URL, newPosition);
   }
   UpdatePosition(id:any,position:any){
-    return this.myClient.put(this.Base_URL+"/"+id, position);
+    return this.myClient.patch(this.Base_URL+"/"+id, position);
   }
   DeletePosition(id:any){
     return this.myClient.delete(this.Base_URL+"/"+id);

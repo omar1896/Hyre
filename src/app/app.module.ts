@@ -57,6 +57,7 @@ import { LayoutComponent } from './Components/layout/layout.component';
 import { DashboardPositionsComponent } from './Components/dashboard-positions/dashboard-positions.component';
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
 import { PositionFormComponent } from './Components/position-form/position-form.component';
+import { PositionUpdateComponent } from './Components/position-update/position-update.component';
 
 
 
@@ -86,6 +87,7 @@ import { PositionFormComponent } from './Components/position-form/position-form.
     DashboardPositionsComponent,
     DashboardHomeComponent,
     PositionFormComponent,
+    PositionUpdateComponent,
   ],
   imports: [
     BrowserModule,

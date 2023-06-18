@@ -11,6 +11,7 @@ import {  DashboardPositionsComponent} from './Components/dashboard-positions/da
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
 
 import { PositionFormComponent } from './Components/position-form/position-form.component';
+import { PositionUpdateComponent } from './Components/position-update/position-update.component';
 
 
 
@@ -27,6 +28,7 @@ const routes: Routes = [
     // ALL Dashboard endpoints --> example for dashboard/applicants--> { path : "applicants" , component : applicants }
     { path : "positions" , component : DashboardPositionsComponent },
     { path : "positions/create" , component : PositionFormComponent },
+    { path : "positions/:id/update" , component : PositionUpdateComponent },
     { path: '', component: DashboardHomeComponent },
 
   ]},

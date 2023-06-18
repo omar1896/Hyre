@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { PositionServiceService } from 'src/app/Services/position-service.service';
 
 @Component({
   selector: 'app-position-form',
@@ -8,6 +9,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class PositionFormComponent {
 
+  constructor(private myservice:PositionServiceService){
+
+  }
 
   validationForm = new FormGroup({
     name:new FormControl(null,[Validators.minLength(2),Validators.required]),
@@ -45,10 +49,13 @@ export class PositionFormComponent {
 
 
   Add(name:any,vacancies:any,description:any,end_date:any){
+    console.log( this.validationForm.value);
 
     if(this.validationForm.valid){
-
-      let newStudent={name,vacancies,description,end_date};
+      console.log("in add valid")
+      let newPostion={company:1,...this.validationForm.value}; //& company is static
+      console.log( newPostion);
+       this.myservice.AddNewPosition(newPostion).subscribe();
 
     }
   }
