@@ -18,6 +18,6 @@ export class AuthInterceptor implements HttpInterceptor {
         Authorization: `Token ${token}`
       }
     }));
-
-
+  }
+  
 }

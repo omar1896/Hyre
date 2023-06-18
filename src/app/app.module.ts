@@ -34,8 +34,6 @@ import {
 } from './Components/dashboard/containers';
 import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { CreateApplicantsComponent } from './Components/create-applicants/create-applicants.component';
-import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
-import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -68,11 +66,9 @@ import {
 
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
 import { InterviewsComponent } from './Components/interviews/interviews.component';
-
 import { CompanyregisterformComponent } from './Components/companyregisterform/companyregisterform.component';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
-
-} from '@coreui/angular';
 
 @NgModule({
   declarations: [
@@ -101,12 +97,8 @@ import { CompanyregisterformComponent } from './Components/companyregisterform/c
     DialogComponent,
     InterviewFormComponent,
     DashboardHomeComponent,
-    feat/applicantForm
     CreateApplicantsComponent,
-
-    feat-interview-dashboard
     InterviewsComponent,
-
     CompanyregisterformComponent,
 
   ],
