@@ -66,6 +66,7 @@ import { DashboardCardComponent } from './Components/dashboard-card/dashboard-ca
 
 import { LayoutComponent } from './Components/layout/layout.component';
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
+import { CompanyregisterformComponent } from './Components/companyregisterform/companyregisterform.component';
 
 } from '@coreui/angular';
 
@@ -98,6 +99,7 @@ import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-h
     DialogComponent,
     InterviewFormComponent,
     DashboardHomeComponent,
+    CompanyregisterformComponent,
   ],
   imports: [
     BrowserModule,

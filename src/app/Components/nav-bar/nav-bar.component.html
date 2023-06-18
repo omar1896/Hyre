@@ -3,14 +3,14 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav d-flex w-100 justify-content-center">
         <div class="navbar-nav d-flex w-100 mt-3 justify-content-evenly align-items-center">
-          <a href="/home" class="nav-link align-self-start">
+          <a routerLink="/home" class="nav-link align-self-start">
             <img src="/assets/images/agora.svg" alt="Hyre" width="100px" loading="lazy">
           </a>
-          <a class="nav-link" href="#">Pricing</a>
-          <a class="nav-link" href="#">Demo</a>
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" routerLink="/home">Pricing</a>
+          <a class="nav-link" routerLink="#">Demo</a>
+          <a class="nav-link" routerLink="about">About</a>
           <div class="nav-links d-flex">
-            <a class="nav-link" href="#">Signup</a>
+            <a class="nav-link" routerLink="signup">Signup</a>
           </div>
         </div>
       </div>
@@ -22,7 +22,7 @@
 
 <nav class="navbar bg-body-tertiary fixed-top d-md-none d-block">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">               
+      <a class="navbar-brand" routerLink="/home">               
             <img src="/assets/images/agora.svg" alt="Hyre" width="100px" loading="lazy">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-            <a href="/home"> 
+            <a routerLink="/home"> 
               <img src="/assets/images/agora.svg" alt="Hyre" width="100px" loading="lazy">
             </a>
           </h5>
@@ -40,16 +40,16 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
+              <a class="nav-link" routerLink="home">Pricing</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Demo</a>
+              <a class="nav-link" routerLink="#">Demo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" routerLink="about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Signup</a>
+              <a class="nav-link" routerLink="signup">Signup</a>
             </li>
           </ul>
         </div>

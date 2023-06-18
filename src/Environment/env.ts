@@ -1,5 +1,8 @@
 export const Environment = Object.freeze ({
 
-  // apiUrl: ''
-  apiUrl: 'http://127.0.0.1:8000/'
+  //dev
+  apiUrl: 'http://localhost:8000'
+  //prod
+  // apiUrl: 'http://localhost:9000'
+
 });
