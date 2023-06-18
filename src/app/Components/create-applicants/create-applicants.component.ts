@@ -33,7 +33,7 @@ export class CreateApplicantsComponent implements OnInit {
   ngOnInit(): void {
     // const token = this.route.snapshot.paramMap.get('token');
     // console.log(token); // Use the parameter value as needed 
-    this.getCompanyPositions.getCompanyData('26c723dba01d5869a973cc28bd986566c7975f7c').subscribe({
+    this.getCompanyPositions.getCompanyData().subscribe({
       next:(data :any)=>{
         if(data.success){
           console.log(data); // Positions 
