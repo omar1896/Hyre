@@ -1,1 +1,41 @@
-<p>dashboard-applicant works!</p>
+<div>
+    <div class="text-center d-flex justify-content-center">
+        <a routerLinkActive="active" routerLink="" class="m-4 btn btn-success">Generate applicants form link</a>
+        <div class="m-2">
+            <label for="position" class="fw-bold">Filter by positions:</label>
+            <select id="position" name="position"  class="form-control">
+              <option [ngValue]="null" disabled selected>Select an available position</option>
+              <option *ngFor="let position of positions" [ngValue]="position.id">{{ position.name }}</option>
+            </select>
+        </div>
+    </div>
+
+    <table [striped]="true" cTable>
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Education level</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngIf="applicants">
+                <tr *ngFor="let applicant of applicants">
+                    <th scope="row">{{ applicant.id }}</th>
+                    <td>{{ applicant.name }}</td>
+                    <td>{{ applicant.email }}</td>
+                    <td>{{ applicant.edu_degree }}</td>
+                    <td>{{ applicant.mobile }}</td>
+                    <td>
+                        <a class="btn btn-outline-warning m-1" routerLink="">View</a>
+                        <a class="btn btn-outline-success m-1" id="{{ applicant.id }}">Canadite</a>
+                        <a class="btn btn-outline-danger m-1" id="{{ applicant.id }}" (click)="delete(applicant.id)">Delete</a>
+                    </td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
