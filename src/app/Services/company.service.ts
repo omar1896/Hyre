@@ -5,14 +5,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ApplicantService {
+export class CompanyService {
 
   private readonly Base_URL = Environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 
-  sendData(formData: FormData) {
-    return this.http.post(`${this.Base_URL}/tenant/applicants/store/`, formData , {observe:'response'});
+  getCompanyData(formData: FormData) {
+    return this.http.post(`${this.Base_URL}/company/positions`, formData , {observe:'response'});
   }
   
 }
