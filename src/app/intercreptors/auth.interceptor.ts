@@ -11,13 +11,14 @@ export class AuthInterceptor implements HttpInterceptor {
 
 
     const token = localStorage.getItem('Authorization')
+    console.log("token");
     console.log(token);
-    
+
     return next.handle(req.clone({
       setHeaders: {
         Authorization: `Token ${token}`
       }
     }));
   }
-  
+
 }

@@ -70,6 +70,7 @@ import {
   UtilitiesModule,
   CardModule,
 } from '@coreui/angular';
+import { AuthInterceptor } from './intercreptors/auth.interceptor';
 
 
 
@@ -139,6 +140,11 @@ import {
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ResponseInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
       multi: true,
     },
     {
