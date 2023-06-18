@@ -27,6 +27,7 @@ const routes: Routes = [
   },
   { path: "dashboard" ,component:DefaultLayoutComponent,children:[
     { path: '', component: DashboardHomeComponent },
+    { path :'applicants' , component : DashboardApplicantComponent},
     { path : "positions" , component : DashboardPositionsComponent },
     { path : "positions/create" , component : PositionFormComponent },
     { path : "positions/:id/update" , component : PositionUpdateComponent },

@@ -52,7 +52,6 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { AuthInterceptor } from './intercreptors/auth.interceptor';
 import { DashboardApplicantComponent } from './Components/dashboard-applicant/dashboard-applicant.component';
 
-
 import {
   PERFECT_SCROLLBAR_CONFIG,
   PerfectScrollbarConfigInterface,
