@@ -12,7 +12,14 @@ export class ApplicantService {
   constructor(private http: HttpClient) {}
 
   sendData(formData: FormData) {
-    return this.http.post(`${this.Base_URL}/tenant/applicants/store/`, formData , {observe:'response'});
+    return this.http.post(`${this.Base_URL}/tenant/applicants/create/`, formData , {observe:'response'});
   }
-  
+
+  getData() {
+    return this.http.get(`${this.Base_URL}/tenant/applicants/`);
+  }
+
+  deleteData(applicant_id : any){
+    return this.http.delete(`${this.Base_URL}/tenant/applicants/${applicant_id}/destroy/`);
+  }
 }
