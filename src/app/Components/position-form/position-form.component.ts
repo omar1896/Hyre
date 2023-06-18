@@ -53,7 +53,7 @@ export class PositionFormComponent {
 
     if(this.validationForm.valid){
       console.log("in add valid")
-      let newPostion={company:1,...this.validationForm.value}; //& company is static
+      let newPostion={...this.validationForm.value}; //& company is static
       console.log( newPostion);
        this.myservice.AddNewPosition(newPostion).subscribe();
 
