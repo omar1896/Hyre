@@ -15,7 +15,7 @@ export class DashboardApplicantComponent implements OnInit {
     this.fetchApplicants();
     this.fetchPositions();
   }
-
+  
   fetchPositions = () => {
     this.getPositions.getCompanyData().subscribe({
       next: (data: any) => {

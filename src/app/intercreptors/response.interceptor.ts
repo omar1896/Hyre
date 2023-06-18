@@ -26,7 +26,6 @@ export class ResponseInterceptor implements HttpInterceptor {
           if (event.type === 4) {
             // Check if event is an HttpResponse
             if (event.status > 200 && event instanceof HttpResponse) {
-              console.log(event);
               this.toastService.activateToast(
                 event.body.message,
                 event.body.success
