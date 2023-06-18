@@ -33,6 +33,8 @@ import {
   DefaultFooterComponent,
 } from './Components/dashboard/containers';
 import { IconModule, IconSetService } from '@coreui/icons-angular';
+import { CreateApplicantsComponent } from './Components/create-applicants/create-applicants.component';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -42,6 +44,7 @@ import { DashboardCardComponent } from './Components/dashboard-card/dashboard-ca
 import { LayoutComponent } from './Components/layout/layout.component';
 import { CandidateComponent } from './Components/candidate/candidate.component';
 import { FormsModule } from '@angular/forms';
+
 
 import {
   PERFECT_SCROLLBAR_CONFIG,
@@ -68,9 +71,8 @@ import { InterviewsComponent } from './Components/interviews/interviews.componen
 
 import { CompanyregisterformComponent } from './Components/companyregisterform/companyregisterform.component';
 
+
 } from '@coreui/angular';
-
-
 
 @NgModule({
   declarations: [
@@ -99,6 +101,9 @@ import { CompanyregisterformComponent } from './Components/companyregisterform/c
     DialogComponent,
     InterviewFormComponent,
     DashboardHomeComponent,
+    feat/applicantForm
+    CreateApplicantsComponent,
+
     feat-interview-dashboard
     InterviewsComponent,
 

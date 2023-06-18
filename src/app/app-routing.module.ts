@@ -9,9 +9,10 @@ import { AboutComponent } from './Components/AboutComponent/about/about.componen
 import { DefaultLayoutComponent } from './Components/dashboard/containers/default-layout/default-layout.component';
 import { CandidateComponent } from './Components/candidate/candidate.component';
 import { InterviewFormComponent } from './Components/interview-form/interview-form.component';
-
 import { DashboardHomeComponent } from './Components/dashboard/views/dashboard-home/dashboard-home.component';
+import { CreateApplicantsComponent } from './Components/create-applicants/create-applicants.component';
 import { InterviewsComponent } from './Components/interviews/interviews.component';
+
 
 const routes: Routes = [
 
@@ -39,6 +40,9 @@ const routes: Routes = [
     ],
   },
 
+
+  ]},
+  { path : 'applicants/create' , component : CreateApplicantsComponent},
 
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupPageComponent },
