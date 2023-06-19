@@ -1,6 +1,6 @@
 #main{
   background-color: #dcf2f5;
-  /* height: 80vh; */
+  min-height: 100vh;
   color: #071124;
   font-family: WorkSans,sans-serif;
   font-size: 1.5rem;
@@ -30,7 +30,3 @@
   }
 }
 
-.form-con{
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
