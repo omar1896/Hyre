@@ -71,6 +71,7 @@ import {
   UtilitiesModule,
   CardModule,
 } from '@coreui/angular';
+import { ChangeSubscriptionComponent } from './Components/change-subscription/change-subscription.component';
 
 
 @NgModule({
@@ -107,6 +108,7 @@ import {
     CreateApplicantsComponent,
     InterviewsComponent,
     CompanyregisterformComponent,
+    ChangeSubscriptionComponent,
   ],
   imports: [
     BrowserModule,
