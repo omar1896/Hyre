@@ -39,7 +39,7 @@ const routes: Routes = [
     { path: 'user/create', component: AddHrUserComponent },
     ],
   },
-  { path : 'applicants/create' , component : CreateApplicantsComponent},
+  { path : 'applicants/create/:token' , component : CreateApplicantsComponent},
   { path : 'about' , component : AboutComponent},
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupPageComponent },
