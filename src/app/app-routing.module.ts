@@ -17,6 +17,7 @@ import { CreateApplicantsComponent } from './Components/create-applicants/create
 import { InterviewsComponent } from './Components/interviews/interviews.component';
 import { DashboardApplicantComponent } from './Components/dashboard-applicant/dashboard-applicant.component';
 import { ChangeSubscriptionComponent } from './Components/change-subscription/change-subscription.component';
+import { SuccessPaymentComponent } from './Components/success-payment/success-payment.component';
 
 const routes: Routes = [
   { path: '', redirectTo:"/home",pathMatch:"full" },
@@ -36,12 +37,13 @@ const routes: Routes = [
     { path: 'interviews', component: InterviewsComponent },
     { path: 'candidates/:id', component: InterviewFormComponent },
     { path: 'subscriptions', component: ChangeSubscriptionComponent },
-    { path: 'payment/successful', component: ChangeSubscriptionComponent },
+
     ],
   },
   { path : 'applicants/create' , component : CreateApplicantsComponent},
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupPageComponent },
+  { path: 'payment/successful', component: SuccessPaymentComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

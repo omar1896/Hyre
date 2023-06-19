@@ -12,7 +12,7 @@ export class ChangeSubscriptionComponent {
   constructor(private stripe: StripeService){}
 
   subscriptionForm = new FormGroup({
-    name: new FormControl('Bootstrap'),
+    name: new FormControl('Startup'),
     type: new FormControl('Monthly')
   });
 
