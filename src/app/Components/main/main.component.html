@@ -28,29 +28,32 @@
       <div
         class="row d-flex flex-row justify-content-evenly align-items-center mt-4"
       >
-        <div class="col-12 col-md-4">
-          <app-info-card type="Bootstrap"></app-info-card>
-        </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4" *ngIf="bootstrap">
           <app-info-card
-            [toggle]="isMonthly"
-            type="Startup"
-            btnColor="#EE136B"
-            description="Enhanced hiring tools to get off the ground"
-            image="assets/images/free-sub.jpg"
-            monthlyPrice="$329/mo"
-            annuallyPrice="$229/mo"
+            [type]="bootstrap[0].name"
+            [description]="bootstrap[0].description"
           ></app-info-card>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4" *ngIf="startup">
           <app-info-card
             [toggle]="isMonthly"
-            type="Business"
+            btnColor="#EE136B"
+            image="assets/images/free-sub.jpg"
+            [type]="startup[0].name"
+            [description]="startup[0].description"
+            [monthlyPrice]="'$' + startup[0].price + '/mo'"
+            [annuallyPrice]="'$' + startup[1].price + '/mo'"
+          ></app-info-card>
+        </div>
+        <div class="col-12 col-md-4" *ngIf="business">
+          <app-info-card
+            [toggle]="isMonthly"
             btnColor="#B908FF"
-            description="Ultimate hiring control & flexibility"
             image="assets/images/Business-sub.jpg"
-            monthlyPrice="$489/mo"
-            annuallyPrice="$369/mo"
+            [type]="business[0].name"
+            [description]="business[0].description"
+            [monthlyPrice]="'$' + business[1].price + '/mo'"
+            [annuallyPrice]="'$' + business[0].price + '/mo'"
           ></app-info-card>
         </div>
       </div>
