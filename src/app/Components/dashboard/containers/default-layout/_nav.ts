@@ -16,21 +16,7 @@ export const navItems: INavData[] = [
     url: './inbox',
     iconComponent: { name: 'cilInbox' },
   },
-  {
-    name: 'Tasks',
-    url: './tasks',
-    iconComponent: { name: 'cilTask' },
-  },
-  {
-    name: 'Calendar',
-    url: './calendar',
-    iconComponent: { name: 'cilCalendar' },
-  },
-  {
-    name: 'Reports',
-    url: './reports',
-    iconComponent: { name: 'cilChart' },
-  },
+
   {
     name: 'Positions / Pools',
     url: './positions',

@@ -13,10 +13,10 @@ export class DashboardHomeComponent {
   }
 
   createPosition(){
-    this.route.navigateByUrl('dashboard/candidates')
+    this.route.navigateByUrl('dashboard/positions/create')
   }
   createUser(){
-    this.route.navigateByUrl('dashboard/candidates')
+    this.route.navigateByUrl('dashboard/user/create')
   }
   updateSubscription(){
     this.route.navigateByUrl('dashboard/candidates')

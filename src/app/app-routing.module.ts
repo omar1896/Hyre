@@ -16,6 +16,7 @@ import { InterviewFormComponent } from './Components/interview-form/interview-fo
 import { CreateApplicantsComponent } from './Components/create-applicants/create-applicants.component';
 import { InterviewsComponent } from './Components/interviews/interviews.component';
 import { DashboardApplicantComponent } from './Components/dashboard-applicant/dashboard-applicant.component';
+import { AddHrUserComponent } from './Components/dashboard/views/add-hr-user/add-hr-user.component';
 
 const routes: Routes = [
   { path: '', redirectTo:"/home",pathMatch:"full" },
@@ -32,11 +33,14 @@ const routes: Routes = [
     { path : "positions/create" , component : PositionFormComponent },
     { path : "positions/:id/update" , component : PositionUpdateComponent },
     { path: 'candidates', component: CandidateComponent },
+
     { path: 'interviews', component: InterviewsComponent },
     { path: 'candidates/:id', component: InterviewFormComponent },
+    { path: 'user/create', component: AddHrUserComponent },
     ],
   },
   { path : 'applicants/create/:token' , component : CreateApplicantsComponent},
+  { path : 'about' , component : AboutComponent},
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupPageComponent },
   { path: '**', component: NotFoundComponent },
