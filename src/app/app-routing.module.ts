@@ -32,6 +32,7 @@ const routes: Routes = [
     { path : "positions/create" , component : PositionFormComponent },
     { path : "positions/:id/update" , component : PositionUpdateComponent },
     { path: 'candidates', component: CandidateComponent },
+
     { path: 'interviews', component: InterviewsComponent },
     { path: 'candidates/:id', component: InterviewFormComponent },
     ],
