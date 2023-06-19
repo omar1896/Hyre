@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { ApplicantService } from 'src/app/Services/applicant.service';
+import { ActivatedRoute } from '@angular/router';
+import { CompanyService } from 'src/app/Services/company.service';
 @Component({
   selector: 'app-create-applicants',
   templateUrl: './create-applicants.component.html',
@@ -10,25 +12,11 @@ export class CreateApplicantsComponent implements OnInit {
   applicantForm: FormGroup;
   company : any =  {
     image : "assets/images/iti-logo.png",
-    positions : [{
-      id : 2,
-      name : "FrontEnd"
-    },
-    {
-      id : 15,
-      name : "BackEnd"
-    },
-    {
-      id : 20,
-      name : "UX/UI"
-    }]
+    positions: []
   };
 
-  ngOnInit(): void {
-    // Get all Positions and the image for this company  
-  }
-
-  constructor(private dataService : ApplicantService) {
+  
+  constructor(private sendApplicantData : ApplicantService, private getCompanyPositions : CompanyService  ,private route: ActivatedRoute ) {
     this.applicantForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(15), Validators.maxLength(100)]),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -38,6 +26,23 @@ export class CreateApplicantsComponent implements OnInit {
       position : new FormControl (null , [Validators.required]),
       birthday : new FormControl(null , [Validators.required]),
       resume: new FormControl(null,[Validators.required] )
+    });
+  }
+
+
+  ngOnInit(): void {
+    // const token = this.route.snapshot.paramMap.get('token');
+    // console.log(token); // Use the parameter value as needed 
+    this.getCompanyPositions.getCompanyData().subscribe({
+      next:(data :any)=>{
+        if(data.success){
+          console.log(data); // Positions 
+          this.company["positions"] = data['data']; // array
+        }
+        else{
+          console.log(data.message);
+        }
+      }
     });
   }
 
@@ -51,9 +56,17 @@ export class CreateApplicantsComponent implements OnInit {
       formData.append('edu_degree', this.applicantForm.value.edu_degree);
       formData.append('position' , this.applicantForm.value.position);
       formData.append('birth_date' , this.applicantForm.value.birthday);
-      formData.append('resume', this.applicantForm.value.resume);
+
+      const resumeFormControl = this.applicantForm.get('resume');
+      if (resumeFormControl && resumeFormControl.value) {
+        const resumeFile = resumeFormControl.value.files?.[0]; // Access the files property safely
+        
+        if (resumeFile) {
+          formData.append('resume', resumeFile);
+        }
+      }
       
-      this.dataService.sendData(formData).subscribe(
+      this.sendApplicantData.sendData(formData).subscribe(
         {
           next:(data:any) => {
             if (data.success){

@@ -1,11 +1,11 @@
 
 <div class="d-flex flex-column flex-md-row align-items-center justify-content-center mt-3 mb-0">
-    <h1><img src="assets/images/agora.svg" alt="Hyre"></h1>
+    <h1><img src="assets/images/logo.png" height="110" alt="Hyre"></h1>
     <h2> <img class="ps-md-5" src="{{company.image}}" height="100" alt=""> </h2>
 </div>
 
-<form [formGroup]="applicantForm" (ngSubmit)="submitForm()" class="d-flex flex-column align-items-center justify-content-center" style="height: 100%;">
-    <div class="d-flex flex-column col-md-3 col-8">
+<form [formGroup]="applicantForm" (ngSubmit)="submitForm()" class="d-flex flex-column align-items-center justify-content-center" style="height: 100%;" enctype="multipart/form-data">
+    <div class="d-flex flex-column col-md-4 col-8">
         <div class="m-1">
             <label for="name" class="fw-bold">Name:</label>
             <input type="text" id="name" name="name" formControlName="name" class="form-control">
