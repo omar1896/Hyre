@@ -9,37 +9,21 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
-      <th scope="col">Vacancies</th>
-      <th scope="col">Description</th>
-      <th scope="col">End Date</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
-    <ng-container *ngIf="">
-      <tr *ngFor="let p of .data">
-        <th scope="row">{{ p.id }}</th>
+    <ng-container *ngIf="users">
+      <tr *ngFor="let p of users.data">
+        <td scope="row">{{ p.id }}</td>
         <td>{{ p.name }}</td>
-        <td>{{ p.vacancies }}</td>
-        <td>{{ p.description }}</td>
-        <td>{{ p.end_date }}</td>
         <td>
-          <a
-            class="btn btn-outline-warning m-1"
-            routerLink="/dashboard//{{ p.id }}/update"
-            >Edit</a
-          >
-          <a
-            class="btn btn-outline-danger m-1"
-            (click)=""
-            id="{{ p.id }}"
-            >Delete</a
-          >
+          <a class="btn btn-outline-warning m-1"
+            routerLink="/dashboard/positions/{{ p.id }}/update" >Delete</a>
         </td>
       </tr>
     </ng-container>
   </tbody>
 </table>
-
 </div>
 </div>

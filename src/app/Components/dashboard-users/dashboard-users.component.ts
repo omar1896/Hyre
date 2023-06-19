@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard-users.component.css']
 })
 export class DashboardUsersComponent {
-
+users:any
 }
