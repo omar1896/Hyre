@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,7 +9,8 @@ import { Component, HostListener, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
 
   navElement: any
-  constructor () { }
+  isLogedIn=false;
+  constructor (private authService:AuthService) { }
   @HostListener("window:scroll", [])
   onWindowScroll() {
     if (window.scrollY > 0) {
@@ -20,5 +22,10 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.navElement = document.getElementById('bg-screen-nav');
+    this.isLogedIn=this.authService.isLogedIn()
+  }
+  logout(){
+    this.authService.logout()
+    this.isLogedIn=this.authService.isLogedIn()
   }
 }

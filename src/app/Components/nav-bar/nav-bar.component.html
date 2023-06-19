@@ -10,7 +10,8 @@
           <a class="fs-4 nav-link" routerLink="#">Demo</a>
           <a class="fs-4 nav-link" routerLink="about">About</a>
           <div class="fs-4 nav-links d-flex">
-            <a class="fs-4 nav-link" routerLink="signup">Signup</a>
+            <a class="fs-4 nav-link" routerLink="signup" *ngIf="!isLogedIn">Signup</a>
+            <a class="fs-4 nav-link" routerLink="" *ngIf="isLogedIn" (click)="logout()">Logout</a>
           </div>
         </div>
       </div>
