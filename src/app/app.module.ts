@@ -72,7 +72,7 @@ import {
   UtilitiesModule,
   CardModule,
 } from '@coreui/angular';
-import { DashboardUsersComponent } from './dashboard-users/dashboard-users.component';
+import { DashboardUsersComponent } from './Components/dashboard-users/dashboard-users.component';
 
 @NgModule({
   declarations: [
