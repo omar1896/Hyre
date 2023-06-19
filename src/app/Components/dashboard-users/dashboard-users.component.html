@@ -1,29 +1,29 @@
-
-
 <div class="container">
   <div class="row">
+    <table [striped]="true" cTable>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">email</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="users">
+          <tr *ngFor="let p of users  ">
 
-
-<table [striped]="true" cTable>
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <ng-container *ngIf="users">
-      <tr *ngFor="let p of users.data">
-        <td scope="row">{{ p.id }}</td>
-        <td>{{ p.name }}</td>
-        <td>
-          <a class="btn btn-outline-warning m-1"
-            routerLink="/dashboard/positions/{{ p.id }}/update" >Delete</a>
-        </td>
-      </tr>
-    </ng-container>
-  </tbody>
-</table>
-</div>
+            <td>{{ p.name }}</td>
+            <td>{{ p.email }}</td>
+            <td>
+              <a
+                class="btn btn-outline-danger m-1"
+                routerLink="/dashboard/positions/{{ p.id }}/update"
+                >Delete</a
+              >
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
 </div>
