@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {  Router } from '@angular/router';
+import{ModalComponentComponent} from '../modal-component/modal-component.component'
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { PositionServiceService } from 'src/app/Services/position-service.service';
 
 @Component({
@@ -8,7 +10,11 @@ import { PositionServiceService } from 'src/app/Services/position-service.servic
   styleUrls: ['./dashboard-positions.component.css']
 })
 export class DashboardPositionsComponent implements OnInit {
+  id=0;
   positions:any;
+  // showModal = true;
+  // confirmationMessage = 'Are you sure you want to delete this item?';
+  bsModalRef?: BsModalRef;
   constructor(public myService: PositionServiceService,public router:Router){
 
   }
@@ -24,16 +30,59 @@ export class DashboardPositionsComponent implements OnInit {
     );
   }
 
-  showAlert(e:any)
-  {
-    let id=e.target.id
-   let check= confirm("are you sure that you want to delete this student?");
-   if(check)
-   {
-    this.myService.DeletePosition(id).subscribe();
-    //& to reload the component to see changes
-      this.router.navigate(['/dashboard/positions']);
 
-   }
-  }
+
+
+
+
+  // onDeleteConfirmed(): void {
+  //   // Perform the delete action
+  //   // this.showModal = false;
+  //   this.myService.DeletePosition(this.id).subscribe();
+  // }
+
+  // onModalCanceled(): void {
+  //   this.showModal = false;
+  // }
+
+  // showAlert(e:any)
+  // {
+  //   this.showModal = true;
+  //   this.id=e.target.id
+
+  // }
+
+
+showAlert(e:any)
+{
+
+  let id=e.target.id
+ let check= confirm("are you sure that you want to delete this student?");
+ if(check)
+ {
+  this.myService.DeletePosition(id).subscribe();
+  //& to reload the component to see changes
+    this.router.navigate(['/dashboard/positions']);
+
+ }
 }
+
+}
+
+
+
+
+
+// showAlert(e:any)
+// {
+
+//   let id=e.target.id
+//  let check= confirm("are you sure that you want to delete this student?");
+//  if(check)
+//  {
+//   this.myService.DeletePosition(id).subscribe();
+//   //& to reload the component to see changes
+//     this.router.navigate(['/dashboard/positions']);
+
+//  }
+// }
