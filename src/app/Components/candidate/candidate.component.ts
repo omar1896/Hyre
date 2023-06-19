@@ -20,6 +20,7 @@ export class CandidateComponent implements OnInit {
     this.candidates = this.candidateService.getCandidates().subscribe({
       next: (response: any) => {
         this.candidates = response.data;
+        console.log(this.candidates)
       },
     });
   }
@@ -32,15 +33,6 @@ export class CandidateComponent implements OnInit {
     });
   }
 
-  cancelInterview(data: any) {
-    // this.candidateService.deleteInterview(data).subscribe({
-    //   next: (response)=>{
-    //       console.log(response)
-    //   },
-    //   error: ()=>{
-    //   }
-    // })
-  }
   scheduleInterview(id: any, position: string) {
     this.router.navigate(['/dashboard/candidates', id], {
       queryParams: { positionName: position },

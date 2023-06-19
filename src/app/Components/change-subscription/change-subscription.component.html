@@ -1,0 +1,45 @@
+<form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()" class="ms-3 px-4">
+  <h2>Choose One:</h2>
+  <div class="form-check mb-3">
+    <input
+      class="form-check-input"
+      type="radio"
+      formControlName="name"
+      id="flexRadioDefault2"
+      value="Startup"
+    />
+    <label class="form-check-label" for="flexRadioDefault2"> Startup </label>
+  </div>
+  <div class="form-check mb-3">
+    <input
+      class="form-check-input"
+      type="radio"
+      formControlName="name"
+      id="flexRadioDefault3"
+      value="Business"
+    />
+    <label class="form-check-label" for="flexRadioDefault3"> Business </label>
+  </div>
+  <h2>Choose Type:</h2>
+  <div class="form-check mb-3">
+    <input
+      class="form-check-input"
+      type="radio"
+      formControlName="type"
+      id="flexRadioDefault4"
+      value="Monthly"
+    />
+    <label class="form-check-label" for="flexRadioDefault4"> Monthly </label>
+  </div>
+  <div class="form-check mb-3">
+    <input
+      class="form-check-input"
+      type="radio"
+      formControlName="type"
+      id="flexRadioDefault5"
+      value="Annually"
+    />
+    <label class="form-check-label" for="flexRadioDefault5"> Annually </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

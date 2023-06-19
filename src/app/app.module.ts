@@ -53,7 +53,6 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AuthInterceptor } from './intercreptors/auth.interceptor';
 import { DashboardApplicantComponent } from './Components/dashboard-applicant/dashboard-applicant.component';
 import { AddHrUserComponent } from './Components/dashboard/views/add-hr-user/add-hr-user.component';
-import { AuthInterceptor } from './intercreptors/auth.interceptor';
 import { ModalComponentComponent } from './Components/modal-component/modal-component.component';
 import {
   PERFECT_SCROLLBAR_CONFIG,
@@ -74,6 +73,8 @@ import {
   UtilitiesModule,
   CardModule,
 } from '@coreui/angular';
+import { ChangeSubscriptionComponent } from './Components/change-subscription/change-subscription.component';
+import { SuccessPaymentComponent } from './Components/success-payment/success-payment.component';
 
 @NgModule({
   declarations: [
@@ -109,8 +110,11 @@ import {
     CreateApplicantsComponent,
     InterviewsComponent,
     CompanyregisterformComponent,
+    ChangeSubscriptionComponent,
+    SuccessPaymentComponent,
     AddHrUserComponent,
     ModalComponentComponent,
+
 
   ],
   imports: [
