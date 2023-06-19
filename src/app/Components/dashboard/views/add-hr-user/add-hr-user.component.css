@@ -1,0 +1,23 @@
+.form-input{
+    display: block;
+    height: 60px;
+    border: solid 1px #C1C3C8;
+    padding: 0 5%;
+    width: 100%;
+  }
+  .form-input:focus{
+    outline: solid 1px #3898EC;
+  }
+  .form-label{
+    color:#747474;
+    font-size: .9rem;
+  }
+  .form-forget-password{
+    color:#747474;
+    font-size: 1rem;
+  }
+  .form-error{
+    font-size: .9rem;
+    padding: 7px;
+  }
+  

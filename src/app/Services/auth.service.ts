@@ -12,10 +12,14 @@ export class AuthService {
   }
   register(data:any){
 
-    return this.http.post(`${this.URL}/signup`,data)
+    return this.http.post(`${this.URL}signup`,data)
   }
   signin(data:any){
 
-    return this.http.post(`${this.URL}/signin`,data)
+    return this.http.post(`${this.URL}signin`,data)
+  }
+  createUser(data:any){
+
+    return this.http.post(`${this.URL}tenant/users`,data)
   }
 }
