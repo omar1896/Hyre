@@ -34,7 +34,7 @@ export const navItems: INavData[] = [
   },
   {
     name: 'My-Team',
-    url: './My-Team',
+    url: './my-team',
     iconComponent: { name: 'cil-user' },
   }
 ];
