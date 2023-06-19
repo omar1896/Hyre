@@ -16,7 +16,7 @@ export class DashboardHomeComponent {
     this.route.navigateByUrl('dashboard/candidates')
   }
   createUser(){
-    this.route.navigateByUrl('dashboard/candidates')
+    this.route.navigateByUrl('dashboard/user/create')
   }
   updateSubscription(){
     this.route.navigateByUrl('dashboard/candidates')

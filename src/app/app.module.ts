@@ -71,7 +71,7 @@ import {
   UtilitiesModule,
   CardModule,
 } from '@coreui/angular';
-
+import { AddHrUserComponent } from './Components/dashboard/views/add-hr-user/add-hr-user.component';
 
 @NgModule({
   declarations: [
@@ -107,6 +107,7 @@ import {
     CreateApplicantsComponent,
     InterviewsComponent,
     CompanyregisterformComponent,
+    AddHrUserComponent,
   ],
   imports: [
     BrowserModule,
