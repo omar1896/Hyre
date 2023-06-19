@@ -32,11 +32,13 @@ const routes: Routes = [
     { path : "positions/create" , component : PositionFormComponent },
     { path : "positions/:id/update" , component : PositionUpdateComponent },
     { path: 'candidates', component: CandidateComponent },
+
     { path: 'interviews', component: InterviewsComponent },
     { path: 'candidates/:id', component: InterviewFormComponent },
     ],
   },
   { path : 'applicants/create' , component : CreateApplicantsComponent},
+  { path : 'about' , component : AboutComponent},
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupPageComponent },
   { path: '**', component: NotFoundComponent },
