@@ -5,9 +5,9 @@ import {Environment} from "../../Environment/env"
   providedIn: 'root'
 })
 export class AuthService {
-  
+
   private URL=Environment.apiUrl;
-  constructor(private http:HttpClient) { 
+  constructor(private http:HttpClient) {
 
   }
   register(data:any){
@@ -17,5 +17,8 @@ export class AuthService {
   signin(data:any){
 
     return this.http.post(`${this.URL}/signin`,data)
+  }
+  getAllUsers() {
+    return this.http.get(`${this.URL}tenant/users`);
   }
 }
