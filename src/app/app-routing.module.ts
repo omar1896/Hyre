@@ -36,7 +36,7 @@ const routes: Routes = [
     { path: 'candidates/:id', component: InterviewFormComponent },
     ],
   },
-  { path : 'applicants/create' , component : CreateApplicantsComponent},
+  { path : 'applicants/create/:token' , component : CreateApplicantsComponent},
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupPageComponent },
   { path: '**', component: NotFoundComponent },
