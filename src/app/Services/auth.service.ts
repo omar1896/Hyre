@@ -21,4 +21,9 @@ export class AuthService {
   getAllUsers() {
     return this.http.get(`${this.URL}tenant/users`);
   }
+  deleteUser(id:any){
+    return this.http.get(`${this.URL}tenant/users/${id}`);
+
+
+  }
 }
