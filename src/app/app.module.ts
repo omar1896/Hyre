@@ -49,6 +49,7 @@ import { PositionUpdateComponent } from './Components/position-update/position-u
 import { InterviewsComponent } from './Components/interviews/interviews.component';
 import { CompanyregisterformComponent } from './Components/companyregisterform/companyregisterform.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 import {
@@ -71,6 +72,7 @@ import {
   CardModule,
 } from '@coreui/angular';
 import { AuthInterceptor } from './intercreptors/auth.interceptor';
+import { ModalComponentComponent } from './Components/modal-component/modal-component.component';
 
 
 
@@ -108,6 +110,7 @@ import { AuthInterceptor } from './intercreptors/auth.interceptor';
     CreateApplicantsComponent,
     InterviewsComponent,
     CompanyregisterformComponent,
+    ModalComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -133,6 +136,7 @@ import { AuthInterceptor } from './intercreptors/auth.interceptor';
     MatFormFieldModule,
     MatNativeDateModule,
     FormsModule,
+    ModalModule,
   ],
   providers: [
     ToastService,
