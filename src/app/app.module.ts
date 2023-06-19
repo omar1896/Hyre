@@ -49,8 +49,9 @@ import { PositionUpdateComponent } from './Components/position-update/position-u
 import { InterviewsComponent } from './Components/interviews/interviews.component';
 import { CompanyregisterformComponent } from './Components/companyregisterform/companyregisterform.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
-
-
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { AuthInterceptor } from './intercreptors/auth.interceptor';
+import { DashboardApplicantComponent } from './Components/dashboard-applicant/dashboard-applicant.component';
 import {
   PERFECT_SCROLLBAR_CONFIG,
   PerfectScrollbarConfigInterface,
@@ -71,10 +72,7 @@ import {
   CardModule,
 } from '@coreui/angular';
 import { AuthInterceptor } from './intercreptors/auth.interceptor';
-
-
-
-
+import { ModalComponentComponent } from './Components/modal-component/modal-component.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,9 +103,11 @@ import { AuthInterceptor } from './intercreptors/auth.interceptor';
     DialogComponent,
     InterviewFormComponent,
     DashboardHomeComponent,
+    DashboardApplicantComponent,
     CreateApplicantsComponent,
     InterviewsComponent,
     CompanyregisterformComponent,
+    ModalComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -133,6 +133,7 @@ import { AuthInterceptor } from './intercreptors/auth.interceptor';
     MatFormFieldModule,
     MatNativeDateModule,
     FormsModule,
+    ModalModule,
   ],
   providers: [
     ToastService,

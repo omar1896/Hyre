@@ -9,23 +9,23 @@ export const navItems: INavData[] = [
   {
     name: 'Applicants',
     url: './applicants',
-    iconComponent: { name: 'cil-user' },
+    iconComponent: { name: 'cilPeople' },
   },
   {
     name: 'Inbox',
     url: './inbox',
-    iconComponent: { name: 'cil-chart-pie' },
+    iconComponent: { name: 'cilInbox' },
   },
 
   {
     name: 'Positions / Pools',
     url: './positions',
-    iconComponent: { name: 'cil-chart-pie' },
+    iconComponent: { name: 'cilShareBoxed' },
   },
   {
     name: 'Candidates',
     url: './candidates',
-    iconComponent: { name: 'cil-user' },
+    iconComponent: { name: 'cilPeople' },
   },
   {
     name: 'Interviews',
