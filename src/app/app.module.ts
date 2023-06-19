@@ -49,9 +49,11 @@ import { PositionUpdateComponent } from './Components/position-update/position-u
 import { InterviewsComponent } from './Components/interviews/interviews.component';
 import { CompanyregisterformComponent } from './Components/companyregisterform/companyregisterform.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { AuthInterceptor } from './intercreptors/auth.interceptor';
 import { DashboardApplicantComponent } from './Components/dashboard-applicant/dashboard-applicant.component';
-
+import { AddHrUserComponent } from './Components/dashboard/views/add-hr-user/add-hr-user.component';
+import { ModalComponentComponent } from './Components/modal-component/modal-component.component';
 import {
   PERFECT_SCROLLBAR_CONFIG,
   PerfectScrollbarConfigInterface,
@@ -73,7 +75,6 @@ import {
 } from '@coreui/angular';
 import { ChangeSubscriptionComponent } from './Components/change-subscription/change-subscription.component';
 import { SuccessPaymentComponent } from './Components/success-payment/success-payment.component';
-
 
 @NgModule({
   declarations: [
@@ -111,6 +112,10 @@ import { SuccessPaymentComponent } from './Components/success-payment/success-pa
     CompanyregisterformComponent,
     ChangeSubscriptionComponent,
     SuccessPaymentComponent,
+    AddHrUserComponent,
+    ModalComponentComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -136,6 +141,7 @@ import { SuccessPaymentComponent } from './Components/success-payment/success-pa
     MatFormFieldModule,
     MatNativeDateModule,
     FormsModule,
+    ModalModule,
   ],
   providers: [
     ToastService,

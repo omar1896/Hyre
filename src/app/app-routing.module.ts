@@ -18,6 +18,8 @@ import { InterviewsComponent } from './Components/interviews/interviews.componen
 import { DashboardApplicantComponent } from './Components/dashboard-applicant/dashboard-applicant.component';
 import { ChangeSubscriptionComponent } from './Components/change-subscription/change-subscription.component';
 import { SuccessPaymentComponent } from './Components/success-payment/success-payment.component';
+import { AddHrUserComponent } from './Components/dashboard/views/add-hr-user/add-hr-user.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo:"/home",pathMatch:"full" },
@@ -37,10 +39,12 @@ const routes: Routes = [
     { path: 'interviews', component: InterviewsComponent },
     { path: 'candidates/:id', component: InterviewFormComponent },
     { path: 'subscriptions', component: ChangeSubscriptionComponent },
+    { path: 'user/create', component: AddHrUserComponent },
 
     ],
   },
-  { path : 'applicants/create' , component : CreateApplicantsComponent},
+  { path : 'applicants/create/:token' , component : CreateApplicantsComponent},
+  { path : 'about' , component : AboutComponent},
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupPageComponent },
   { path: 'payment/successful', component: SuccessPaymentComponent },

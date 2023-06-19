@@ -22,10 +22,12 @@ export class DashboardHomeComponent implements OnInit {
   }
 
   createPosition(){
-    this.route.navigateByUrl('dashboard/positions')
+
+    this.route.navigateByUrl('dashboard/positions/create')
+
   }
   createUser(){
-    this.route.navigateByUrl('dashboard/candidates')
+    this.route.navigateByUrl('dashboard/user/create')
   }
   updateSubscription(){
     this.route.navigateByUrl('dashboard/subscriptions')
