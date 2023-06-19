@@ -15,7 +15,7 @@ import { CandidateComponent } from './Components/candidate/candidate.component';
 import { InterviewFormComponent } from './Components/interview-form/interview-form.component';
 import { CreateApplicantsComponent } from './Components/create-applicants/create-applicants.component';
 import { InterviewsComponent } from './Components/interviews/interviews.component';
-
+import { DashboardApplicantComponent } from './Components/dashboard-applicant/dashboard-applicant.component';
 
 const routes: Routes = [
   { path: '', redirectTo:"/home",pathMatch:"full" },
@@ -26,8 +26,8 @@ const routes: Routes = [
      ]
   },
   { path: "dashboard" ,component:DefaultLayoutComponent,children:[
-    // ALL Dashboard endpoints --> example for dashboard/applicants--> { path : "applicants" , component : applicants }
     { path: '', component: DashboardHomeComponent },
+    { path :'applicants' , component : DashboardApplicantComponent},
     { path : "positions" , component : DashboardPositionsComponent },
     { path : "positions/create" , component : PositionFormComponent },
     { path : "positions/:id/update" , component : PositionUpdateComponent },

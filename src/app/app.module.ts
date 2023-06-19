@@ -49,7 +49,8 @@ import { PositionUpdateComponent } from './Components/position-update/position-u
 import { InterviewsComponent } from './Components/interviews/interviews.component';
 import { CompanyregisterformComponent } from './Components/companyregisterform/companyregisterform.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
-
+import { AuthInterceptor } from './intercreptors/auth.interceptor';
+import { DashboardApplicantComponent } from './Components/dashboard-applicant/dashboard-applicant.component';
 
 import {
   PERFECT_SCROLLBAR_CONFIG,
@@ -70,9 +71,6 @@ import {
   UtilitiesModule,
   CardModule,
 } from '@coreui/angular';
-import { AuthInterceptor } from './intercreptors/auth.interceptor';
-
-
 
 
 @NgModule({
@@ -105,6 +103,7 @@ import { AuthInterceptor } from './intercreptors/auth.interceptor';
     DialogComponent,
     InterviewFormComponent,
     DashboardHomeComponent,
+    DashboardApplicantComponent,
     CreateApplicantsComponent,
     InterviewsComponent,
     CompanyregisterformComponent,
