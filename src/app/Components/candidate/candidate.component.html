@@ -9,30 +9,37 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let candidate of candidates">
-      <td>{{ candidate.id }}</td>
-      <td>{{ candidate.name }}</td>
-      <td>{{ candidate.email }}</td>
-      <td>{{ candidate.position }}</td>
-      <td>
-        <div class="">
-          <ng-container *ngIf="candidate.hasInterview; else cancelInterview">
-            <!-- this button will open modal to create interview -->
-            <a class="btn btn-success">Cancel</a>
-          </ng-container>
-          <ng-template #cancelInterview>
-            <!-- this button will open modal to cancel interview -->
-            <a
-              class="btn btn-primary"
-              (click)="scheduleInterview(candidate.id, candidate.position)"
-              >Schedule</a
+    <ng-container *ngIf="candidates" ; else noData>
+      <tr *ngFor="let candidate of candidates">
+        <td>{{ candidate.id }}</td>
+        <td>{{ candidate.name }}</td>
+        <td>{{ candidate.email }}</td>
+        <td>{{ candidate.position }}</td>
+        <td>
+          <div class="">
+            <ng-container *ngIf="candidate.hasInterview; else cancelInterview">
+              <!-- this button will open modal to create interview -->
+              <a class="btn btn-success">Cancel</a>
+            </ng-container>
+            <ng-template #cancelInterview>
+              <!-- this button will open modal to cancel interview -->
+              <a
+                class="btn btn-primary"
+                (click)="scheduleInterview(candidate.id, candidate.position)"
+                >Schedule</a
+              >
+            </ng-template>
+            <a class="btn btn-danger" (click)="deleteCandidate(candidate.id)"
+              >Delete</a
             >
-          </ng-template>
-          <a class="btn btn-danger" (click)="deleteCandidate(candidate.id)"
-            >Delete</a
-          >
-        </div>
-      </td>
-    </tr>
+          </div>
+        </td>
+      </tr>
+    </ng-container>
+    <ng-template #noData>
+      <tr>
+        <td colspan="5">no data</td>
+      </tr>
+    </ng-template>
   </tbody>
 </table>

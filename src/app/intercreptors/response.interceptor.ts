@@ -37,9 +37,12 @@ export class ResponseInterceptor implements HttpInterceptor {
           if (event.status == 404) {
             this.route.navigateByUrl('404-notfound');
           }
+          
           if (event instanceof HttpErrorResponse) {
+            console.log(event)
+            let message=event.error.message||event.error.detail||""
             this.toastService.activateToast(
-              event.error.message,
+              message,
               event.error.success
             );
           }

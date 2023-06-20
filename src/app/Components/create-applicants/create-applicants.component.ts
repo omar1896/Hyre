@@ -14,7 +14,7 @@ export class CreateApplicantsComponent implements OnInit {
     image : "assets/images/iti-logo.png",
     positions: []
   };
-
+  token : any ;
   
   constructor(private sendApplicantData : ApplicantService, private getCompanyPositions : CompanyService  ,private route: ActivatedRoute ) {
     this.applicantForm = new FormGroup({
@@ -31,12 +31,10 @@ export class CreateApplicantsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // const token = this.route.snapshot.paramMap.get('token');
-    // console.log(token); // Use the parameter value as needed 
-    this.getCompanyPositions.getCompanyData().subscribe({
+    this.token = this.route.snapshot.paramMap.get('token');
+    this.getCompanyPositions.getCompanyData(this.token).subscribe({
       next:(data :any)=>{
         if(data.success){
-          console.log(data); // Positions 
           this.company["positions"] = data['data']; // array
         }
         else{
@@ -66,7 +64,7 @@ export class CreateApplicantsComponent implements OnInit {
         }
       }
       
-      this.sendApplicantData.sendData(formData).subscribe(
+      this.sendApplicantData.sendData(formData, this.token).subscribe(
         {
           next:(data:any) => {
             if (data.success){

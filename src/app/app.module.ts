@@ -52,6 +52,7 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AuthInterceptor } from './intercreptors/auth.interceptor';
 import { DashboardApplicantComponent } from './Components/dashboard-applicant/dashboard-applicant.component';
+import { AddHrUserComponent } from './Components/dashboard/views/add-hr-user/add-hr-user.component';
 import { ModalComponentComponent } from './Components/modal-component/modal-component.component';
 import {
   PERFECT_SCROLLBAR_CONFIG,
@@ -73,7 +74,8 @@ import {
   CardModule,
 } from '@coreui/angular';
 import { DashboardUsersComponent } from './Components/dashboard-users/dashboard-users.component';
-
+import { ChangeSubscriptionComponent } from './Components/change-subscription/change-subscription.component';
+import { SuccessPaymentComponent } from './Components/success-payment/success-payment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -108,6 +110,9 @@ import { DashboardUsersComponent } from './Components/dashboard-users/dashboard-
     CreateApplicantsComponent,
     InterviewsComponent,
     CompanyregisterformComponent,
+    ChangeSubscriptionComponent,
+    SuccessPaymentComponent,
+    AddHrUserComponent,
     ModalComponentComponent,
     DashboardUsersComponent,
   ],

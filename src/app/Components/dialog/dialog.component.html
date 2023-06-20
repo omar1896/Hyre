@@ -3,8 +3,8 @@
   {{ data.body }}
 </div>
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close>{{ data.cancelButton }}</button>
   <button mat-button mat-dialog-close cdkFocusInitial (click)="onNextClick()">
     {{ data.nextButton }}
   </button>
+  <button mat-button mat-dialog-close>{{ data.cancelButton }}</button>
 </div>

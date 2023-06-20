@@ -17,6 +17,12 @@ import { CreateApplicantsComponent } from './Components/create-applicants/create
 import { InterviewsComponent } from './Components/interviews/interviews.component';
 import { DashboardApplicantComponent } from './Components/dashboard-applicant/dashboard-applicant.component';
 import { DashboardUsersComponent } from './Components/dashboard-users/dashboard-users.component';
+import { ChangeSubscriptionComponent } from './Components/change-subscription/change-subscription.component';
+import { SuccessPaymentComponent } from './Components/success-payment/success-payment.component';
+import { AddHrUserComponent } from './Components/dashboard/views/add-hr-user/add-hr-user.component';
+import { AuthGuard } from './Guards/auth.guard';
+
+
 
 const routes: Routes = [
   { path: '', redirectTo:"/home",pathMatch:"full" },
@@ -24,9 +30,9 @@ const routes: Routes = [
     component:LayoutComponent,
     children:[
       { path: 'home', component:MainComponent },
-     ]
+    ]
   },
-  { path: "dashboard" ,component:DefaultLayoutComponent,children:[
+  { path: "dashboard" ,canActivate:[AuthGuard],component:DefaultLayoutComponent,children:[
     { path: '', component: DashboardHomeComponent },
     { path: 'my-team', component: DashboardUsersComponent },
     { path :'applicants' , component : DashboardApplicantComponent},
@@ -34,15 +40,18 @@ const routes: Routes = [
     { path : "positions/create" , component : PositionFormComponent },
     { path : "positions/:id/update" , component : PositionUpdateComponent },
     { path: 'candidates', component: CandidateComponent },
-
     { path: 'interviews', component: InterviewsComponent },
     { path: 'candidates/:id', component: InterviewFormComponent },
+    { path: 'subscriptions', component: ChangeSubscriptionComponent },
+    { path: 'user/create', component: AddHrUserComponent },
+
     ],
   },
-  { path : 'applicants/create' , component : CreateApplicantsComponent},
+  { path : 'applicants/create/:token' , component : CreateApplicantsComponent},
   { path : 'about' , component : AboutComponent},
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupPageComponent },
+  { path: 'payment/successful', component: SuccessPaymentComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
