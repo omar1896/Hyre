@@ -1,10 +1,10 @@
 <div>
-    <div class="text-center d-flex justify-content-center">
+    <div class="text-center d-flex justify-content-around">
         <a routerLinkActive="active" routerLink="" class="m-4 btn btn-success">Generate applicants form link</a>
         <div class="m-2">
             <label for="position" class="fw-bold">Filter by positions:</label>
-            <select id="position" name="position"  class="form-control">
-              <option [ngValue]="null" disabled selected>Select an available position</option>
+            <select id="position" name="position"  class="form-control" style="width: 150%;" [(ngModel)]="selectedPosition" (change)="onPositionChange()">
+              <option [ngValue]="null" selected>All positions</option>
               <option *ngFor="let position of positions" [ngValue]="position.id">{{ position.name }}</option>
             </select>
         </div>
