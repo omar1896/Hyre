@@ -90,6 +90,18 @@ export class DashboardApplicantComponent implements OnInit {
     })
   }
 
+  updateStatus(applicant_id : any){
+    this.applicantService.update(applicant_id, 1).subscribe({
+      next: (data: any) => {
+        if (data.success) {
+          this.fetchApplicants();
+        } else {
+          console.log(data.message);
+        }
+      }
+    })
+  }
+
   copyLink() {
     const linkElement = document.getElementById('copy') as HTMLSpanElement;
     const linkToCopy = linkElement.innerText;

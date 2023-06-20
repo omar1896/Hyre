@@ -30,4 +30,8 @@ export class ApplicantService {
   generateLink (){
     return this.http.get(`${this.Base_URL}tenant/applicants/formLink`);
   }
+
+  update(applicant_id : any , status :any){
+    return this.http.put(`${this.Base_URL}tenant/applicants/${applicant_id}/edit` , status);
+  }
 }
