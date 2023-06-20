@@ -19,6 +19,7 @@ import { DashboardApplicantComponent } from './Components/dashboard-applicant/da
 import { ChangeSubscriptionComponent } from './Components/change-subscription/change-subscription.component';
 import { SuccessPaymentComponent } from './Components/success-payment/success-payment.component';
 import { AddHrUserComponent } from './Components/dashboard/views/add-hr-user/add-hr-user.component';
+import { AuthGuard } from './Guards/auth.guard';
 
 
 const routes: Routes = [
@@ -27,9 +28,9 @@ const routes: Routes = [
     component:LayoutComponent,
     children:[
       { path: 'home', component:MainComponent },
-     ]
+    ]
   },
-  { path: "dashboard" ,component:DefaultLayoutComponent,children:[
+  { path: "dashboard" ,canActivate:[AuthGuard],component:DefaultLayoutComponent,children:[
     { path: '', component: DashboardHomeComponent },
     { path :'applicants' , component : DashboardApplicantComponent},
     { path : "positions" , component : DashboardPositionsComponent },
