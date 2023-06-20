@@ -16,10 +16,12 @@ import { InterviewFormComponent } from './Components/interview-form/interview-fo
 import { CreateApplicantsComponent } from './Components/create-applicants/create-applicants.component';
 import { InterviewsComponent } from './Components/interviews/interviews.component';
 import { DashboardApplicantComponent } from './Components/dashboard-applicant/dashboard-applicant.component';
+import { DashboardUsersComponent } from './Components/dashboard-users/dashboard-users.component';
 import { ChangeSubscriptionComponent } from './Components/change-subscription/change-subscription.component';
 import { SuccessPaymentComponent } from './Components/success-payment/success-payment.component';
 import { AddHrUserComponent } from './Components/dashboard/views/add-hr-user/add-hr-user.component';
 import { AuthGuard } from './Guards/auth.guard';
+
 
 
 const routes: Routes = [
@@ -32,6 +34,7 @@ const routes: Routes = [
   },
   { path: "dashboard" ,canActivate:[AuthGuard],component:DefaultLayoutComponent,children:[
     { path: '', component: DashboardHomeComponent },
+    { path: 'my-team', component: DashboardUsersComponent },
     { path :'applicants' , component : DashboardApplicantComponent},
     { path : "positions" , component : DashboardPositionsComponent },
     { path : "positions/create" , component : PositionFormComponent },

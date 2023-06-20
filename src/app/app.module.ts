@@ -73,9 +73,9 @@ import {
   UtilitiesModule,
   CardModule,
 } from '@coreui/angular';
+import { DashboardUsersComponent } from './Components/dashboard-users/dashboard-users.component';
 import { ChangeSubscriptionComponent } from './Components/change-subscription/change-subscription.component';
 import { SuccessPaymentComponent } from './Components/success-payment/success-payment.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -114,8 +114,7 @@ import { SuccessPaymentComponent } from './Components/success-payment/success-pa
     SuccessPaymentComponent,
     AddHrUserComponent,
     ModalComponentComponent,
-
-
+    DashboardUsersComponent,
   ],
   imports: [
     BrowserModule,

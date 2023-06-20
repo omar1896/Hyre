@@ -6,9 +6,11 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  
+
   private URL=Environment.apiUrl;
+
   constructor(private http:HttpClient,private router:Router) { 
+
 
   }
   register(data:any){
@@ -33,5 +35,13 @@ export class AuthService {
   logout(){
     localStorage.removeItem("Authorization")
     this.router.navigateByUrl("home")
+  }
+  getAllUsers() {
+    return this.http.get(`${this.URL}tenant/users`);
+  }
+  deleteUser(id:any){
+    return this.http.delete(`${this.URL}tenant/users/${id}/destroy`);
+
+
   }
 }

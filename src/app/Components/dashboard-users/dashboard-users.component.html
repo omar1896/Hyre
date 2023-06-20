@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <table [striped]="true" cTable>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">email</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="users">
+          <tr *ngFor="let p of users  ">
+
+            <td>{{ p.name }}</td>
+            <td>{{ p.email }}</td>
+            <td>
+              <button
+                class="btn btn-outline-danger m-1"
+                id="{{p.id}}"
+              (click)="deleteUser($event)"
+                >Delete</button
+              >
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -32,4 +32,9 @@ export const navItems: INavData[] = [
     url: './interviews',
     iconComponent: { name: 'cil-user' },
   },
+  {
+    name: 'My-Team',
+    url: './my-team',
+    iconComponent: { name: 'cil-user' },
+  }
 ];
