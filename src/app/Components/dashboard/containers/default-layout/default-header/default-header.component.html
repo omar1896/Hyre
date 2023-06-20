@@ -1,4 +1,11 @@
 <!-- <c-header class="mb-4 d-print-none" position="sticky"> -->
+  <style>
+.b-hover:hover{
+border-bottom: 2px #000000 solid;
+cursor: pointer;
+
+}
+  </style>
 <ng-container>
   <c-container [fluid]="true">
     <button
@@ -12,13 +19,42 @@
         size="lg"
       ></svg>
     </button>
-    <button
+    <button dropdown container="body" class="btn border-0 fs-5 me-5">
+      <span dropdownToggle class="b-hover me-5">Menu</span>
+      <ul
+        id="basic-link-dropdown"
+        *dropdownMenu
+        class="dropdown-menu mt-4 h-auto"
+        role="menu"
+        aria-labelledby="basic-link"
+        style="width: 170px"
+      >
+        <li role="menuitem">
+          <a
+            class="fw-bold dropdown-item py-2 rounded-0 border-2 b-hover"
+            routerLink="profile"
+            >Profile</a
+          >
+        </li>
+        <li role="menuitem">
+          
+          <a
+            class="fw-bold dropdown-item py-2 rounded-0 border-2 b-hover"
+            
+            (click)="logout()"
+            >Log Out</a
+          >
+
+        </li>
+      </ul>
+    </button>
+    <!-- <button
     (click)="logout()"
     class="ps-1 btn"
     >
     <i class="bi bi-box-arrow-left"></i>
     logOut
-    </button>
+    </button> -->
     <!-- <c-header-nav class="d-none d-lg-flex me-auto">
       <c-nav-item>
         <a cNavLink routerLink="/dashboard" routerLinkActive="active">
