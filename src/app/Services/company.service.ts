@@ -16,7 +16,10 @@ export class CompanyService {
   }
 
   getCompanyInfo(){
-    return this.http.get(`${this.Base_URL}/company`);
+    return this.http.get(`${this.Base_URL}company`);
+  }
+  changelogo(data:any){
+    return this.http.put(`${this.Base_URL}tenant/image`,data);
   }
   
   

@@ -41,7 +41,11 @@ export class AuthService {
   }
   deleteUser(id:any){
     return this.http.delete(`${this.URL}tenant/users/${id}/destroy`);
-
-
+  }
+  getUser() {
+    return this.http.get(`${this.URL}tenant/user`);
+  }
+  updateUser(data:any) {
+    return this.http.put(`${this.URL}tenant/user`,data);
   }
 }
