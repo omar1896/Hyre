@@ -8,9 +8,11 @@ export class PositionServiceService {
 
   constructor(private readonly myClient:HttpClient) { }
 
-  private readonly Base_URL = "http://127.0.0.1:8000/tenant/positions";
+  private readonly Base_URL = "http://localhost:8000/tenant/positions";
 
   GetAllPositions(){
+    console.log("Hello");
+    
     return this.myClient.get(this.Base_URL);
   }
 

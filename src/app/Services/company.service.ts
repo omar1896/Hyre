@@ -12,7 +12,7 @@ export class CompanyService {
   constructor(private http: HttpClient) {}
 
   getCompanyData(company_token?: any) {
-    return this.http.get(`${this.Base_URL}/company/positions/${company_token}`);
+    return this.http.get(`${this.Base_URL}company/positions/${company_token}`);
   }
   
 }
