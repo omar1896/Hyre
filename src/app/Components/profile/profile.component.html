@@ -1,0 +1,161 @@
+
+<div style="min-height:90vh;">
+    <div id="app">
+        
+        <main class="py-4">
+            <div class="container">
+                <div class="d-flex justify-content-center parent mt-1" *ngIf="isAdmin">
+                    <div class="cardat w-100 me-auto" >
+                      <img src="{{company.image}}" alt="profile image" *ngIf="company"/>
+                      <span
+                        data-bs-toggle="modal"
+                        data-bs-target="#updateImage"
+                        ><i class="bi bi-camera"></i
+                      ></span>
+                    </div>
+                  </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                        <h4 class="pb-2">
+                            Profile Information
+                        </h4>
+                        <span class="text-justify mb-3" style="padding-top:-3px;">Update your account's profile
+                            information and email address.<br><br> When You change your email ,you need to verify your
+                            email else the account will be blocked</span>
+                    </div>
+                    <div class="col-lg-8 text-center pt-2">
+                        <div class="card py-4 mb-5 mt-md-3 bg-white rounded "
+                            style="box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175)">
+
+                            <form [formGroup]="infoForm">
+                                <div class="form-group px-3">
+
+                                    <label for="displayName" class="col-12 text-left pl-0">Name</label>
+                                    <input type="text" name="name" formControlName="name" class="col-md-8 form-control" placeholder="Jane Doe">
+
+                                    <label for="email" class="pt-3 col-12 text-left pl-0">Email</label>
+                                    <input type="email" name="email" formControlName="email" class="col-md-8 form-control" placeholder="name@example.com">
+                                    <div *ngIf="(!name?.valid && name?.dirty) || errors?.name" class="my-3">
+                                        <span class="alert alert-danger form-error w-100" *ngIf="!name?.valid">Company Name not Avilable</span>
+                                        <span class="alert alert-danger form-error w-100" *ngIf="errors?.name">{{errors?.name[0]}}</span>
+                                        
+                                    </div>
+                                    <div *ngIf="(!email?.valid && email?.dirty) || errors?.user?.email " class="my-3">
+                                        <span *ngIf="!email?.valid" class="alert alert-danger form-error w-100">Enter a valid email address</span>    
+                                        <span *ngIf="errors?.user?.email" class="alert alert-danger form-error w-100" >{{errors?.user?.email[0]}}</span>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-0 mr-4 mt-3 ms-auto">
+                                    <div class="col-md-8 offset-md-4 text-right ">
+                                        <button type="submit" class="btn btn-primary" (click)="update()">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="border-bottom border-grey"></div>
+                <div class="row justify-content-center pt-5">
+                    <div class="col-lg-4">
+                        <h4 class="pb-2">
+                            Update Password</h4>
+                        <span class="text-justify" style="padding-top:-3px;">Ensure your account is using a long, random
+                            password to stay secure.</span>
+                    </div>
+                    <div class="col-lg-8 text-center pt-2">
+                        <div class="card py-4 mb-5 mt-md-3 bg-white rounded"
+                            style="box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175)">
+
+                            <form>
+                                <div class="form-group px-3">
+
+                                    <label for="password" class="col-12 text-left pl-0">New Password</label>
+                                    <input type="password" class="col-md-8 form-control" placeholder="Password">
+
+                                    <label for="password" class="pt-3 col-12 text-left pl-0">Confirm Password</label>
+                                    <input type="password" class="col-md-8 form-control" placeholder="Password">
+
+                                </div>
+                                <div class="form-group row mb-0 mt-3 ms-auto">
+                                    <div class="col-md-8 offset-md-4 text-right">
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-bottom border-grey" *ngIf="isAdmin"></div>
+                <div class="row justify-content-center pt-5" *ngIf="isAdmin">
+                    <div class="col-lg-4">
+                        <h4 class="pb-2">
+                            Delete Account</h4>
+                        <span class="text-justify" style="padding-top:-3px;">Permanently delete your account.</span>
+                    </div>
+                    <div class="col-lg-8 pt-0">
+                        <div class="card py-4 mb-5 mt-md-3 bg-white rounded"
+                            style="box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175)">
+                            <div class="text-left px-3">
+                                Once your account is deleted, all of its resources and data will be permanently deleted.
+                                Before deleting your account, please download any data or information that you wish to
+                                retain.
+                            </div>
+
+                            <form>
+                                <div class="form-group row mb-0 mr-4 pt-4 px-3">
+                                    <div class="col-md-8 offset-l-4 text-left">
+                                        <button type="submit" class="btn btn-danger pl-3">Delete Account</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div><div
+    class="modal fade"
+    id="updateImage"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">
+            Update Your Profile Picture
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form
+            [formGroup]="validationForm"
+            (ngSubmit)="changeImage()"
+            
+          >
+            <input
+              type="file"
+              accept=".jpg, .jpeg, .png"
+              formControlName="profileImage"
+              (change)="onFileSelected($event)"
+              name="profileImage"
+            />
+            <p class="imageInfo">*only images are allowed</p>
+            <div class="modal-footer" >
+              <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
