@@ -60,7 +60,7 @@ export class PositionFormComponent {
       console.log( newPostion);
        this.myservice.AddNewPosition(newPostion).subscribe({
         next:(res:any)=>{
-          this.router.navigateByUrl("\signin")
+          this.router.navigateByUrl("/dashboard/positions")
         },
         error:(err:any)=>{
           this.errors=err.error.data
