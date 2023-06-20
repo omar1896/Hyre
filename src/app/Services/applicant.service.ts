@@ -26,4 +26,8 @@ export class ApplicantService {
   deleteData(applicant_id : any){
     return this.http.delete(`${this.Base_URL}tenant/applicants/${applicant_id}/destroy/`);
   }
+
+  generateLink (){
+    return this.http.get(`${this.Base_URL}tenant/applicants/formLink`);
+  }
 }
