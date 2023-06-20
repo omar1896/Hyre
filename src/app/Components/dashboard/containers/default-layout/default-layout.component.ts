@@ -15,7 +15,9 @@ export class DefaultLayoutComponent implements OnInit{
     this.companyService.getCompanyInfo().subscribe({
       next:(res:any)=>{
         console.log(res)
+        
         this.user=res.data
+        this.user.image=this.user.image ||"/assets/images/default-log.png"
       },
       error:(err:any)=>{
         
