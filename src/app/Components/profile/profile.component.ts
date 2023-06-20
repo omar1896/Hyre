@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
 import { CompanyService } from 'src/app/Services/company.service';
 
@@ -9,19 +10,24 @@ import { CompanyService } from 'src/app/Services/company.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-  validationForm: any;
+  imageForm: any;
   user:any ;
   company:any ;
   isAdmin?:Boolean;
   infoForm:FormGroup;
+  passwordForm:FormGroup;
   errors:any;
-  constructor(private companyService:CompanyService,private authService:AuthService){
-    this.validationForm = new FormGroup({
+  constructor(private companyService:CompanyService,private authService:AuthService,private router:Router){
+    this.imageForm = new FormGroup({
       profileImage: new FormControl(null),
     });
     this.infoForm = new FormGroup({
       email:  new FormControl(null,[Validators.required, Validators.email]) ,
       name: new FormControl(null,[Validators.required,Validators.nullValidator]),
+    });
+    this.passwordForm = new FormGroup({
+      password: new FormControl(null,[ Validators.required, Validators.minLength(10), Validators.maxLength(60) ,Validators.required]) ,
+      password_confirm : new FormControl(null , [Validators.required , Validators.minLength(10), Validators.maxLength(60),Validators.required ])
     });
   }
   ngOnInit(): void {
@@ -88,11 +94,49 @@ export class ProfileComponent {
   }
 
   get email () {
-    return this.validationForm.controls["email"];
+    return this.infoForm.controls["email"];
   }
 
 
   get name () {
-    return this.validationForm.controls["name"];
+    return this.infoForm.controls["name"];
+  }
+  get password () {
+    return this.passwordForm.controls["password"];
+  }
+
+  get confirmPassword () {
+    return this.passwordForm.controls["password_confirm"];
+  }
+  arePasswordsEqual() {
+    if (  this.confirmPassword?.value ==  this.password?.value) {
+      return true;
+    }
+      return false;
+  }
+
+  changepassword(){
+    if(this.passwordForm.valid){
+      this.authService.changePassword(this.passwordForm.value).subscribe({
+          next:(res:any)=>{
+            console.log(res)
+          },
+          error:(err:any)=>{
+            console.log()
+          }
+        })
+    }
+  }
+  deleteUser(){
+    this.authService.deleteUser(this.user.id).subscribe({
+      next:(res:any)=>{
+        console.log(res)
+        this.authService.logout()
+        this.router.navigateByUrl("home")
+      },
+      error:(err:any)=>{
+        console.log()
+      }
+    })
   }
 }

@@ -27,20 +27,17 @@
                         <div class="card py-4 mb-5 mt-md-3 bg-white rounded "
                             style="box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175)">
 
-                            <form [formGroup]="infoForm">
+                            <form [formGroup]="infoForm" class="mt-4 w-100 p-3">
                                 <div class="form-group px-3">
-
+                                    <div class="mt-2">
                                     <label for="displayName" class="col-12 text-left pl-0">Name</label>
                                     <input type="text" name="name" formControlName="name" class="col-md-8 form-control" placeholder="Jane Doe">
-
+                                </div>
+                                <div class="mt-2">
                                     <label for="email" class="pt-3 col-12 text-left pl-0">Email</label>
                                     <input type="email" name="email" formControlName="email" class="col-md-8 form-control" placeholder="name@example.com">
-                                    <div *ngIf="(!name?.valid && name?.dirty) || errors?.name" class="my-3">
-                                        <span class="alert alert-danger form-error w-100" *ngIf="!name?.valid">Company Name not Avilable</span>
-                                        <span class="alert alert-danger form-error w-100" *ngIf="errors?.name">{{errors?.name[0]}}</span>
-                                        
-                                    </div>
-                                    <div *ngIf="(!email?.valid && email?.dirty) || errors?.user?.email " class="my-3">
+                                </div>
+                                    <div *ngIf="!email?.valid && email?.dirty" class="my-4">
                                         <span *ngIf="!email?.valid" class="alert alert-danger form-error w-100">Enter a valid email address</span>    
                                         <span *ngIf="errors?.user?.email" class="alert alert-danger form-error w-100" >{{errors?.user?.email[0]}}</span>
                                     </div>
@@ -67,21 +64,27 @@
                         <div class="card py-4 mb-5 mt-md-3 bg-white rounded"
                             style="box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175)">
 
-                            <form>
+                            <form [formGroup]="passwordForm">
                                 <div class="form-group px-3">
-
+                                    <div class="mt-2">
                                     <label for="password" class="col-12 text-left pl-0">New Password</label>
-                                    <input type="password" class="col-md-8 form-control" placeholder="Password">
-
+                                    <input type="password" formControlName="password" name="password" class="col-md-8 form-control" placeholder="Password">
+                                    </div>
+                                    <div *ngIf="!password?.valid && password?.dirty" class="my-4">
+                                        <span class="alert alert-danger form-error w-100">password must be more than 10 characters or numbers</span>
+                                        
+                                    </div>
+                                    <div class="mt-2">
                                     <label for="password" class="pt-3 col-12 text-left pl-0">Confirm Password</label>
-                                    <input type="password" class="col-md-8 form-control" placeholder="Password">
-
-                                </div>
-                                <div class="form-group row mb-0 mt-3 ms-auto">
-                                    <div class="col-md-8 offset-md-4 text-right">
-                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    <input type="password" name="password_confirm" formControlName="password_confirm" class="col-md-8 form-control" placeholder="Password">
+                                    </div>
+                                    <div *ngIf="confirmPassword?.dirty && !arePasswordsEqual()" class="my-4">
+                                        <span class="alert alert-danger form-error w-100">passwords do not match</span>
                                     </div>
                                 </div>
+                                    <div class="col-md-8 offset-md-4 text-right mt-3">
+                                        <button type="submit" class="btn btn-primary" (click)="changepassword()">Save</button>
+                                    </div>
                             </form>
                         </div>
                     </div>
@@ -105,7 +108,7 @@
                             <form>
                                 <div class="form-group row mb-0 mr-4 pt-4 px-3">
                                     <div class="col-md-8 offset-l-4 text-left">
-                                        <button type="submit" class="btn btn-danger pl-3">Delete Account</button>
+                                        <button type="submit" class="btn btn-danger pl-3" (click)="deleteUser()">Delete Account</button>
                                     </div>
                                 </div>
                             </form>
@@ -114,7 +117,9 @@
                 </div>
             </div>
         </main>
-    </div><div
+    </div>
+    
+    <div
     class="modal fade"
     id="updateImage"
     tabindex="-1"
@@ -136,7 +141,7 @@
         </div>
         <div class="modal-body">
           <form
-            [formGroup]="validationForm"
+            [formGroup]="imageForm"
             (ngSubmit)="changeImage()"
             
           >
