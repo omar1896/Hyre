@@ -48,4 +48,7 @@ export class AuthService {
   updateUser(data:any) {
     return this.http.put(`${this.URL}tenant/user`,data);
   }
+  changePassword(data:any) {
+    return this.http.put(`${this.URL}changepassword`,data);
+  }
 }
