@@ -15,7 +15,25 @@ constructor(private myClient:AuthService){
 }
 
 ngOnInit(): void {
-   this.users= this.myClient.getAllUsers().subscribe({
+   this.getAllUsers()
+}
+
+deleteUser(event:any){
+  console.log(event)
+  console.log("delete")
+this.myClient.deleteUser(event.target.id).subscribe({next:(res:any)=>{
+this.getAllUsers()
+  console.log(res)
+
+},
+error:(err:any)=>{
+  console.log(err)
+}})
+}
+
+
+getAllUsers=()=>{
+   this.myClient.getAllUsers().subscribe({
     next: (data: any) => {
       if (data.success) {
         this.users = data["data"];
@@ -27,5 +45,6 @@ ngOnInit(): void {
     }
   });
 }
-
 }
+
+

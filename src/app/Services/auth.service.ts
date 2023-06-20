@@ -22,7 +22,7 @@ export class AuthService {
     return this.http.get(`${this.URL}tenant/users`);
   }
   deleteUser(id:any){
-    return this.http.get(`${this.URL}tenant/users/${id}`);
+    return this.http.delete(`${this.URL}tenant/users/${id}/destroy`);
 
 
   }

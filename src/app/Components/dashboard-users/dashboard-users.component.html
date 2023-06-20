@@ -15,10 +15,11 @@
             <td>{{ p.name }}</td>
             <td>{{ p.email }}</td>
             <td>
-              <a
+              <button
                 class="btn btn-outline-danger m-1"
-                routerLink="/dashboard/positions/{{ p.id }}/update"
-                >Delete</a
+                id="{{p.id}}"
+              (click)="deleteUser($event)"
+                >Delete</button
               >
             </td>
           </tr>
