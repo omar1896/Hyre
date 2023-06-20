@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { PositionServiceService } from 'src/app/Services/position-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-position-update',
@@ -9,10 +10,11 @@ import { PositionServiceService } from 'src/app/Services/position-service.servic
   styleUrls: ['./position-update.component.css']
 })
 export class PositionUpdateComponent {
+  errors:any
   ID:any;
   position:any;
   validationFormUpdate:any;
-  constructor(myRoute:ActivatedRoute,public myService: PositionServiceService){
+  constructor(myRoute:ActivatedRoute,public myService: PositionServiceService,private router:Router){
     this.ID = myRoute.snapshot.params["id"];
 
   }
@@ -57,7 +59,14 @@ export class PositionUpdateComponent {
 
         console.log(this.validationFormUpdate.value);
 
-        this.myService.UpdatePosition(this.ID,this.validationFormUpdate.value).subscribe();
+        this.myService.UpdatePosition(this.ID,this.validationFormUpdate.value).subscribe({
+          next:(res:any)=>{
+            this.router.navigateByUrl("/dashboard/positions")
+          },
+          error:(err:any)=>{
+            this.errors=err.error.data
+          }
+        });
 
 
       }
