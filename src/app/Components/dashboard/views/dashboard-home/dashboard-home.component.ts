@@ -2,6 +2,7 @@ import { Component , OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DialogComponent } from '../../../dialog/dialog.component'
 import { MatDialog } from '@angular/material/dialog';
+import { CompanyService } from 'src/app/Services/company.service';
 
 
 @Component({
@@ -10,15 +11,27 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./dashboard-home.component.css']
 })
 export class DashboardHomeComponent implements OnInit {
-
-  isModalClosed: boolean
-  constructor(private route: Router , private dialog: MatDialog){
-    this.isModalClosed = false
+  user:any;
+  isModalClosed?: boolean
+  constructor(private route: Router , private dialog: MatDialog,private companyService:CompanyService){
+    this.isModalClosed = true
   }
   ngOnInit(): void {
-    if(!this.isModalClosed){
-      this.openDialog()
-    }
+    this.companyService.getCompanyInfo().subscribe({
+      next:(res:any)=>{
+        this.user=res.data
+        if(this.user.subscription=="Bootstrap"){
+          this.isModalClosed = !this.isModalClosed
+          this.openDialog()
+        }
+      },
+      error:(err:any)=>{
+        
+      }
+    })
+    // if(!this.isModalClosed){
+    //   this.openDialog()
+    // }
   }
 
   createPosition(){

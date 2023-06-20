@@ -14,5 +14,10 @@ export class CompanyService {
   getCompanyData(company_token?: any) {
     return this.http.get(`${this.Base_URL}/company/positions/${company_token}`);
   }
+
+  getCompanyInfo(){
+    return this.http.get(`${this.Base_URL}/company`);
+  }
+  
   
 }
