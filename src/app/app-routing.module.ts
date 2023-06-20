@@ -21,6 +21,7 @@ import { ChangeSubscriptionComponent } from './Components/change-subscription/ch
 import { SuccessPaymentComponent } from './Components/success-payment/success-payment.component';
 import { AddHrUserComponent } from './Components/dashboard/views/add-hr-user/add-hr-user.component';
 import { AuthGuard } from './Guards/auth.guard';
+import { LoggedinGuard } from './Guards/loggedin.guard';
 
 
 
@@ -49,9 +50,9 @@ const routes: Routes = [
   },
   { path : 'applicants/create/:token' , component : CreateApplicantsComponent},
   { path : 'about' , component : AboutComponent},
-  { path: 'signin', component: SigninComponent },
-  { path: 'signup', component: SignupPageComponent },
-  { path: 'payment/successful', component: SuccessPaymentComponent },
+  { path: 'signin', component: SigninComponent ,canActivate:[LoggedinGuard]},
+  { path: 'signup', component: SignupPageComponent ,canActivate:[LoggedinGuard]},
+  { path: 'payment/successful', component: SuccessPaymentComponent ,canActivate:[LoggedinGuard]},
   { path: '**', component: NotFoundComponent },
 ];
 

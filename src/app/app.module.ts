@@ -76,6 +76,7 @@ import {
 import { DashboardUsersComponent } from './Components/dashboard-users/dashboard-users.component';
 import { ChangeSubscriptionComponent } from './Components/change-subscription/change-subscription.component';
 import { SuccessPaymentComponent } from './Components/success-payment/success-payment.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 @NgModule({
   declarations: [
     AppComponent,
@@ -120,6 +121,7 @@ import { SuccessPaymentComponent } from './Components/success-payment/success-pa
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    BsDropdownModule.forRoot(),
     ToastModule,
     BrowserAnimationsModule,
     HttpClientModule,
