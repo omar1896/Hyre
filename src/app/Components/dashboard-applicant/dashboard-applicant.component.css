@@ -1,0 +1,32 @@
+.box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffff;
+  }
+  
+  .value {
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    max-width: 200px; /* Adjust the max width as per your needs */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .copy-button {
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  

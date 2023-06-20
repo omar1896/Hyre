@@ -1,6 +1,11 @@
 <div>
     <div class="text-center d-flex justify-content-around">
-        <a routerLinkActive="active" routerLink="" class="m-4 btn btn-success">Generate applicants form link</a>
+        <a routerLinkActive="active" (click)="getGeneratedLink()" class="m-4 btn btn-success">Generate Applicants link</a>
+        <div class="box mt-3" style="width: 30%;">
+            <span class="value" id="copy">{{generatedLink.link}}</span>
+            <span class="value">{{generatedLink.expiration_date}}</span>
+            <button class="copy-button" (click)="copyLink()">Copy</button>
+        </div>          
         <div class="m-2">
             <label for="position" class="fw-bold">Filter by positions:</label>
             <select id="position" name="position"  class="form-control" style="width: 150%;" [(ngModel)]="selectedPosition" (change)="onPositionChange()">

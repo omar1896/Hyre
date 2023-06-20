@@ -11,6 +11,10 @@ export class DashboardApplicantComponent implements OnInit {
   applicants: any = [];
   positions: any = [];
   selectedPosition: number | null = null;
+  generatedLink : any = {
+    link : 'http://',
+    expiration_date : '**/**/****'
+  }
   constructor(private applicantService: ApplicantService, private getPositions: PositionServiceService) { }
   ngOnInit(): void {
     this.fetchApplicants();
@@ -72,8 +76,32 @@ export class DashboardApplicantComponent implements OnInit {
       });
     }
   }
-  
-  showAlert() {
-    // (click)="showAlert($event)"
+
+  getGeneratedLink () {
+    this.applicantService.generateLink().subscribe({
+      next: (data: any) => {
+        if (data.success) {
+          this.generatedLink['link'] = data['data'].link
+          this.generatedLink['expiration_date'] = data['data'].expiration_date
+        } else {
+          console.log(data.message);
+        }
+      }
+    })
   }
+
+  copyLink() {
+    const linkElement = document.getElementById('copy') as HTMLSpanElement;
+    const linkToCopy = linkElement.innerText;
+    navigator.clipboard.writeText(linkToCopy)
+      .then(() => {
+        // Handle successful copy
+        console.log('Link copied successfully!');
+      })
+      .catch((error) => {
+        // Handle error
+        console.error('Failed to copy link:', error);
+      });
+  }
+  
 }
