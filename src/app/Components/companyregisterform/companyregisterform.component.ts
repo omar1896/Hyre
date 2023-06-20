@@ -12,7 +12,7 @@ export class CompanyregisterformComponent {
   validationForm!:FormGroup;
   errors:any;
   constructor(private fb:FormBuilder,private router:Router,private authservice:AuthService){
-    
+
     this.validationForm  = fb.group({
       name: new FormControl(null,[Validators.required,Validators.nullValidator]),
       subscription:new FormControl(1,[Validators.required]),
@@ -21,7 +21,7 @@ export class CompanyregisterformComponent {
         name: new FormControl(null,[Validators.required,Validators.nullValidator]),
         username : new FormControl (null,[Validators.required , Validators.minLength(3)]) ,
         password: new FormControl(null,[ Validators.required, Validators.minLength(10), Validators.maxLength(60) ]) ,
-        password_confirm : new FormControl(null , [Validators.required , Validators.minLength(10), Validators.maxLength(60) ]) 
+        password_confirm : new FormControl(null , [Validators.required , Validators.minLength(10), Validators.maxLength(60) ])
     }),
   })
 }
@@ -34,7 +34,7 @@ export class CompanyregisterformComponent {
     if (this.validationForm.valid ) {
       this.authservice.register(this.validationForm.value).subscribe({
         next:(res:any)=>{
-          this.router.navigateByUrl("signup")
+          this.router.navigateByUrl("\signin")
         },
         error:(err:any)=>{
           this.errors=err.error.data
