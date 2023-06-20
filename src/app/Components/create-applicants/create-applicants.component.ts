@@ -15,7 +15,7 @@ export class CreateApplicantsComponent implements OnInit {
     positions: []
   };
   token : any ;
-  
+  resume:any;
   constructor(private sendApplicantData : ApplicantService, private getCompanyPositions : CompanyService  ,private route: ActivatedRoute ) {
     this.applicantForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(15), Validators.maxLength(100)]),
@@ -43,8 +43,12 @@ export class CreateApplicantsComponent implements OnInit {
       }
     });
   }
-
+  onFileSelected(event: any) {
+    this.resume = event.target.files[0];
+  }
   submitForm() {
+
+    console.log(this.resume)
     if (this.applicantForm.valid) {
       const formData = new FormData();
       formData.append('name', this.applicantForm.value.name);
@@ -55,12 +59,10 @@ export class CreateApplicantsComponent implements OnInit {
       formData.append('position' , this.applicantForm.value.position);
       formData.append('birth_date' , this.applicantForm.value.birthday);
 
-      const resumeFormControl = this.applicantForm.get('resume');
-      if (resumeFormControl && resumeFormControl.value) {
-        const resumeFile = resumeFormControl.value.files?.[0]; // Access the files property safely
-        
-        if (resumeFile) {
-          formData.append('resume', resumeFile);
+      if (this.resume ) { // Access the files property safely
+        console.log(this.resume)
+        if (this.resume) {
+          formData.append('Resume', this.resume);
         }
       }
       

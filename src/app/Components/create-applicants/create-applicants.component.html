@@ -80,7 +80,7 @@
             </div>      
           <div class="m-2">
             <label for="resume" class="fw-bold">Resume (PDF only):</label>
-            <input type="file" id="resume" name="resume" formControlName="resume" accept=".pdf" class="form-control" required>
+            <input type="file" (change)="onFileSelected($event)" id="resume" name="resume" formControlName="resume" accept=".pdf" class="form-control" required>
             <div class="text-danger" *ngIf="applicantForm.get('resume')?.invalid && (applicantForm.get('resume')?.dirty || applicantForm.get('resume')?.touched)">
               <div *ngIf="applicantForm.get('resume')?.errors?.['required']">Resume is required.</div>
             </div>
