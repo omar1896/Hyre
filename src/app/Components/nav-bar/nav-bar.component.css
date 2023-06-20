@@ -28,3 +28,14 @@ img {
     transition: transform 0.3s ease; /* Specifies a transition duration of 0.3 seconds with an ease timing function */
     object-fit: fill;
 }
+
+.a-hover:hover{
+    background-color: #B0B1AB;
+    cursor: pointer;
+}
+  
+.b-hover:hover{
+border-bottom: 2px #000000 solid;
+cursor: pointer;
+
+}

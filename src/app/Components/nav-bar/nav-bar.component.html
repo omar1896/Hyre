@@ -10,8 +10,58 @@
           <a class="fs-4 nav-link" routerLink="#">Demo</a>
           <a class="fs-4 nav-link" routerLink="about">About</a>
           <div class="fs-4 nav-links d-flex">
-            <a class="fs-4 nav-link" routerLink="signup" *ngIf="!isLogedIn">Signup</a>
-            <a class="fs-4 nav-link" routerLink="" *ngIf="isLogedIn" (click)="logout()">Logout</a>
+            <!-- <a class="fs-4 nav-link" routerLink="signup" *ngIf="!isLogedIn">Signup</a> -->
+            <!-- <a class="fs-4 nav-link" routerLink="" *ngIf="isLogedIn" (click)="logout()">Logout</a> -->
+            <ng-container *ngIf="isLogedIn">
+              <span dropdown container="body">
+                <span dropdownToggle class="b-hover">Menu</span>
+                <!-- <img
+                  class="btn rounded rounded-circle p-0 border img-hover"
+                  
+                  style="width: 40px"
+                  id="basic-link"
+                  dropdownToggle
+                  (click)="(false)"
+                  aria-controls="basic-link-dropdown"
+                /> -->
+                <ul
+                  id="basic-link-dropdown"
+                  *dropdownMenu
+                  class="dropdown-menu mt-4 h-auto"
+                  role="menu"
+                  aria-labelledby="basic-link"
+                  style="width: 170px"
+                >
+                  <li role="menuitem">
+                    <a
+                      class="fw-bold dropdown-item py-2 rounded-0 border-2 b-hover"
+                      routerLink="/dashboard"
+                      >DashBoard</a
+                    >
+                  </li>
+                  <li role="menuitem">
+                    <a
+                      class="fw-bold dropdown-item py-2 rounded-0 border-2 b-hover"
+                      
+                      (click)="logout()"
+                      >Log Out</a
+                    >
+                  </li>
+                </ul>
+              </span>
+            </ng-container>
+            <ng-container *ngIf="!isLogedIn">
+              <a
+                class="btn fw-bold rounded-0 border-2 b-hover"
+                routerLink="/signup"
+                >Sign Up</a
+              >
+              <a
+                class="btn fw-bold rounded-0 border-2 b-hover"
+                routerLink="/signin"
+                >Log In</a
+              >
+            </ng-container>
           </div>
         </div>
       </div>
