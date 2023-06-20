@@ -17,13 +17,14 @@ export class DefaultLayoutComponent implements OnInit{
         console.log(res)
         
         this.user=res.data
+
         this.user.image=this.user.image ||"/assets/images/default-log.png"
       },
       error:(err:any)=>{
-        
+
       }
     })
-    
+
   }
 
   public navItems = navItems;

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PositionServiceService } from 'src/app/Services/position-service.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-position-form',
@@ -8,8 +10,9 @@ import { PositionServiceService } from 'src/app/Services/position-service.servic
   styleUrls: ['./position-form.component.css']
 })
 export class PositionFormComponent {
+  errors:any;
 
-  constructor(private myservice:PositionServiceService){
+  constructor(private myservice:PositionServiceService,private router:Router){
 
   }
 
@@ -55,7 +58,14 @@ export class PositionFormComponent {
       console.log("in add valid")
       let newPostion={...this.validationForm.value}; //& company is static
       console.log( newPostion);
-       this.myservice.AddNewPosition(newPostion).subscribe();
+       this.myservice.AddNewPosition(newPostion).subscribe({
+        next:(res:any)=>{
+          this.router.navigateByUrl("/dashboard/positions")
+        },
+        error:(err:any)=>{
+          this.errors=err.error.data
+        }
+      });
 
     }
   }

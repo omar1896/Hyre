@@ -12,14 +12,18 @@ export class ApplicantService {
   constructor(private http: HttpClient) {}
 
   sendData(formData: FormData , token : any) {
-    return this.http.post(`${this.Base_URL}/tenant/applicants/create/${token}`, formData , {observe:'response'});
+    return this.http.post(`${this.Base_URL}tenant/applicants/create/${token}`, formData , {observe:'response'});
   }
 
   getData() {
-    return this.http.get(`${this.Base_URL}/tenant/positions/`);
+    return this.http.get(`${this.Base_URL}tenant/applicants/`);
+  }
+
+  getDataByPosition(position_id : any) {
+    return this.http.get(`${this.Base_URL}tenant/applicants/position/${position_id}`);
   }
 
   deleteData(applicant_id : any){
-    return this.http.delete(`${this.Base_URL}/tenant/applicants/${applicant_id}/destroy/`);
+    return this.http.delete(`${this.Base_URL}tenant/applicants/${applicant_id}/destroy/`);
   }
 }
