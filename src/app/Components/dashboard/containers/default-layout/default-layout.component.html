@@ -11,6 +11,7 @@
   <!-- Company data -->
   <div>
     <c-sidebar-brand
+    *ngIf="user"
     class="p-2"
     style="background-color: transparent;"
     [brandFull]="{
@@ -27,13 +28,12 @@
       style: 'border-radius: 100%;',
       alt: 'Hyre'
     }"
-    [routerLink]="'/users/' + user._id"
+    routerLink="/dashboard"
   ></c-sidebar-brand>
 
-  <span class="mt-4"  style="display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 90%; font-weight: bolder;">
+  <span class="mt-4"  *ngIf="user" style="display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 90%; font-weight: bolder;">
     <ul style="list-style: none;">
-      <li>{{ user.company }}</li>
-      <li class="mt-2">{{ user.name }}</li>
+      <li class="mt-2"> welcome {{ user.name }}</li>
     </ul>
   </span>
   </div>
