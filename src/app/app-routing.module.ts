@@ -22,6 +22,7 @@ import { SuccessPaymentComponent } from './Components/success-payment/success-pa
 import { AddHrUserComponent } from './Components/dashboard/views/add-hr-user/add-hr-user.component';
 import { AuthGuard } from './Guards/auth.guard';
 import { LoggedinGuard } from './Guards/loggedin.guard';
+import { ProfileComponent } from './Components/profile/profile.component';
 
 
 
@@ -45,6 +46,7 @@ const routes: Routes = [
     { path: 'candidates/:id', component: InterviewFormComponent },
     { path: 'subscriptions', component: ChangeSubscriptionComponent },
     { path: 'user/create', component: AddHrUserComponent },
+    { path: 'profile', component: ProfileComponent },
 
     ],
   },
