@@ -77,6 +77,7 @@ import { DashboardUsersComponent } from './Components/dashboard-users/dashboard-
 import { ChangeSubscriptionComponent } from './Components/change-subscription/change-subscription.component';
 import { SuccessPaymentComponent } from './Components/success-payment/success-payment.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ProfileComponent } from './Components/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -116,6 +117,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     AddHrUserComponent,
     ModalComponentComponent,
     DashboardUsersComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
