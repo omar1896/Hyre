@@ -16,7 +16,7 @@ export class CompanyService {
   }
 
   getCompanyInfo(){
-    return this.http.get(`${this.Base_URL}/company`);
+    return this.http.get(`${this.Base_URL}company`);
   }
   
   
