@@ -46,8 +46,6 @@ export class DashboardPositionsComponent implements OnInit {
 
 
   showAlert(e: any) {
-
-
     this.myService.DeletePosition(e.target.id).subscribe({
       next: (res: any) => {
         this.getAllPositions()
