@@ -12,13 +12,7 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cilPeople' },
   },
   {
-    name: 'Inbox',
-    url: './inbox',
-    iconComponent: { name: 'cilInbox' },
-  },
-
-  {
-    name: 'Positions / Pools',
+    name: 'Positions',
     url: './positions',
     iconComponent: { name: 'cilShareBoxed' },
   },
@@ -33,7 +27,7 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cil-user' },
   },
   {
-    name: 'My-Team',
+    name: 'My Team',
     url: './my-team',
     iconComponent: { name: 'cil-user' },
   }

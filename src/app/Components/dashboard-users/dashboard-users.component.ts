@@ -1,50 +1,69 @@
 import { Component, OnInit } from '@angular/core';
-import{AuthService} from 'src/app/Services/auth.service'
+import { AuthService } from 'src/app/Services/auth.service';
+import { DialogComponent } from '../dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dashboard-users',
   templateUrl: './dashboard-users.component.html',
-  styleUrls: ['./dashboard-users.component.css']
+  styleUrls: ['./dashboard-users.component.css'],
 })
 export class DashboardUsersComponent implements OnInit {
-users:any
+  users: any;
 
-constructor(private myClient:AuthService){
+  constructor(private myClient: AuthService,
+    private dialog: MatDialog
+    ) {}
 
+  ngOnInit(): void {
+    this.getAllUsers();
+  }
 
-}
+  deleteUser(event: any) {
+    this.openDialog(event)
+    // this.myClient.deleteUser(event.target.id).subscribe({
+    //   next: (res: any) => {
+    //     this.getAllUsers();
+    //   },
+    //   error: (err: any) => {
+    //     console.log(err);
+    //   },
+    // });
+  }
 
-ngOnInit(): void {
-   this.getAllUsers()
-}
+  openDialog(e: any) {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: {
+        title: 'Delete',
+        body: 'Are You Sure to Delete ?',
+        cancelButton: 'Cancel',
+        nextButton: 'Confirm',
+      },
+    });
 
-deleteUser(event:any){
-  console.log(event)
-  console.log("delete")
-this.myClient.deleteUser(event.target.id).subscribe({next:(res:any)=>{
-this.getAllUsers()
-  console.log(res)
-
-},
-error:(err:any)=>{
-  console.log(err)
-}})
-}
-
-
-getAllUsers=()=>{
-   this.myClient.getAllUsers().subscribe({
-    next: (data: any) => {
-      if (data.success) {
-        this.users = data["data"];
-        console.log(this.users)
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === true) {
+        this.myClient.deleteUser(e.target.id).subscribe({
+          next: (res: any) => {
+            this.getAllUsers();
+          },
+          error: (err: any) => {
+            console.log(err);
+          },
+        });
       }
-      else {
-        console.log(data.message);
-      }
-    }
-  });
-}
-}
+    });
+  }
 
-
+  getAllUsers = () => {
+    this.myClient.getAllUsers().subscribe({
+      next: (data: any) => {
+        if (data.success) {
+          this.users = data['data'];
+        } else {
+          console.log(data.message);
+        }
+      },
+    });
+  };
+}

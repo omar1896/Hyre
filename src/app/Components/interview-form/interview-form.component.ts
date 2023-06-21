@@ -36,10 +36,9 @@ export class InterviewFormComponent {
     if(this.form.valid){
       const data = this.form.value
       const date = this.parseTimeAndConcat(data.date, data.time)
-      const interview = {interviewer:2 , applicant:this.applicantId , position:this.positionName, date}
+      const interview = {applicant:this.applicantId , position:+this.positionName, date}
       this.InterviewService.createInterview(interview).subscribe({
         next: (response: any) =>{
-          console.log(response)
         }
       })
     }

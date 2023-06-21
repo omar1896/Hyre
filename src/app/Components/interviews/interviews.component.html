@@ -1,3 +1,6 @@
+<a class="btn btn-color mb-4" [href]="meetingUrl" target="_blank"
+  ><i class="bi bi-plus-lg me-1"></i>Join Room</a
+>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -5,7 +8,8 @@
       <th scope="col">Interviewer</th>
       <th scope="col">Applicant</th>
       <th scope="col">Position</th>
-      <th scope="col">date</th>
+      <th scope="col">Date</th>
+      <th scope="col">Room</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -15,7 +19,8 @@
       <td>{{ interview.interviewer }}</td>
       <td>{{ interview.applicant }}</td>
       <td>{{ interview.position }}</td>
-      <td>{{ interview.date }}</td>
+      <td>{{ interview.date | date : "short" }}</td>
+      <td>{{ interview.room }}</td>
       <td>
         <div class="">
           <a class="btn btn-danger" (click)="deleteInterview(interview.id)"

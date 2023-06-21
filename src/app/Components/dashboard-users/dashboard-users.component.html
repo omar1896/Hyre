@@ -1,4 +1,7 @@
 <div class="container">
+  <a routerLink="/dashboard/user/create" class="m-4 btn btn-color"
+    ><i class="bi bi-plus-lg me-1"></i>Create HR Member</a
+  >
   <div class="row">
     <table [striped]="true" cTable>
       <thead>
@@ -10,17 +13,17 @@
       </thead>
       <tbody>
         <ng-container *ngIf="users">
-          <tr *ngFor="let p of users  ">
-
+          <tr *ngFor="let p of users">
             <td>{{ p.name }}</td>
             <td>{{ p.email }}</td>
             <td>
               <button
                 class="btn btn-outline-danger m-1"
-                id="{{p.id}}"
-              (click)="deleteUser($event)"
-                >Delete</button
+                id="{{ p.id }}"
+                (click)="deleteUser($event)"
               >
+                Delete
+              </button>
             </td>
           </tr>
         </ng-container>
