@@ -1,21 +1,10 @@
-
-<div class="text-center">
-<!--
-  <app-modal-component
-
-  [message]="confirmationMessage"
-  (confirm)="onDeleteConfirmed()"
-  (cancel)="onModalCanceled()"
-  ></app-modal-component> -->
-
-
-
+<div>
   <a
     routerLinkActive="active"
     routerLink="/dashboard/positions/create"
-    class="m-4 btn btn-success"
-    ><i class="bi bi-cloud-plus"></i
-  ></a>
+    class="m-4 btn btn-color"
+    ><i class="bi bi-plus-lg me-1"></i>Create Position</a
+  >
 </div>
 
 <table [striped]="true" cTable>
@@ -45,7 +34,7 @@
           >
           <a
             class="btn btn-outline-danger m-1"
-            (click)="showAlert($event)"
+            (click)="deletePos($event)"
             id="{{ p.id }}"
             >Delete</a
           >

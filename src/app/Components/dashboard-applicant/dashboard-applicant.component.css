@@ -10,7 +10,7 @@
     border-radius: 5px;
     background-color: #ffff;
   }
-  
+
   .value {
     font-size: 14px;
     font-weight: bold;
@@ -20,7 +20,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  
+
   .copy-button {
     background-color: black;
     color: #fff;
@@ -29,4 +29,13 @@
     padding: 5px 10px;
     cursor: pointer;
   }
-  
+  .btn-color{
+    background-color: #4CABCD;
+    color:#FFFF;
+    transition: all .3s ;
+    cursor: pointer;
+  }
+
+  .btn-color:hover{
+    transform: scale(1.05);
+  }

@@ -22,8 +22,18 @@ export class CompanyService {
     return this.http.put(`${this.Base_URL}tenant/image`,data);
 
   }
+
+  changeSubscription(data:any){
+    return this.http.patch(`${this.Base_URL}change/subscription`,data);
+
+  }
+
+
+}
+
   getCompanyImage(company_token?: any){
     return this.http.get(`${this.Base_URL}company/image/${company_token}`);
   }
   
 }
+

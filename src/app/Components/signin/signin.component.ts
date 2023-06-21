@@ -14,7 +14,7 @@ export class SigninComponent {
   }
 
   submit(event:any){
-    console.log(event)
+    
     let data={"email":event.email,"password":event.password}
     this.authService.signin(data).subscribe({
       next:(res:any)=>{

@@ -7,6 +7,16 @@
   background-position: 20% 100%;
   min-height: 100vh;
 }
+
+table thead tr th{
+  text-align: center;
+}
+
+table tbody tr td{
+  text-align: center;
+}
+
+
 /* html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 

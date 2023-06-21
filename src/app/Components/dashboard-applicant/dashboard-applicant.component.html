@@ -1,46 +1,70 @@
 <div>
-    <div class="text-center d-flex justify-content-around">
-        <a routerLinkActive="active" (click)="getGeneratedLink()" class="m-4 btn btn-success">Generate Applicants link</a>
-        <div class="box mt-3" style="width: 30%;">
-            <span class="value" id="copy">{{generatedLink.link}}</span>
-            <span class="value">{{generatedLink.expiration_date}}</span>
-            <button class="copy-button" (click)="copyLink()">Copy</button>
-        </div>          
-        <div class="m-2">
-            <label for="position" class="fw-bold">Filter by positions:</label>
-            <select id="position" name="position"  class="form-control" style="width: 150%;" [(ngModel)]="selectedPosition" (change)="onPositionChange()">
-              <option [ngValue]="null" selected>All positions</option>
-              <option *ngFor="let position of positions" [ngValue]="position.id">{{ position.name }}</option>
-            </select>
-        </div>
+  <div class="text-center d-flex justify-content-between w-100">
+    <a
+      routerLinkActive="active"
+      (click)="getGeneratedLink()"
+      class="m-4 btn btn-color"
+      >Generate Form link</a
+    >
+    <div class="box mt-3" style="width: 30%">
+      <span class="value" id="copy">{{ generatedLink.link }}</span>
+      <span class="value">{{ generatedLink.expiration_date }}</span>
+      <button class="copy-button" (click)="copyLink()">Copy</button>
     </div>
+    <div class="m-2">
+      <label for="position" class="fw-bold">Filter by positions:</label>
+      <select
+        id="position"
+        name="position"
+        class="form-control"
+        [(ngModel)]="selectedPosition"
+        (change)="onPositionChange()"
+      >
+        <option [ngValue]="null" selected>All positions</option>
+        <option *ngFor="let position of positions" [ngValue]="position.id">
+          {{ position.name }}
+        </option>
+      </select>
+    </div>
+  </div>
 
-    <table [striped]="true" cTable>
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Education level</th>
-                <th scope="col">Phone</th>
-                <th scope="col">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <ng-container *ngIf="applicants">
-                <tr *ngFor="let applicant of applicants">
-                    <th scope="row">{{ applicant.id }}</th>
-                    <td>{{ applicant.name }}</td>
-                    <td>{{ applicant.email }}</td>
-                    <td>{{ applicant.edu_degree }}</td>
-                    <td>{{ applicant.mobile }}</td>
-                    <td>
-                        <a class="btn btn-outline-warning m-1" href="{{ applicant.Resume }}" target="_blank">CV</a>
-                        <a class="btn btn-outline-success m-1" (click)="updateStatus(applicant.id)">Canadite</a>
-                        <a class="btn btn-outline-danger m-1" (click)="delete(applicant.id)">Delete</a>
-                    </td>
-                </tr>
-            </ng-container>
-        </tbody>
-    </table>
+  <table [striped]="true" cTable>
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Education level</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="applicants">
+        <tr *ngFor="let applicant of applicants">
+          <th scope="row">{{ applicant.id }}</th>
+          <td>{{ applicant.name }}</td>
+          <td>{{ applicant.email }}</td>
+          <td>{{ applicant.edu_degree }}</td>
+          <td>{{ applicant.mobile }}</td>
+          <td>
+            <a
+              class="btn btn-outline-warning m-1"
+              href="{{ applicant.Resume }}"
+              target="_blank"
+              >CV</a
+            >
+            <a
+              class="btn btn-outline-success m-1"
+              (click)="updateStatus(applicant.id)"
+              >Candidate</a
+            >
+            <a class="btn btn-outline-danger m-1" (click)="delete(applicant.id)"
+              >Delete</a
+            >
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
 </div>

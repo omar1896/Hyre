@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CandidateService } from '../../Services/candidate.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { DialogComponent } from '../dialog/dialog.component';
+
 
 @Component({
   selector: 'app-candidate',
@@ -26,11 +28,7 @@ export class CandidateComponent implements OnInit {
   }
 
   deleteCandidate(id: any) {
-    this.candidateService.deleteCandidate(id).subscribe({
-      next: (response: any) => {
-        this.candidates = response.data;
-      },
-    });
+    this.openDialog(id)
   }
 
   scheduleInterview(id: any, position: string) {
@@ -39,31 +37,26 @@ export class CandidateComponent implements OnInit {
     });
   }
 
-  // openDialog() {
-  //   const dialogRef = this.dialog.open(DialogComponent, {
-  //     data: {
-  //       title: 'Hello world',
-  //       body: '<p>mohamed yossef</p>',
-  //       cancelButton: 'Cancel',
-  //       nextButton: 'Next'
-  //     }
-  //   });
+  openDialog(id: any) {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: {
+        title: 'Delete',
+        body: 'Are You Sure to Delete ?',
+        cancelButton: 'Cancel',
+        nextButton: 'Confirm'
+      },
+    });
 
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     if (result === true) {
-  //       const nextDialogRef = this.dialog.open(DialogComponent, {
-  //         data: {
-  //           title: 'Second dialog',
-  //           body: '',
-  //           cancelButton: 'Cancel',
-  //           nextButton: 'Next'
-  //         }
-  //       });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === true) {
+        this.candidateService.deleteCandidate(id).subscribe({
+          next: (response: any) => {
+            this.candidates = response.data;
+            },
+        });
+      }
 
-  //       nextDialogRef.afterClosed().subscribe(result => {
-  //         console.log(`Second dialog result: ${result}`);
-  //       });
-  //     }
-  //   });
-  // }
+    });
+  };
 }
+

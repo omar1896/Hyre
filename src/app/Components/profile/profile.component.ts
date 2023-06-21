@@ -3,6 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
 import { CompanyService } from 'src/app/Services/company.service';
+import { DialogComponent } from '../dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-profile',
@@ -17,7 +19,9 @@ export class ProfileComponent {
   infoForm:FormGroup;
   passwordForm:FormGroup;
   errors:any;
-  constructor(private companyService:CompanyService,private authService:AuthService,private router:Router){
+  constructor(private companyService:CompanyService,private authService:AuthService,private router:Router,
+    private dialog: MatDialog
+    ){
     this.imageForm = new FormGroup({
       profileImage: new FormControl(null),
     });
@@ -33,7 +37,7 @@ export class ProfileComponent {
   ngOnInit(): void {
     this.authService.getUser().subscribe({
       next:(res:any)=>{
-        console.log(res)
+
         this.user=res.data
         this.isAdmin=this.user?.groups[0]?.id==1
         this.infoForm.patchValue(this.user)
@@ -43,7 +47,7 @@ export class ProfileComponent {
     })
     this.companyService.getCompanyInfo().subscribe({
       next:(res:any)=>{
-        console.log(res)
+
         this.company=res.data
         this.company.image=this.company.image || "/assets/images/default-logo.jpeg"
       },
@@ -82,7 +86,7 @@ export class ProfileComponent {
     if(this.infoForm.valid){
       this.authService.updateUser(this.infoForm.value).subscribe({
         next:(res:any)=>{
-          console.log(res)
+
           this.user=res.data
           this.isAdmin=this.user?.groups[0]?.id==1
         },
@@ -127,16 +131,45 @@ export class ProfileComponent {
         })
     }
   }
-  deleteUser(){
-    this.authService.deleteUser(this.user.id).subscribe({
-      next:(res:any)=>{
-        console.log(res)
-        this.authService.logout()
-        this.router.navigateByUrl("home")
+
+  openDialog(id: any) {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: {
+        title: 'Delete',
+        body: 'Are You Sure to Delete ?',
+        cancelButton: 'Cancel',
+        nextButton: 'Confirm'
       },
-      error:(err:any)=>{
-        console.log()
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === true) {
+        this.authService.deleteUser(id).subscribe({
+          next:(res:any)=>{
+
+            this.authService.logout()
+            this.router.navigateByUrl("home")
+          },
+          error:(err:any)=>{
+            console.log()
+          }
+        })
       }
-    })
+
+    });
+  };
+
+  deleteUser(){
+    this.openDialog(this.user.id)
+    // this.authService.deleteUser(this.user.id).subscribe({
+    //   next:(res:any)=>{
+
+    //     this.authService.logout()
+    //     this.router.navigateByUrl("home")
+    //   },
+    //   error:(err:any)=>{
+    //     console.log()
+    //   }
+    // })
   }
 }

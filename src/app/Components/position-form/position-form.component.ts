@@ -52,7 +52,7 @@ export class PositionFormComponent {
 
 
   Add(name:any,vacancies:any,description:any,end_date:any){
-    console.log( this.validationForm.value);
+    
 
     if(this.validationForm.valid){
       console.log("in add valid")

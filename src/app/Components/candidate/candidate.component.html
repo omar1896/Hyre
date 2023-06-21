@@ -16,20 +16,20 @@
         <td>{{ candidate.email }}</td>
         <td>{{ candidate.position }}</td>
         <td>
-          <div class="">
-            <ng-container *ngIf="candidate.hasInterview; else cancelInterview">
-              <!-- this button will open modal to create interview -->
-              <a class="btn btn-success">Cancel</a>
+          <div>
+            <ng-container *ngIf="candidate.hasInterview; else cancelInterviews">
+              <span class="btn btn-outline-success me-2">Reserved</span>
             </ng-container>
-            <ng-template #cancelInterview>
-              <!-- this button will open modal to cancel interview -->
+            <ng-template #cancelInterviews>
               <a
-                class="btn btn-primary"
+                class="btn btn-outline-primary"
                 (click)="scheduleInterview(candidate.id, candidate.position)"
                 >Schedule</a
               >
             </ng-template>
-            <a class="btn btn-danger" (click)="deleteCandidate(candidate.id)"
+            <a
+              class="btn btn-outline-danger"
+              (click)="deleteCandidate(candidate.id)"
               >Delete</a
             >
           </div>

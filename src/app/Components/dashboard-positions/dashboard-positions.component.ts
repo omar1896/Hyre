@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { ModalComponentComponent } from '../modal-component/modal-component.component'
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { PositionServiceService } from 'src/app/Services/position-service.service';
+import { DialogComponent } from '../dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dashboard-positions',
@@ -12,10 +14,8 @@ import { PositionServiceService } from 'src/app/Services/position-service.servic
 export class DashboardPositionsComponent implements OnInit {
   id = 0;
   positions: any;
-  // showModal = true;
-  // confirmationMessage = 'Are you sure you want to delete this item?';
   bsModalRef?: BsModalRef;
-  constructor(public myService: PositionServiceService, public router: Router) {
+  constructor(public myService: PositionServiceService, public router: Router , private dialog: MatDialog) {
 
   }
   ngOnInit(): void {
@@ -24,39 +24,35 @@ export class DashboardPositionsComponent implements OnInit {
 
 
 
-
-
-
-  // onDeleteConfirmed(): void {
-  //   // Perform the delete action
-  //   // this.showModal = false;
-  //   this.myService.DeletePosition(this.id).subscribe();
-  // }
-
-  // onModalCanceled(): void {
-  //   this.showModal = false;
-  // }
-
-  // showAlert(e:any)
-  // {
-  //   this.showModal = true;
-  //   this.id=e.target.id
-
-  // }
-
-
-  showAlert(e: any) {
-    this.myService.DeletePosition(e.target.id).subscribe({
-      next: (res: any) => {
-        this.getAllPositions()
-        this.router.navigateByUrl("/dashboard/positions")
-      },
-      error: (err: any) => {
-        console.log(err)
-      }
-    })
-
+  deletePos(e: any){
+    this.openDialog(e)
   }
+  openDialog(e: any) {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: {
+        title: 'Delete',
+        body: 'Are You Sure to Delete ?',
+        cancelButton: 'Cancel',
+        nextButton: 'Confirm'
+
+      },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === true) {
+        this.myService.DeletePosition(e.target.id).subscribe({
+          next: (res: any) => {
+            this.getAllPositions()
+            this.router.navigateByUrl("/dashboard/positions")
+          },
+          error: (err: any) => {
+            console.log(err)
+          }
+        })
+      }
+
+    });
+  };
 
   getAllPositions() {
     this.myService.GetAllPositions().subscribe(
@@ -71,33 +67,3 @@ export class DashboardPositionsComponent implements OnInit {
   }
 }
 
-// getAllUsers=()=>{
-//   this.myClient.getAllUsers().subscribe({
-//    next: (data: any) => {
-//      if (data.success) {
-//        this.users = data["data"];
-//        console.log(this.users)
-//      }
-//      else {
-//        console.log(data.message);
-//      }
-//    }
-//  });
-// }
-// }
-
-
-
-// showAlert(e:any)
-// {
-
-//   let id=e.target.id
-//  let check= confirm("are you sure that you want to delete this student?");
-//  if(check)
-//  {
-//   this.myService.DeletePosition(id).subscribe();
-//   //& to reload the component to see changes
-//     this.router.navigate(['/dashboard/positions']);
-
-//  }
-// }

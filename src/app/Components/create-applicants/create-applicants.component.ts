@@ -37,9 +37,6 @@ export class CreateApplicantsComponent implements OnInit {
         if(data.success){
           this.company["positions"] = data['data']; // array
         }
-        else{
-          console.log(data.message);
-        }
       }
     });
     this.getCompanyData();
@@ -49,7 +46,6 @@ export class CreateApplicantsComponent implements OnInit {
   }
   submitForm() {
 
-    console.log(this.resume)
     if (this.applicantForm.valid) {
       const formData = new FormData();
       formData.append('name', this.applicantForm.value.name);
@@ -66,7 +62,7 @@ export class CreateApplicantsComponent implements OnInit {
           formData.append('Resume', this.resume);
         }
       }
-      
+
       this.sendApplicantData.sendData(formData, this.token).subscribe(
         {
           next:(data:any) => {

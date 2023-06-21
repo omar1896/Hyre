@@ -24,21 +24,14 @@ export class AppComponent {
   ) {
     iconSetService.icons = { ...iconSubset };
 
-    // iconSet singleton
   }
 
   ngOnInit(): void {
-    // this.router.events.subscribe((evt) => {
-    //   if (!(evt instanceof NavigationEnd)) {
-    //     return;
-    //   }
-    // });
 
     this.toastService.toastEvent.subscribe((data:any) => {
         data=JSON.parse(data)
         this.toastMessage = data.message;
         this.toastSuccess=data.success;
-        // console.log(this.toastMessage)
         this.show()
       });
 
@@ -62,14 +55,5 @@ export class AppComponent {
         nextButton:"next"
       }
       });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
     }
-
-    onClick(){
-      console.log('emitted succefully')
-    }
-
 }

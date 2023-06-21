@@ -22,9 +22,9 @@ export class PositionUpdateComponent {
     this.myService.GetPositionByID(this.ID).subscribe(
       {
         next:(data)=>{
-          console.log(data);
+
           this.position = data;
-          console.log(this.position['data']['position']['name']);
+
           this.validationFormUpdate = new FormGroup({
             name:new FormControl(this.position['data']['position']["name"],[Validators.minLength(2),Validators.required]),
             vacancies:new FormControl(this.position['data']['position']["vacancies"],[Validators.min(1),Validators.max(100),Validators.required]),
@@ -57,7 +57,7 @@ export class PositionUpdateComponent {
       if(this.validationFormUpdate.valid){
 
 
-        console.log(this.validationFormUpdate.value);
+        
 
         this.myService.UpdatePosition(this.ID,this.validationFormUpdate.value).subscribe({
           next:(res:any)=>{

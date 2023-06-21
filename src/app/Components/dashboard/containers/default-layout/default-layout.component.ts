@@ -5,6 +5,7 @@ import { CompanyService } from 'src/app/Services/company.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './default-layout.component.html',
+
 })
 export class DefaultLayoutComponent implements OnInit{
   user:any ;
@@ -14,8 +15,7 @@ export class DefaultLayoutComponent implements OnInit{
   ngOnInit(): void {
     this.companyService.getCompanyInfo().subscribe({
       next:(res:any)=>{
-        console.log(res)
-        
+
         this.user=res.data
 
         this.user.image=this.user.image ||"/assets/images/default-log.png"

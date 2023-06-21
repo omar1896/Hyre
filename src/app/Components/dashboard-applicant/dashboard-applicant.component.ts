@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApplicantService } from 'src/app/Services/applicant.service';
 import { PositionServiceService } from 'src/app/Services/position-service.service';
+import { DialogComponent } from '../dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-dashboard-applicant',
   templateUrl: './dashboard-applicant.component.html',
@@ -15,22 +17,26 @@ export class DashboardApplicantComponent implements OnInit {
     link : 'http://',
     expiration_date : '**/**/****'
   }
+
+  constructor(private applicantService: ApplicantService,
+  private getPositions: PositionServiceService,
+  private dialog: MatDialog
+  ) { }
+
   company : any = null;
-  constructor(private applicantService: ApplicantService, private getPositions: PositionServiceService) { }
+
   ngOnInit(): void {
     this.fetchApplicants();
     this.fetchPositions();
   }
-  
+
   fetchPositions = () => {
     this.getPositions.GetAllPositions().subscribe({
       next: (data: any) => {
         if (data.success) {
           this.positions = data["data"];
         }
-        else {
-          console.log(data.message);
-        }
+
       }
     });
   }
@@ -41,21 +47,38 @@ export class DashboardApplicantComponent implements OnInit {
         if (data.success) {
           this.applicants = data["data"];
         }
-        else {
-          console.log(data.message);
-        }
+
       }
     });
   }
 
-  delete(applicant_id: any) {
-    this.applicantService.deleteData(applicant_id).subscribe({
-      next: (data: any) => {
-        this.fetchApplicants();
-      }
-    });
+
+  delete(id: any) {
+    this.openDialog(id)
+
   }
 
+  openDialog(id: any) {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: {
+        title: 'Delete',
+        body: 'Are You Sure to Delete ?',
+        cancelButton: 'Cancel',
+        nextButton: 'Confirm'
+      },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === true) {
+        this.applicantService.deleteData(id).subscribe({
+          next: (data: any) => {
+              this.fetchApplicants();
+          }
+        });
+      }
+
+    });
+  };
   onPositionChange() {
     if (this.selectedPosition === null) {
       this.fetchApplicants();
@@ -63,10 +86,7 @@ export class DashboardApplicantComponent implements OnInit {
       this.applicantService.getDataByPosition(this.selectedPosition).subscribe({
         next: (data: any) => {
           if (data.success) {
-            console.log(data);
             this.applicants = data['data'];
-          } else {
-            console.log(data.message);
           }
         }
       });
@@ -79,8 +99,6 @@ export class DashboardApplicantComponent implements OnInit {
         if (data.success) {
           this.generatedLink['link'] = data['data'].link
           this.generatedLink['expiration_date'] = data['data'].expiration_date
-        } else {
-          console.log(data.message);
         }
       }
     })
@@ -91,8 +109,6 @@ export class DashboardApplicantComponent implements OnInit {
       next: (data: any) => {
         if (data.success) {
           this.fetchApplicants();
-        } else {
-          console.log(data.message);
         }
       }
     })
@@ -111,5 +127,5 @@ export class DashboardApplicantComponent implements OnInit {
         console.error('Failed to copy link:', error);
       });
   }
-  
+
 }
