@@ -63,7 +63,7 @@
             <div class="text-danger" *ngIf="applicantForm.get('position')?.invalid && (applicantForm.get('position')?.dirty || applicantForm.get('position')?.touched)">
               <div *ngIf="applicantForm.get('position')?.errors?.['required']">Position selection is required.</div>
             </div>
-          </div>                              
+          </div>
           <div class="m-2">
               <label for="edu_degree" class="fw-bold">Education Degree:</label>
               <select id="edu_degree" name="edu_degree" formControlName="edu_degree" class="form-control">
@@ -77,7 +77,7 @@
                 <div *ngIf="applicantForm.get('edu_degree')?.errors?.['required']">Education Degree is required.</div>
                 <div *ngIf="applicantForm.get('edu_degree')?.errors?.['maxlength']">Education Degree should not exceed 128 characters.</div>
               </div>
-            </div>      
+            </div>
           <div class="m-2">
             <label for="resume" class="fw-bold">Resume (PDF only):</label>
             <input type="file" (change)="onFileSelected($event)" id="resume" name="resume" formControlName="resume" accept=".pdf" class="form-control" required>
@@ -89,4 +89,3 @@
     <!--[disabled]="!applicantForm.valid"-->
     <button type="submit" class="btn btn-success mt-2 mb-5" style="width: 32%; border-radius: 0;" >Submit</button>
 </form>
-  

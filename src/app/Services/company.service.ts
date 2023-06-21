@@ -28,12 +28,11 @@ export class CompanyService {
 
   }
 
-
-}
-
   getCompanyImage(company_token?: any){
     return this.http.get(`${this.Base_URL}company/image/${company_token}`);
   }
-  
 }
+
+
+
 
