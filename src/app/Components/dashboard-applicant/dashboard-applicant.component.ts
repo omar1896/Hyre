@@ -17,6 +17,7 @@ export class DashboardApplicantComponent implements OnInit {
     link : 'http://',
     expiration_date : '**/**/****'
   }
+  searchTerm: string = '';
 
   constructor(private applicantService: ApplicantService,
   private getPositions: PositionServiceService,
@@ -127,5 +128,13 @@ export class DashboardApplicantComponent implements OnInit {
         console.error('Failed to copy link:', error);
       });
   }
+
+  get filteredApplicants() {
+    return this.applicants.filter((applicant: { name: string; }) => {
+      const name = applicant.name.toLowerCase();
+      return name.includes(this.searchTerm.toLowerCase());
+    });
+  }
+  
 
 }
