@@ -17,10 +17,14 @@ export class DashboardApplicantComponent implements OnInit {
     link : 'http://',
     expiration_date : '**/**/****'
   }
+
   constructor(private applicantService: ApplicantService,
   private getPositions: PositionServiceService,
   private dialog: MatDialog
   ) { }
+
+  company : any = null;
+
   ngOnInit(): void {
     this.fetchApplicants();
     this.fetchPositions();
@@ -48,8 +52,10 @@ export class DashboardApplicantComponent implements OnInit {
     });
   }
 
+
   delete(id: any) {
     this.openDialog(id)
+
   }
 
   openDialog(id: any) {

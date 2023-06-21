@@ -23,6 +23,7 @@ export class DashboardPositionsComponent implements OnInit {
   }
 
 
+
   deletePos(e: any){
     this.openDialog(e)
   }
@@ -33,6 +34,7 @@ export class DashboardPositionsComponent implements OnInit {
         body: 'Are You Sure to Delete ?',
         cancelButton: 'Cancel',
         nextButton: 'Confirm'
+
       },
     });
 
