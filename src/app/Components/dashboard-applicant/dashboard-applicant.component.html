@@ -35,7 +35,7 @@
                     <td>{{ applicant.edu_degree }}</td>
                     <td>{{ applicant.mobile }}</td>
                     <td>
-                        <a class="btn btn-outline-warning m-1">View</a>
+                        <a class="btn btn-outline-warning m-1" href="{{ applicant.Resume }}" target="_blank">CV</a>
                         <a class="btn btn-outline-success m-1" (click)="updateStatus(applicant.id)">Canadite</a>
                         <a class="btn btn-outline-danger m-1" (click)="delete(applicant.id)">Delete</a>
                     </td>
