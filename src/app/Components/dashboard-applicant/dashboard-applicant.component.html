@@ -1,16 +1,16 @@
 <div>
-  <div class="text-center d-flex justify-content-between w-100">
+  <div class="text-center d-flex justify-content-around w-100">
     <a routerLinkActive="active" (click)="getGeneratedLink()" class="m-4 btn btn-color">Generate Form link</a>
     <div class="box mt-3" style="width: 30%">
       <span class="value" id="copy">{{ generatedLink.link }}</span>
       <span class="value">{{ generatedLink.expiration_date }}</span>
       <button class="copy-button" (click)="copyLink()">Copy</button>
     </div>
-    <input type="text" [(ngModel)]="searchTerm" class="form-control mt-4" placeholder="Search" style="height: 50%; width: 20%;">
-    <div class="m-2">
-      <label for="position" class="fw-bold">Filter by positions:</label>
+    <input type="text" [(ngModel)]="searchTerm" class="form-control mt-4" placeholder="Search by applicant name..." style="height: 50%; width: 20%;">
+    <div class="mt-4">
       <select id="position" name="position" class="form-control" [(ngModel)]="selectedPosition" (change)="onPositionChange()">
-        <option [ngValue]="null" selected>All positions</option>
+        <option [ngValue]="null" class="text-secondary" disabled selected>Filter by position</option>
+        <option [ngValue]="null">All positions</option>
         <option *ngFor="let position of positions" [ngValue]="position.id">{{ position.name }}</option>
       </select>
     </div>
