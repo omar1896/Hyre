@@ -11,8 +11,6 @@ export class PositionServiceService {
   private readonly Base_URL = "http://localhost:8000/tenant/positions";
 
   GetAllPositions(){
-    console.log("Hello");
-    
     return this.myClient.get(this.Base_URL);
   }
 

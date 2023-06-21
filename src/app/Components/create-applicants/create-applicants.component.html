@@ -1,7 +1,7 @@
 
 <div class="d-flex flex-column flex-md-row align-items-center justify-content-center mt-3 mb-0">
     <h1><img src="assets/images/logo.png" height="110" alt="Hyre"></h1>
-    <h2> <img class="ps-md-5" src="{{company.image}}" height="100" alt=""> </h2>
+    <h2> <img class="ps-md-5" src="{{company.image}}" height="100" alt="" style="max-width: 100%;"> </h2>
 </div>
 
 <form [formGroup]="applicantForm" (ngSubmit)="submitForm()" class="d-flex flex-column align-items-center justify-content-center" style="height: 100%;" enctype="multipart/form-data">
@@ -87,6 +87,6 @@
           </div>
     </div>
     <!--[disabled]="!applicantForm.valid"-->
-    <button type="submit" class="btn btn-success mt-2" >Submit</button>
+    <button type="submit" class="btn btn-success mt-2 mb-5" style="width: 32%; border-radius: 0;" >Submit</button>
 </form>
   

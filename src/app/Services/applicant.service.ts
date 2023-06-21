@@ -24,6 +24,7 @@ export class ApplicantService {
   }
 
   deleteData(applicant_id : any){
+    console.log("Hello ");
     return this.http.delete(`${this.Base_URL}tenant/applicants/${applicant_id}/destroy/`);
   }
 

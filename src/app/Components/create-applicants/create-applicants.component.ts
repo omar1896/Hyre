@@ -11,12 +11,12 @@ import { CompanyService } from 'src/app/Services/company.service';
 export class CreateApplicantsComponent implements OnInit {
   applicantForm: FormGroup;
   company : any =  {
-    image : "assets/images/iti-logo.png",
+    image : null,
     positions: []
   };
   token : any ;
   resume:any;
-  constructor(private sendApplicantData : ApplicantService, private getCompanyPositions : CompanyService  ,private route: ActivatedRoute ) {
+  constructor(private sendApplicantData : ApplicantService, private getCompany : CompanyService  , private route: ActivatedRoute ) {
     this.applicantForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(15), Validators.maxLength(100)]),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -32,7 +32,7 @@ export class CreateApplicantsComponent implements OnInit {
 
   ngOnInit(): void {
     this.token = this.route.snapshot.paramMap.get('token');
-    this.getCompanyPositions.getCompanyData(this.token).subscribe({
+    this.getCompany.getCompanyData(this.token).subscribe({
       next:(data :any)=>{
         if(data.success){
           this.company["positions"] = data['data']; // array
@@ -42,6 +42,7 @@ export class CreateApplicantsComponent implements OnInit {
         }
       }
     });
+    this.getCompanyData();
   }
   onFileSelected(event: any) {
     this.resume = event.target.files[0];
@@ -77,6 +78,19 @@ export class CreateApplicantsComponent implements OnInit {
         }
       );
     }
+  }
+
+  getCompanyData () {
+    this.getCompany.getCompanyImage(this.token).subscribe({
+      next: (data: any) => {
+        if (data.success) {
+          this.company['image'] = data['data']
+        } else {
+          console.log(data.message);
+          this.company["image"] = "/assets/images/default-log.png"
+        }
+      }
+    })
   }
 
 }

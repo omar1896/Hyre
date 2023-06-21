@@ -15,6 +15,7 @@ export class DashboardApplicantComponent implements OnInit {
     link : 'http://',
     expiration_date : '**/**/****'
   }
+  company : any = null;
   constructor(private applicantService: ApplicantService, private getPositions: PositionServiceService) { }
   ngOnInit(): void {
     this.fetchApplicants();
@@ -37,7 +38,6 @@ export class DashboardApplicantComponent implements OnInit {
     // Applicants Data
     this.applicantService.getData().subscribe({
       next: (data: any) => {
-        console.log(data)
         if (data.success) {
           this.applicants = data["data"];
         }
@@ -51,12 +51,7 @@ export class DashboardApplicantComponent implements OnInit {
   delete(applicant_id: any) {
     this.applicantService.deleteData(applicant_id).subscribe({
       next: (data: any) => {
-        if (data.success) {
-          this.fetchApplicants();
-        }
-        else {
-          console.log(data.message);
-        }
+        this.fetchApplicants();
       }
     });
   }
