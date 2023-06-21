@@ -37,6 +37,7 @@ export class DashboardApplicantComponent implements OnInit {
     // Applicants Data
     this.applicantService.getData().subscribe({
       next: (data: any) => {
+        console.log(data)
         if (data.success) {
           this.applicants = data["data"];
         }

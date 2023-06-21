@@ -12,7 +12,7 @@ export class ApplicantService {
   constructor(private http: HttpClient) {}
 
   sendData(formData: FormData , token : any) {
-    return this.http.post(`${this.Base_URL}tenant/applicants/create/${token}`, formData , {observe:'response'});
+    return this.http.post(`${this.Base_URL}tenant/applicants/create/${token}`, formData );
   }
 
   getData() {
