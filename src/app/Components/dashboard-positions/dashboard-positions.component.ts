@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {  Router } from '@angular/router';
-import{ModalComponentComponent} from '../modal-component/modal-component.component'
+import { Router } from '@angular/router';
+import { ModalComponentComponent } from '../modal-component/modal-component.component'
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { PositionServiceService } from 'src/app/Services/position-service.service';
 
@@ -10,24 +10,16 @@ import { PositionServiceService } from 'src/app/Services/position-service.servic
   styleUrls: ['./dashboard-positions.component.css']
 })
 export class DashboardPositionsComponent implements OnInit {
-  id=0;
-  positions:any;
+  id = 0;
+  positions: any;
   // showModal = true;
   // confirmationMessage = 'Are you sure you want to delete this item?';
   bsModalRef?: BsModalRef;
-  constructor(public myService: PositionServiceService,public router:Router){
+  constructor(public myService: PositionServiceService, public router: Router) {
 
   }
   ngOnInit(): void {
-    this.myService.GetAllPositions().subscribe(
-      {
-        next:(data)=>{
-          console.log("the data",data);
-          this.positions = data;
-        },
-        error:(err)=>{console.log(err)}
-      }
-    );
+    this.getAllPositions()
   }
 
 
@@ -53,23 +45,48 @@ export class DashboardPositionsComponent implements OnInit {
   // }
 
 
-showAlert(e:any)
-{
+  showAlert(e: any) {
 
-  let id=e.target.id
- let check= confirm("are you sure that you want to delete this student?");
- if(check)
- {
-  this.myService.DeletePosition(id).subscribe();
-  //& to reload the component to see changes
-    this.router.navigate(['/dashboard/positions']);
 
- }
+    this.myService.DeletePosition(e.target.id).subscribe({
+      next: (res: any) => {
+        this.getAllPositions()
+        this.router.navigateByUrl("/dashboard/positions")
+      },
+      error: (err: any) => {
+        console.log(err)
+      }
+    })
+
+  }
+
+  getAllPositions() {
+    this.myService.GetAllPositions().subscribe(
+      {
+        next: (data:any) => {
+          console.log("the data", data);
+          this.positions = data
+        },
+        error: (err) => { console.log(err) }
+      }
+    );
+  }
 }
 
-}
-
-
+// getAllUsers=()=>{
+//   this.myClient.getAllUsers().subscribe({
+//    next: (data: any) => {
+//      if (data.success) {
+//        this.users = data["data"];
+//        console.log(this.users)
+//      }
+//      else {
+//        console.log(data.message);
+//      }
+//    }
+//  });
+// }
+// }
 
 
 
