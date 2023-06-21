@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { ApplicantService } from 'src/app/Services/applicant.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CompanyService } from 'src/app/Services/company.service';
 @Component({
   selector: 'app-create-applicants',
@@ -16,7 +16,7 @@ export class CreateApplicantsComponent implements OnInit {
   };
   token : any ;
   resume:any;
-  constructor(private sendApplicantData : ApplicantService, private getCompany : CompanyService  , private route: ActivatedRoute ) {
+  constructor(private sendApplicantData : ApplicantService, private getCompany : CompanyService  , private route: ActivatedRoute,private router:Router ) {
     this.applicantForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(15), Validators.maxLength(100)]),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -71,6 +71,7 @@ export class CreateApplicantsComponent implements OnInit {
         {
           next:(data:any) => {
             if (data.success){
+              this.router.navigateByUrl("/applicants/confirmation")
               console.log(data); // Use Tostar ,  this.route.navigateByUrl ('anguler server route')
             }
             console.log(data.message);

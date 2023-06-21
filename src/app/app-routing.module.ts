@@ -23,6 +23,7 @@ import { AddHrUserComponent } from './Components/dashboard/views/add-hr-user/add
 import { AuthGuard } from './Guards/auth.guard';
 import { LoggedinGuard } from './Guards/loggedin.guard';
 import { ProfileComponent } from './Components/profile/profile.component';
+import { ThankyouComponent } from './Components/thankyou/thankyou.component';
 
 
 
@@ -51,6 +52,7 @@ const routes: Routes = [
     ],
   },
   { path : 'applicants/create/:token' , component : CreateApplicantsComponent},
+  { path : 'applicants/confirmation' , component : ThankyouComponent},
   { path : 'about' , component : AboutComponent},
   { path: 'signin', component: SigninComponent ,canActivate:[LoggedinGuard]},
   { path: 'signup', component: SignupPageComponent ,canActivate:[LoggedinGuard]},

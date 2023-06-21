@@ -78,6 +78,7 @@ import { ChangeSubscriptionComponent } from './Components/change-subscription/ch
 import { SuccessPaymentComponent } from './Components/success-payment/success-payment.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ProfileComponent } from './Components/profile/profile.component';
+import { ThankyouComponent } from './Components/thankyou/thankyou.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -118,6 +119,7 @@ import { ProfileComponent } from './Components/profile/profile.component';
     ModalComponentComponent,
     DashboardUsersComponent,
     ProfileComponent,
+    ThankyouComponent,
   ],
   imports: [
     BrowserModule,
