@@ -29,4 +29,34 @@
 
   }
 }
+.cus-img{
+  /* aspect-ratio: 1/2; */
+  object-fit: cover;
+}
+
+.short-para{
+  font-size: 1.3rem;
+  line-height: 125%;
+}
+
+.med-para{
+  font-size: 1.7rem;
+  font-weight: bold
+}
+.large-para{
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 135%;
+}
+.title-para{
+  color:#D0256A;
+  font-size: 1.7rem;
+  margin-top: 80px;
+}
+
+.title-para2{
+  color:#2867DB;
+  font-size: 1.7rem;
+  margin-top: 80px;
+}
 
