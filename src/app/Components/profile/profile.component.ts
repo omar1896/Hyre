@@ -49,7 +49,7 @@ export class ProfileComponent {
       next:(res:any)=>{
 
         this.company=res.data
-        this.company.image=this.company.image || "/assets/images/default-logo.jpeg"
+        this.company.image=this.company.image || "/assets/images/default-log.png"
       },
       error:(err:any)=>{
 
