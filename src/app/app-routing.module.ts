@@ -56,7 +56,7 @@ const routes: Routes = [
   { path : 'about' , component : AboutComponent},
   { path: 'signin', component: SigninComponent ,canActivate:[LoggedinGuard]},
   { path: 'signup', component: SignupPageComponent ,canActivate:[LoggedinGuard]},
-  { path: 'payment/successful', component: SuccessPaymentComponent ,canActivate:[LoggedinGuard]},
+  { path: 'payment/successful', component: SuccessPaymentComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
