@@ -79,6 +79,8 @@ import { SuccessPaymentComponent } from './Components/success-payment/success-pa
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { ThankyouComponent } from './Components/thankyou/thankyou.component';
+import { RedirectpaymentComponent } from './Components/redirectpayment/redirectpayment.component';
+import { PaymentFailComponent } from './Components/payment-fail/payment-fail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -120,6 +122,8 @@ import { ThankyouComponent } from './Components/thankyou/thankyou.component';
     DashboardUsersComponent,
     ProfileComponent,
     ThankyouComponent,
+    RedirectpaymentComponent,
+    PaymentFailComponent,
   ],
   imports: [
     BrowserModule,

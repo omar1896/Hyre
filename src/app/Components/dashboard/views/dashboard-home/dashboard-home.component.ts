@@ -20,8 +20,9 @@ export class DashboardHomeComponent implements OnInit {
     this.companyService.getCompanyInfo().subscribe({
       next:(res:any)=>{
         this.user=res.data
+        // console.log(this.user.subscription=="Bootstrap")
         if(this.user.subscription=="Bootstrap"){
-          this.isModalClosed = !this.isModalClosed
+          // this.isModalClosed = !this.isModalClosed
           this.openDialog()
         }
       },
