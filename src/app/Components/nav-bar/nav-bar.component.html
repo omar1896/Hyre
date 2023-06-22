@@ -7,7 +7,7 @@
             <app-logo [mWidth]="'75px'" title=""></app-logo>
           </a>
           <a class="fs-4 nav-link" routerLink="/home">Pricing</a>
-          <a class="fs-4 nav-link" routerLink="#">Demo</a>
+          <a class="fs-4 nav-link" href="/home#demo">Demo</a>
           <a class="fs-4 nav-link" routerLink="about">About</a>
           <div class="fs-4 nav-links d-flex">
             <!-- <a class="fs-4 nav-link" routerLink="signup" *ngIf="!isLogedIn">Signup</a> -->
@@ -94,13 +94,19 @@
               <a class="nav-link fs-3" routerLink="home">Pricing</a>
             </li>
             <li class="nav-item mt-2 border-bottom">
-              <a class="nav-link fs-3" routerLink="#">Demo</a>
+              <a class="nav-link fs-3" href="/home#demo">Demo</a>
             </li>
             <li class="nav-item mt-2 border-bottom">
               <a class="nav-link fs-3" routerLink="about">About</a>
             </li>
-            <li class="nav-item mt-2 border-bottom">
+            <li class="nav-item mt-2 border-bottom" *ngIf="!isLogedIn">
               <a class="nav-link fs-3" routerLink="signup">Signup</a>
+            </li>
+            <li class="nav-item mt-2 border-bottom" *ngIf="!isLogedIn">
+              <a class="nav-link fs-3" routerLink="signin">Signin</a>
+            </li>
+            <li class="nav-item mt-2 border-bottom" *ngIf="isLogedIn">
+              <a class="nav-link fs-3" routerLink="dashboard">DashBoard</a>
             </li>
           </ul>
         </div>

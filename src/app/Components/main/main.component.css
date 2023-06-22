@@ -60,3 +60,11 @@
   margin-top: 80px;
 }
 
+.preveiw:hover{
+  transform: scale(1.05);
+  /* transition:transform .35s; */
+
+}
+.preveiw{
+  transition:transform .35s;
+}
