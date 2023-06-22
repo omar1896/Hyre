@@ -1,70 +1,61 @@
 <div class="text-center section px-3" id="main">
   <div class="row align-items-center justify-content-center">
-    <div class="col-12 my-3">
-      <h1 id="title">Find & Hire Employees, Sooner.</h1>
+    <div class="col-12 my-5">
+      <h1 id="title" style="line-height: 50px;">Find & Hire Employees, Sooner.</h1>
     </div>
-    <div class="col-md-12 col-lg-8 mt-2">
+    <div class="col-md-12 col-lg-8 mt-2" style="line-height: 30px;">
       From advertising jobs to making offers, get everything you need to attract
       and hire better employees — in less time.
     </div>
-    <div class="col-12 mt-5">
-      <a
-        style="background-color: #d0256a"
-        class="button text-light btn rounded rounded-5 py-3 px-5"
-        routerLink="signup"
-        >Get Started</a
-      >
+    <div class="row justify-content-center fs-6 my-4">
+      <div class="col-12 col-md-3 mt-2" style="line-height: 30px;">
+        <i class="bi bi-check2"></i>
+        Signup Now For Free
+      </div>
+      <div class="col-12 col-md-3 mt-2" style="line-height: 30px;">
+        <i class="bi bi-check2"></i>
+        No Credit Card Needed
+      </div>
     </div>
-    <section
-      class="container d-flex flex-column justify-content-evenly align-items-center mt-5"
-    >
+    <div class="col-12 mt-4">
+      <a style="background-color: #d0256a" class="button text-light btn rounded rounded-5 py-3 px-5"
+        routerLink="signup">Get Started</a>
+    </div>
+    <div class="container my-4" id="demo">
+      <a href="https://www.youtube.com/watch?v=uiPSnrE6uWE">
+        <img class="image-fluid w-100 preveiw" style="max-width: 600px;"
+          src="https://assets-global.website-files.com/6127d83f257132e4fe0bddc6/6127e8e1263fb6202426579e_breezy-intro-video.webp"
+          alt="">
+      </a>
+    </div>
+    <section class="container d-flex flex-column justify-content-evenly align-items-center mt-5">
       <div
-        class="mt-4 d-flex flex-row justify-content-between justify-content-md-around align-items-center w-75 position-relative"
-      >
+        class="mt-4 d-flex flex-row justify-content-between justify-content-md-around align-items-center w-75 position-relative">
         <p [ngClass]="!isMonthly ? 'text-dark' : 'text-primary'">Monthly</p>
         <app-toggle-button (toggle)="isMonthly = $event"></app-toggle-button>
         <p [ngClass]="isMonthly ? 'text-dark' : 'text-primary'">Annually</p>
       </div>
-      <div
-        class="row d-flex flex-row justify-content-evenly align-items-center mt-4"
-      >
+      <div class="row d-flex flex-row justify-content-evenly align-items-center mt-4">
         <div class="col-12 col-md-4" *ngIf="bootstrap">
-          <app-info-card
-            [type]="bootstrap[0].name"
-            [description]="bootstrap[0].description"
-          ></app-info-card>
+          <app-info-card [type]="bootstrap[0].name" [description]="bootstrap[0].description"></app-info-card>
         </div>
         <div class="col-12 col-md-4" *ngIf="startup">
-          <app-info-card
-            [toggle]="isMonthly"
-            btnColor="#EE136B"
-            image="assets/images/free-sub.jpg"
-            [type]="startup[0].name"
-            [description]="startup[0].description"
+          <app-info-card [toggle]="isMonthly" btnColor="#EE136B" image="assets/images/free-sub.jpg"
+            [type]="startup[0].name" [description]="startup[0].description"
             [monthlyPrice]="'$' + startup[0].price + '/mo'"
-            [annuallyPrice]="'$' + startup[1].price + '/mo'"
-          ></app-info-card>
+            [annuallyPrice]="'$' + startup[1].price + '/mo'"></app-info-card>
         </div>
         <div class="col-12 col-md-4" *ngIf="business">
-          <app-info-card
-            [toggle]="isMonthly"
-            btnColor="#B908FF"
-            image="assets/images/Business-sub.jpg"
-            [type]="business[0].name"
-            [description]="business[0].description"
+          <app-info-card [toggle]="isMonthly" btnColor="#B908FF" image="assets/images/Business-sub.jpg"
+            [type]="business[0].name" [description]="business[0].description"
             [monthlyPrice]="'$' + business[1].price + '/mo'"
-            [annuallyPrice]="'$' + business[0].price + '/mo'"
-          ></app-info-card>
+            [annuallyPrice]="'$' + business[0].price + '/mo'"></app-info-card>
         </div>
       </div>
     </section>
-    <div
-      class="row w-100 d-flex flex-row justify-content-between align-items-center bg-white py-5"
-    >
+    <div class="row w-100 d-flex flex-row justify-content-between align-items-center bg-white py-5">
       <h2 class="title-para text-start mt-4">Advertise & Attract</h2>
-      <div
-        class="col-12 col-md-6 text-start d-felx flex-column justify-content-between"
-      >
+      <div class="col-12 col-md-6 text-start d-felx flex-column justify-content-between">
         <p class="large-para mb-4">
           Get your job in front of millions of candidates.
         </p>
@@ -80,19 +71,11 @@
           as as little or as much time as you like.
         </h5>
       </div>
-      <img
-        class="cus-img col-12 col-md-6"
-        src="/assets/images/sec2.png"
-        alt="social media pic"
-      />
+      <img class="cus-img col-12 col-md-6" src="/assets/images/sec2.png" alt="social media pic" />
     </div>
-    <div
-      class="row w-100 d-flex flex-row justify-content-between align-items-center bg-white"
-    >
+    <div class="row w-100 d-flex flex-row justify-content-between align-items-center bg-white">
       <h2 class="title-para2 text-start">Automate & Qualify</h2>
-      <div
-        class="col-12 col-md-6 text-start d-felx flex-column justify-content-between"
-      >
+      <div class="col-12 col-md-6 text-start d-felx flex-column justify-content-between">
         <p class="large-para mb-4">
           Focus on hiring, not tedious, repetitive tasks.
         </p>
@@ -102,11 +85,7 @@
           interviews, and collecting feedback from your team.
         </h5>
       </div>
-      <img
-        class="cus-img col-12 col-md-6"
-        src="/assets/images/sec3.png"
-        alt="social media pic"
-      />
+      <img class="cus-img col-12 col-md-6" src="/assets/images/sec3.png" alt="social media pic" />
     </div>
   </div>
 </div>
