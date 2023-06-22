@@ -24,6 +24,9 @@ import { AuthGuard } from './Guards/auth.guard';
 import { LoggedinGuard } from './Guards/loggedin.guard';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { ThankyouComponent } from './Components/thankyou/thankyou.component';
+import { PaymentFailComponent } from './Components/payment-fail/payment-fail.component';
+import { RedirectpaymentComponent } from './Components/redirectpayment/redirectpayment.component';
+import { PaymentSuccessComponent } from './Components/payment-success/payment-success.component';
 
 
 
@@ -56,7 +59,10 @@ const routes: Routes = [
   { path : 'about' , component : AboutComponent},
   { path: 'signin', component: SigninComponent ,canActivate:[LoggedinGuard]},
   { path: 'signup', component: SignupPageComponent ,canActivate:[LoggedinGuard]},
-  { path: 'payment/successful', component: SuccessPaymentComponent },
+  // { path: 'payment/successful', component: SuccessPaymentComponent },
+  { path: 'payment/successful', component: PaymentSuccessComponent },
+  { path: 'payment/failed', component: PaymentFailComponent },
+  { path: 'checkout/:cId/:prId', component: RedirectpaymentComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
