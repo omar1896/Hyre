@@ -1,27 +1,45 @@
 # Hyre
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
+## INTRODUCTION
+In today's job market, the hiring process can be time-consuming and cumbersome for both the hiring manager and the job applicant. 
+The main goal for Hyre to develop a user-friendly and efficient hiring process that can streamline the HR department's workload and provide a better experience for job applicants. The project aims to integrate the Agora API, which provides video call functionality, to enable remote interviews. Additionally, the project will incorporate automated email responses to provide timely updates to job applicants on their application status, reducing the need for manual communication. The project's ultimate goal is to improve the hiring process's efficiency and effectiveness while reducing the time and resources required to hire the right candidate.
 
-## Development server
+## DEMO
+🎬
+We Hope That You are enjoying Watching Our Demo Video 
+[Click Here](https://youtu.be/y0YarbomBV4)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## FEATURES
+- Authuntication
+- Roles and Perimissions
+- Agora Video call 
+- Automated Emails
+- Stripe Payment
+- Friendly User Interface
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## INSTALLATION
+<pre>
+- git clone https://github.com/omar1896/Hyre.git
+- npm i 
+- npm start
+</pre>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## TECHNOLOGIES
+- Angular
+- Django
+- Rest framework
+- Postgres
+- Bootstrap
+- HTML
+- CSS
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Contributers
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [Ahmed Zain](https://github.com/AhmedMohamedZein)
+- [Ahmed Hamada](https://github.com/AhmedHamada011)
+- [Mahmoud Basiouny](https://github.com/mahmoud-elbasiony)
+- [Mohammed Yousef](https://github.com/Mohamedyousef44)
+- [Omar Alaa](https://github.com/omar1896)
