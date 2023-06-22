@@ -17,4 +17,7 @@ export class StripeService {
   createCheckoutSession(data: any){
     return this.http.post(this.URL, data);
   }
+  redirect(url:any,data: any){
+    return this.http.post(`${Environment.apiUrl}stripe/checkout${url}`,data);
+  }
 }
